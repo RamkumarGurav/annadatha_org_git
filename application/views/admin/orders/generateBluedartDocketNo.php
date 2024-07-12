@@ -1,4 +1,4 @@
-<?
+<?php 
 $this->load->library('Bluedart');
 $obj_bluedart = new Bluedart();
 
@@ -100,7 +100,7 @@ if($od->is_cod==1)
 }
 ?>
 
-<?php
+<?php 
 $destination_pincode = $od->d_zipcode; // Mandatory
 $vendor_address = 'Shop No. 3,4,5';
 $vendor_address2 = 'Deol Nagar';

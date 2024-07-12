@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= _admin_files_ ?>css/tablednd.css" type="text/css" />
+<link rel="stylesheet" href="<? php echo _admin_files_ ?>css/tablednd.css" type="text/css" />
 
 <style>
    * {
@@ -30,11 +30,11 @@
    }
 </style>
 
-<link href="<?= _admin_files_ ?>skin-lion/ui.easytree.css" rel="stylesheet" type="text/css" />
+<link href="<? php echo _admin_files_ ?>skin-lion/ui.easytree.css" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<?php
+<? php
 
 $page_module_name = "Product";
 
@@ -46,7 +46,7 @@ echo "</pre>";*/
 
 ?>
 
-<?
+<? 
 
 $is_update = false;
 
@@ -468,7 +468,7 @@ if (!empty($product_category_detail)) {
 
             <div class="col-sm-6">
 
-               <h1 class="m-0 text-dark"><small><?= $page_module_name ?> </small></h1>
+               <h1 class="m-0 text-dark"><small><? php echo $page_module_name ?> </small></h1>
 
             </div>
 
@@ -478,20 +478,21 @@ if (!empty($product_category_detail)) {
 
                <ol class="breadcrumb float-sm-right">
 
-                  <li class="breadcrumb-item"><a href="<?= MAINSITE_Admin . "wam" ?>">Home</a></li>
+                  <li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 
                   <li class="breadcrumb-item"><a
-                        href="<?= MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?= $user_access->module_name ?>
+                        href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
                         List</a></li>
 
-                  <? if (!empty($product_detail)) { ?>
+                  <?  if (!empty($product_detail)) { ?>
 
                      <li class="breadcrumb-item"><a
-                           href="<?= MAINSITE_Admin . $user_access->class_name . "/view/" . $product_id ?>">View</a></li>
+                           href="<? php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $product_id ?>">View</a>
+                     </li>
 
-                  <? } ?>
+                  <?  } ?>
 
-                  <li class="breadcrumb-item"><?= $record_action ?></li>
+                  <li class="breadcrumb-item"><? php echo $record_action ?></li>
 
                </ol>
 
@@ -513,13 +514,14 @@ if (!empty($product_category_detail)) {
 
    <!-- Main content -->
 
-   <? ?>
+   <?  ?>
+
 
    <section class="content">
 
       <div class="row">
 
-         <?
+         <? 
          $active_tab = $this->session->userdata("active_tab");
          //echo "active_tab : $active_tab";
          if (empty($active_tab)) {
@@ -528,7 +530,7 @@ if (!empty($product_category_detail)) {
          ?>
 
          <div class="col-md-12">
-            <?= $this->session->flashdata('alert_message'); ?>
+            <? php echo $this->session->flashdata('alert_message'); ?>
             <div class="row align-items-center bg-white tabb">
 
                <span class="pull-right n-pop-small" id="PopUpMsg"><i></i></span>
@@ -537,71 +539,59 @@ if (!empty($product_category_detail)) {
 
 
 
-                  <li role="presentation" class="<? if ($active_tab == "INFORMATION") {
+                  <li role="presentation" class="<?  if ($active_tab == "INFORMATION") {
                      echo "active";
-                  } ?>"><a
-                        href="#INFORMATION" class="<? if ($active_tab == "INFORMATION") {
-                           echo "active";
-                        } ?>"
-                        aria-controls="home" role="tab" data-toggle="tab">INFORMATION</a></li>
+                  } ?>"><a href="#INFORMATION" class="<?  if ($active_tab == "INFORMATION") {
+                      echo "active";
+                   } ?>" aria-controls="home" role="tab" data-toggle="tab">INFORMATION</a></li>
 
-                  <li role="presentation" class=" <? if ($active_tab == "COMBINATIONS") {
+                  <li role="presentation" class=" <?  if ($active_tab == "COMBINATIONS") {
                      echo " active ";
-                  } ?>"><a
-                        href="#COMBINATIONS" class="<? if ($active_tab == "COMBINATIONS") {
-                           echo "active";
-                        } ?>"
-                        aria-controls="profile" role="tab" data-toggle="tab">COMBINATIONS</a></li>
+                  } ?>"><a href="#COMBINATIONS" class="<?  if ($active_tab == "COMBINATIONS") {
+                      echo "active";
+                   } ?>" aria-controls="profile" role="tab" data-toggle="tab">COMBINATIONS</a></li>
 
-                  <li role="presentation" class=" <? if ($active_tab == "COMBINATIONS_POS") {
+                  <li role="presentation" class=" <?  if ($active_tab == "COMBINATIONS_POS") {
                      echo " active ";
-                  } ?>"><a
-                        href="#COMBINATIONS_POS" class="<? if ($active_tab == "COMBINATIONS_POS") {
-                           echo "active";
-                        } ?>"
-                        aria-controls="profile" role="tab" data-toggle="tab"> POSITION</a></li>
+                  } ?>"><a href="#COMBINATIONS_POS" class="<?  if ($active_tab == "COMBINATIONS_POS") {
+                      echo "active";
+                   } ?>" aria-controls="profile" role="tab" data-toggle="tab"> POSITION</a></li>
 
-                  <li role="presentation" class=" <? if ($active_tab == "images") {
+                  <li role="presentation" class=" <?  if ($active_tab == "images") {
                      echo " active ";
-                  } ?>"><a
-                        href="#images" class="<? if ($active_tab == "images") {
-                           echo "active";
-                        } ?>"
-                        aria-controls="messages" role="tab" data-toggle="tab">IMAGES</a></li>
+                  } ?>"><a href="#images" class="<?  if ($active_tab == "images") {
+                      echo "active";
+                   } ?>" aria-controls="messages" role="tab" data-toggle="tab">IMAGES</a></li>
 
-                  <?php /*?>
+                  <? php /*?>
 
-             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
 
-             <?php */ ?>
+        <? php */ ?>
 
-                  <?php if (!empty($user_access_seo)) {
+                  <? php if (!empty($user_access_seo)) {
                      if ($user_access_seo->update_module == 1) { ?>
 
-                        <li role="presentation" class=" <? if ($active_tab == "settings") {
+                        <li role="presentation" class=" <?  if ($active_tab == "settings") {
                            echo " active ";
-                        } ?>"><a
-                              href="#settings" class="<? if ($active_tab == "settings") {
-                                 echo "active";
-                              } ?>"
-                              aria-controls="settings" role="tab" data-toggle="tab">SEO Settings</a></li>
+                        } ?>"><a href="#settings" class="<?  if ($active_tab == "settings") {
+                            echo "active";
+                         } ?>" aria-controls="settings" role="tab" data-toggle="tab">SEO Settings</a></li>
 
-                     <? }
+                     <?  }
                   } ?>
 
-                  <li role="presentation" class=" <? if ($active_tab == "add_review") {
+                  <li role="presentation" class=" <?  if ($active_tab == "add_review") {
                      echo " active ";
-                  } ?>"><a
-                        href="#add_review" class="<? if ($active_tab == "add_review") {
-                           echo "active";
-                        } ?>"
-                        aria-controls="add_review" role="tab" data-toggle="tab">Add Review</a></li>
+                  } ?>"><a href="#add_review" class="<?  if ($active_tab == "add_review") {
+                      echo "active";
+                   } ?>" aria-controls="add_review" role="tab" data-toggle="tab">Add Review</a></li>
 
                </ul>
 
                <div class="col-md-3 text-right">
 
-                  <a href="<?= MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"
+                  <a href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"
                      class="btn btn-primary"><i class="fa fa-arrow-left"></i>&nbsp; Back To Product List</a>
 
                </div>
@@ -612,8 +602,8 @@ if (!empty($product_category_detail)) {
 
          <div class="col-md-12">
 
-            <? if ($alert == "success" || $alert == "update" || $alert == "fail" || $alert == "imageUpdate" || $alert == "wrongimageformat" || $alert == "imageDelete" || $alert == "combiSuccess") { ?><span
-                  style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<? if ($alert == "success") {
+            <?  if ($alert == "success" || $alert == "update" || $alert == "fail" || $alert == "imageUpdate" || $alert == "wrongimageformat" || $alert == "imageDelete" || $alert == "combiSuccess") { ?><span
+                  style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?  if ($alert == "success") {
                      echo "Record Inserted Successfully.";
                   } else if ($alert == "update") {
                      echo "Record Updated Successfully.";
@@ -627,17 +617,15 @@ if (!empty($product_category_detail)) {
                      echo "Image Deleted Seccessfully.";
                   } else if ($alert == "combiSuccess") {
                      //echo "Combination Inserted Seccessfully.";
-                  } ?></span><? } ?>
+                  } ?></span><?  } ?>
 
             <div class="tab-content  admin-tab-cont1">
 
                <!--Information TAB-->
 
-               <div role="tabpanel"
-                  class="tab-pane show fade <? if ($active_tab == "INFORMATION") {
-                     echo "in active show ";
-                  } ?>"
-                  id="INFORMATION">
+               <div role="tabpanel" class="tab-pane show fade <?  if ($active_tab == "INFORMATION") {
+                  echo "in active show ";
+               } ?>" id="INFORMATION">
 
                   <div class="box box-primary">
 
@@ -651,11 +639,11 @@ if (!empty($product_category_detail)) {
 
                      <div class="box-body">
 
-                        <?php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'product_form', "name" => "product_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateForm()')); ?>
+                        <? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'product_form', "name" => "product_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateForm()')); ?>
 
                         <input type="hidden" name="action" id="action_info" value="" />
 
-                        <input type="hidden" name="product_id" id="product_id" value="<?php echo $product_id; ?>" />
+                        <input type="hidden" name="product_id" id="product_id" value="<? php echo $product_id; ?>" />
 
                         <div class="row">
 
@@ -677,14 +665,14 @@ if (!empty($product_category_detail)) {
                                     </label>
 
                                     <input type="text" name="name" id="name" placeholder="Product Name"
-                                       class="form-control" value="<? echo $name; ?>" required>
+                                       class="form-control" value="<?  echo $name; ?>" required>
 
                                     <span class="field-validation-valid" data-valmsg-for="Name"
                                        data-valmsg-replace="true"></span>
 
                                  </div>
 
-                                 <? if ($product_id <= 0) { ?>
+                                 <?  if ($product_id <= 0) { ?>
 
                                     <div class="col-md-6">
 
@@ -710,11 +698,11 @@ if (!empty($product_category_detail)) {
 
                                     </div>
 
-                                 <? } else { ?>
+                                 <?  } else { ?>
 
                                     <input type="file" style="display:none" name="image[]" id="p_image" multiple />
 
-                                 <? } ?>
+                                 <?  } ?>
 
                               </div>
 
@@ -726,7 +714,7 @@ if (!empty($product_category_detail)) {
 
                                        <label class="control-label" for="Name">
 
-                                          Brands/Manufacturer <? echo $brand_id; ?>
+                                          Brands/Manufacturer <?  echo $brand_id; ?>
 
                                           <div data-title="Brands/Manufacturer." class="ico-help icon_title_box"><i
                                                 class="fa fa-question-circle"></i></div>
@@ -739,14 +727,14 @@ if (!empty($product_category_detail)) {
 
                                           <option value="">Please Select</option>
 
-                                          <? foreach ($brand_list as $row) { ?>
+                                          <?  foreach ($brand_list as $row) { ?>
 
-                                             <option <? if ($brand_id == $row->brand_id) {
+                                             <option <?  if ($brand_id == $row->brand_id) {
                                                 echo "selected";
                                              } ?>
-                                                value="<? echo $row->brand_id; ?>"><? echo $row->brand_name; ?></option>
+                                                value="<?  echo $row->brand_id; ?>"><?  echo $row->brand_name; ?></option>
 
-                                          <? } ?>
+                                          <?  } ?>
 
                                        </select>
 
@@ -769,7 +757,7 @@ if (!empty($product_category_detail)) {
                                        </label>
 
                                        <input type="text" name="ref_code" id="ref_code" placeholder="Reference Code"
-                                          class="form-control" value="<? echo $ref_code; ?>" required>
+                                          class="form-control" value="<?  echo $ref_code; ?>" required>
 
                                        <span class="field-validation-valid" data-valmsg-for="Name"
                                           data-valmsg-replace="true"></span>
@@ -790,7 +778,7 @@ if (!empty($product_category_detail)) {
                                        </label>
 
                                        <input type="text" name="hsn_code" id="hsn_code" placeholder="HSN Code"
-                                          class="form-control" value="<? echo $hsn_code; ?>" required><span
+                                          class="form-control" value="<?  echo $hsn_code; ?>" required><span
                                           class="field-validation-valid" data-valmsg-for="Name"
                                           data-valmsg-replace="true"></span>
 
@@ -822,16 +810,16 @@ if (!empty($product_category_detail)) {
 
                                           <option value="">Please Select</option>
 
-                                          <?
+                                          <? 
 
                                           foreach ($tax_list as $row) { ?>
 
-                                             <option <? if ($tax_id == $row->tax_id) {
+                                             <option <?  if ($tax_id == $row->tax_id) {
                                                 echo "selected";
                                              } ?>
-                                                value="<? echo $row->tax_id; ?>"><? echo $row->tax_name; ?></option>
+                                                value="<?  echo $row->tax_id; ?>"><?  echo $row->tax_name; ?></option>
 
-                                          <? } ?>
+                                          <?  } ?>
 
                                        </select>
 
@@ -856,7 +844,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-success d-inline">
 
                                                 <input type="radio" class="radio-col-green" name="is_bulk_enquiry"
-                                                   id="is_bulk_enquiry1" value="1" <?php if ($is_bulk_enquiry == 1)
+                                                   id="is_bulk_enquiry1" value="1" <? php if ($is_bulk_enquiry == 1)
                                                       echo ' checked'; ?> required /><label for="is_bulk_enquiry1">Yes</label>
 
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -864,7 +852,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-danger d-inline">
 
                                                 <input type="radio" class="radio-col-red" name="is_bulk_enquiry"
-                                                   id="is_bulk_enquiry2" value="0" <?php if ($is_bulk_enquiry == 0)
+                                                   id="is_bulk_enquiry2" value="0" <? php if ($is_bulk_enquiry == 0)
                                                       echo ' checked'; ?> /><label for="is_bulk_enquiry2">No</label>
                                              </div>
 
@@ -910,7 +898,7 @@ if (!empty($product_category_detail)) {
                                  </label>
 
                                  <textarea class="search_textbox form-control" rows="8" name="short_description"
-                                    id="short_description"><? echo $short_description; ?></textarea>
+                                    id="short_description"><?  echo $short_description; ?></textarea>
 
                                  <span class="field-validation-valid" data-valmsg-for="Name"
                                     data-valmsg-replace="true"></span>
@@ -936,16 +924,16 @@ if (!empty($product_category_detail)) {
                                           <li class="isFolder isExpanded" title="New Parent Category">
 
                                              <i class="fa fa-folder"></i>
-                                             <?php /*?><a href="0" target="super_category_id,0,true" ><?php */ ?> New
-                                             Parent Category<?php /*?></a><?php */ ?>
+                                             <? php /*?><a href="0" target="super_category_id,0,true" ><? php */ ?> New
+                                             Parent Category<? php /*?></a><? php */ ?>
 
-                                             <? foreach ($category_list as $row1) {
+                                             <?  foreach ($category_list as $row1) {
 
                                                 if ($row1->super_category_id == 0) { ?>
 
                                                    <ul>
 
-                                                      <? $liClassExpend = '';
+                                                      <?  $liClassExpend = '';
                                                       $liClass = '';
                                                       $liFolderCount = 0;
                                                       foreach ($category_list as $row2) {
@@ -958,23 +946,22 @@ if (!empty($product_category_detail)) {
                                                          $liClass = 'isFolder';
                                                       } ?>
 
-                                                      <li class="<? echo $liClass . " " . $liClassExpend; ?> "
+                                                      <li class="<?  echo $liClass . " " . $liClassExpend; ?> "
                                                          title="Parent Category">
 
                                                          <i class="fa fa-angle-right"></i>
 
-                                                         <?php /*?> <a href="0" target="super_category_id,<? echo $row1['category_id']; ?>,false" ><? echo $row1['name']; ?></a>
+                                                         <? php /*?> <a href="0" target="super_category_id,<?  echo $row1['category_id']; ?>,false" ><?  echo $row1['name']; ?></a>
 
-                                                    <a href="0" target="category_id[],<? echo $row1['category_id']; ?>,false" ><? echo $row1['name']; ?></a><?php */ ?>
+                                                     <a href="0" target="category_id[],<?  echo $row1['category_id']; ?>,false" ><?  echo $row1['name']; ?></a><? php */ ?>
 
-                                                         <a href="0"
-                                                            target="category_id[],<? echo $row1->category_id; ?>,<? if (in_array($row1->category_id, $category_id_arr)) {
-                                                                  echo 'true';
-                                                               } else {
-                                                                  echo "false";
-                                                               } ?>"><? echo $row1->name; ?></a>
+                                                         <a href="0" target="category_id[],<?  echo $row1->category_id; ?>,<?  if (in_array($row1->category_id, $category_id_arr)) {
+                                                               echo 'true';
+                                                            } else {
+                                                               echo "false";
+                                                            } ?>"><?  echo $row1->name; ?></a>
 
-                                                         <? foreach ($category_list as $row3) {
+                                                         <?  foreach ($category_list as $row3) {
 
                                                             if ($row3->super_category_id == $row1->category_id) {
 
@@ -982,7 +969,7 @@ if (!empty($product_category_detail)) {
 
                                                                <ul>
 
-                                                                  <? $liClassExpend = '';
+                                                                  <?  $liClassExpend = '';
                                                                   $liClass = '';
                                                                   $liFolderCount = 0;
                                                                   foreach ($category_list as $row4) {
@@ -995,31 +982,30 @@ if (!empty($product_category_detail)) {
                                                                         $liClassExpend = 'isExpanded';
                                                                   } ?>
 
-                                                                  <li class="<? echo $liClass . " " . $liClassExpend; ?>  "
+                                                                  <li class="<?  echo $liClass . " " . $liClassExpend; ?>  "
                                                                      title="Sub Category">
 
-                                                                     <a href="0"
-                                                                        target="category_id[],<? echo $row3->category_id; ?>,<? if (in_array($row3->category_id, $category_id_arr)) {
-                                                                              echo 'true';
-                                                                           } else {
-                                                                              echo "false";
-                                                                           } ?>"><? echo $row3->name; ?></a>
+                                                                     <a href="0" target="category_id[],<?  echo $row3->category_id; ?>,<?  if (in_array($row3->category_id, $category_id_arr)) {
+                                                                           echo 'true';
+                                                                        } else {
+                                                                           echo "false";
+                                                                        } ?>"><?  echo $row3->name; ?></a>
 
                                                                      <ul>
 
-                                                                        <? foreach ($category_list as $row5) {
+                                                                        <?  foreach ($category_list as $row5) {
 
                                                                            if ($row5->super_category_id == $row3->category_id) { ?>
 
                                                                               <li class="" title="Super Sub Category"><a href="0"
-                                                                                    target="category_id[],<? echo $row5->category_id; ?>,<? if (in_array($row5->category_id, $category_id_arr)) {
+                                                                                    target="category_id[],<?  echo $row5->category_id; ?>,<?  if (in_array($row5->category_id, $category_id_arr)) {
                                                                                           echo 'true';
                                                                                        } else {
                                                                                           echo "false";
-                                                                                       } ?>"><? echo $row5->name; ?></a>
+                                                                                       } ?>"><?  echo $row5->name; ?></a>
                                                                               </li>
 
-                                                                           <? }
+                                                                           <?  }
                                                                         } ?>
 
                                                                      </ul>
@@ -1028,14 +1014,14 @@ if (!empty($product_category_detail)) {
 
                                                                </ul>
 
-                                                            <? }
+                                                            <?  }
                                                          } ?>
 
                                                       </li>
 
                                                    </ul>
 
-                                                <? }
+                                                <?  }
                                              } ?>
 
                                           </li>
@@ -1075,7 +1061,7 @@ if (!empty($product_category_detail)) {
                               </label>
 
                               <textarea class="search_textbox ckeditor" name="description" id="description"
-                                 style="width: 576px; height: 200px;"><? echo $description; ?></textarea>
+                                 style="width: 576px; height: 200px;"><?  echo $description; ?></textarea>
 
                               <span class="field-validation-valid" data-valmsg-for="Name"
                                  data-valmsg-replace="true"></span>
@@ -1100,7 +1086,7 @@ if (!empty($product_category_detail)) {
                               </label>
 
                               <textarea class="search_textbox ckeditor" name="application" id="application"
-                                 style="width: 576px; height: 200px;"><? echo $application; ?></textarea>
+                                 style="width: 576px; height: 200px;"><?  echo $application; ?></textarea>
 
                               <span class="field-validation-valid" data-valmsg-for="Name"
                                  data-valmsg-replace="true"></span>
@@ -1109,7 +1095,7 @@ if (!empty($product_category_detail)) {
 
                         </div>
 
-                        <? if ($product_id > 0) { ?>
+                        <?  if ($product_id > 0) { ?>
 
                            <div class="form-group row">
 
@@ -1132,13 +1118,13 @@ if (!empty($product_category_detail)) {
 
                                  <div class="demo-radio-button ">
 
-                                    <input type="radio" class="radio-col-green" name="status" id="status1" value="1" <?php if ($status)
+                                    <input type="radio" class="radio-col-green" name="status" id="status1" value="1" <? php if ($status)
                                        echo ' checked'; ?> required /><label for="status1">
                                        &nbsp;Active</label>
 
                                     &nbsp;&nbsp;
 
-                                    <input type="radio" class="radio-col-red" name="status" id="status2" value="0" <?php if (!$status)
+                                    <input type="radio" class="radio-col-red" name="status" id="status2" value="0" <? php if (!$status)
                                        echo ' checked'; ?> /><label for="status2"> &nbsp;Block</label> </li>
 
                                  </div>
@@ -1162,7 +1148,7 @@ if (!empty($product_category_detail)) {
 
                                  <div class="input-group input-group-required mt-2">
 
-                                    <?php if (!empty($added_by_name)) {
+                                    <? php if (!empty($added_by_name)) {
                                        echo $added_by_name;
                                     } else
                                        echo "N/A"; ?>
@@ -1191,7 +1177,7 @@ if (!empty($product_category_detail)) {
 
                                  <div class="input-group input-group-required mt-2">
 
-                                    <?php if (!empty($updated_by_name)) {
+                                    <? php if (!empty($updated_by_name)) {
                                        echo $updated_by_name;
                                     } else
                                        echo "N/A"; ?>
@@ -1224,7 +1210,7 @@ if (!empty($product_category_detail)) {
 
                                  <div class="input-group input-group-required">
 
-                                    <?php echo date('d-M-Y h:i:s A', strtotime($added_on)); ?>
+                                    <? php echo date('d-M-Y h:i:s A', strtotime($added_on)); ?>
 
                                  </div>
 
@@ -1250,7 +1236,7 @@ if (!empty($product_category_detail)) {
 
                                  <div class="input-group input-group-required">
 
-                                    <?php if ($updated_on != '0000-00-00 00:00:00') {
+                                    <? php if ($updated_on != '0000-00-00 00:00:00') {
                                        echo date('d-M-Y h:i:s A', strtotime($updated_on));
                                     } else
                                        echo "N/A"; ?>
@@ -1268,7 +1254,7 @@ if (!empty($product_category_detail)) {
 
                            </div>
 
-                        <? } ?>
+                        <?  } ?>
 
                         <div class="col-md-12 text-center">
 
@@ -1280,7 +1266,7 @@ if (!empty($product_category_detail)) {
 
                         </div>
 
-                        <?php echo form_close() ?>
+                        <? php echo form_close() ?>
 
                      </div>
 
@@ -1290,11 +1276,9 @@ if (!empty($product_category_detail)) {
 
                <!--Combination TAB-->
 
-               <div role="tabpanel"
-                  class="tab-pane fade <? if ($active_tab == "COMBINATIONS") {
-                     echo " in active show ";
-                  } ?>"
-                  id="COMBINATIONS">
+               <div role="tabpanel" class="tab-pane fade <?  if ($active_tab == "COMBINATIONS") {
+                  echo " in active show ";
+               } ?>" id="COMBINATIONS">
 
                   <div class="box box-primary">
 
@@ -1308,7 +1292,7 @@ if (!empty($product_category_detail)) {
 
                         <div class="col-md-6">
 
-                           <button type="button" style="float: right;" class="btn btn-danger " <?php /*?>data-toggle="collapse" data-target="#collapseOne"<?php */ ?>
+                           <button type="button" style="float: right;" class="btn btn-danger " <? php /*?>data-toggle="collapse" data-target="#collapseOne"<? php */ ?>
                               onclick="setCombinationFormHeader(1)">Add New Combination</button>
 
                         </div>
@@ -1340,9 +1324,9 @@ if (!empty($product_category_detail)) {
 
                                     </center>
 
-                                    <?php echo form_open(MAINSITE_Admin . 'catalog/Product-Module/doAddProductCombination', array('method' => 'post', 'name' => 'ProductAttributeForm', 'id' => 'ProductAttributeForm', 'style' => '', 'class' => 'form-horizontal', "enctype" => "multipart/form-data")); ?>
+                                    <? php echo form_open(MAINSITE_Admin . 'catalog/Product-Module/doAddProductCombination', array('method' => 'post', 'name' => 'ProductAttributeForm', 'id' => 'ProductAttributeForm', 'style' => '', 'class' => 'form-horizontal', "enctype" => "multipart/form-data")); ?>
 
-                                    <?
+                                    <? 
 
                                     $trending_now = 0;
                                     $hot_selling_now = 0;
@@ -1352,7 +1336,7 @@ if (!empty($product_category_detail)) {
                                     ?>
 
                                     <input type="hidden" name="product_id" id="product_id"
-                                       value="<?php echo $product_id; ?>" />
+                                       value="<? php echo $product_id; ?>" />
 
                                     <input type="hidden" name="product_combination_id" id="product_combination_id"
                                        value="0" />
@@ -1418,12 +1402,13 @@ if (!empty($product_category_detail)) {
 
                                              <option value="">Select UOM</option>
 
-                                             <? foreach ($uom_list as $col) { ?>
+                                             <?  foreach ($uom_list as $col) { ?>
 
-                                                <option value="<? echo $col->unit_of_measurement_id; ?>">
-                                                   <? echo $col->unit_of_measurement_name; ?></option>
+                                                <option value="<?  echo $col->unit_of_measurement_id; ?>">
+                                                   <?  echo $col->unit_of_measurement_name; ?>
+                                                </option>
 
-                                             <? } ?>
+                                             <?  } ?>
 
                                           </select>
 
@@ -1454,12 +1439,13 @@ if (!empty($product_category_detail)) {
 
                                              <option value="">Select Attribute</option>
 
-                                             <? foreach ($product_attribute_list as $col) { ?>
+                                             <?  foreach ($product_attribute_list as $col) { ?>
 
-                                                <option value="<? echo $col->product_attribute_id; ?>">
-                                                   <? echo $col->name; ?></option>
+                                                <option value="<?  echo $col->product_attribute_id; ?>">
+                                                   <?  echo $col->name; ?>
+                                                </option>
 
-                                             <? } ?>
+                                             <?  } ?>
 
                                           </select>
 
@@ -1482,19 +1468,20 @@ if (!empty($product_category_detail)) {
 
                                           <div class="input-group input-group-required" id="showAttributeValue">
 
-                                             <? //echo "<pre>"; print_r($attribute_value_list);echo "</pre>"; ?>
+                                             <?  //echo "<pre>"; print_r($attribute_value_list);echo "</pre>"; ?>
 
                                              <select name="select_product_attribute_value_id"
                                                 id="select_product_attribute_value_id" class="form-control">
 
                                                 <option value="">Select Value</option>
 
-                                                <? foreach ($attribute_value_list as $col) { ?>
+                                                <?  foreach ($attribute_value_list as $col) { ?>
 
-                                                   <option value="<? echo $col->product_attribute_value_id; ?>">
-                                                      <? echo $col->name; ?></option>
+                                                   <option value="<?  echo $col->product_attribute_value_id; ?>">
+                                                      <?  echo $col->name; ?>
+                                                   </option>
 
-                                                <? } ?>
+                                                <?  } ?>
 
                                              </select>
 
@@ -1537,7 +1524,7 @@ if (!empty($product_category_detail)) {
                                           </label>
 
                                           <div class="input-group input-group-required" id="showAttributeValue">
-                                             <? //echo "<pre>"; print_r($attribute_value_list);echo "</pre>"; ?>
+                                             <?  //echo "<pre>"; print_r($attribute_value_list);echo "</pre>"; ?>
 
                                              <input type="button" onclick="myFunc()" class="btn bg-blue"
                                                 value="Make Combination" / style="width: 100%;">
@@ -1821,13 +1808,13 @@ if (!empty($product_category_detail)) {
                                           <div class="demo-radio-button">
                                              <div class="icheck-success d-inline">
                                                 <input type="radio" class="radio-col-green" name="trending_now"
-                                                   id="trending_now1" value="1" <?php if ($trending_now)
+                                                   id="trending_now1" value="1" <? php if ($trending_now)
                                                       echo ' checked'; ?> required />
                                                 <label for="trending_now1">Active &nbsp; &nbsp;</label>
                                              </div>
                                              <div class="icheck-danger d-inline">
                                                 <input type="radio" class="radio-col-red" name="trending_now"
-                                                   id="trending_now2" value="0" <?php if (!$trending_now)
+                                                   id="trending_now2" value="0" <? php if (!$trending_now)
                                                       echo ' checked'; ?> />
                                                 <label for="trending_now2">Block &nbsp; &nbsp;</label>
                                              </div>
@@ -1851,14 +1838,14 @@ if (!empty($product_category_detail)) {
                                           <div class="demo-radio-button">
                                              <div class="icheck-success d-inline">
                                                 <input type="radio" class="radio-col-green" name="hot_selling_now"
-                                                   id="hot_selling_now1" value="1" <?php if ($hot_selling_now)
+                                                   id="hot_selling_now1" value="1" <? php if ($hot_selling_now)
                                                       echo ' checked'; ?> required />
                                                 <label for="hot_selling_now1">Active &nbsp; &nbsp;</label>
                                              </div>
                                              <div class="icheck-danger d-inline">
 
                                                 <input type="radio" class="radio-col-red" name="hot_selling_now"
-                                                   id="hot_selling_now2" value="0" <?php if (!$hot_selling_now)
+                                                   id="hot_selling_now2" value="0" <? php if (!$hot_selling_now)
                                                       echo ' checked'; ?> />
 
                                                 <label for="hot_selling_now2">Block &nbsp; &nbsp;</label>
@@ -1885,7 +1872,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-success d-inline">
 
                                                 <input type="radio" class="radio-col-green" name="best_sellers"
-                                                   id="best_sellers1" value="1" <?php if ($best_sellers)
+                                                   id="best_sellers1" value="1" <? php if ($best_sellers)
                                                       echo ' checked'; ?> required />
 
                                                 <label for="best_sellers1">Active &nbsp; &nbsp;</label>
@@ -1893,7 +1880,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-danger d-inline">
 
                                                 <input type="radio" class="radio-col-red" name="best_sellers"
-                                                   id="best_sellers2" value="0" <?php if (!$best_sellers)
+                                                   id="best_sellers2" value="0" <? php if (!$best_sellers)
                                                       echo ' checked'; ?> />
 
                                                 <label for="best_sellers2">Block &nbsp; &nbsp;</label>
@@ -1920,7 +1907,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-success d-inline">
 
                                                 <input type="radio" class="radio-col-green" name="new_product"
-                                                   id="new_product1" value="1" <?php if ($new_product)
+                                                   id="new_product1" value="1" <? php if ($new_product)
                                                       echo ' checked'; ?> required />
 
                                                 <label for="new_product1">Active &nbsp; &nbsp;</label>
@@ -1928,7 +1915,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-danger d-inline">
 
                                                 <input type="radio" class="radio-col-red" name="new_product"
-                                                   id="new_product2" value="0" <?php if (!$new_product)
+                                                   id="new_product2" value="0" <? php if (!$new_product)
                                                       echo ' checked'; ?> />
 
                                                 <label for="new_product2">Block &nbsp; &nbsp;</label>
@@ -1996,7 +1983,7 @@ if (!empty($product_category_detail)) {
 
                                           <article class="row">
 
-                                             <?
+                                             <? 
 
                                              $pid_count = 0;
 
@@ -2006,22 +1993,22 @@ if (!empty($product_category_detail)) {
                                                 <div class="img-checkbox demo-radio-button">
                                                    <div class="icheck-success d-inline">
 
-                                                      <input class="radio-col-green" <?= ($col->default_image == 1) ? 'checked' : '' ?> name="product_image_id"
-                                                         id="product_image_id_<? echo $col->product_image_id; ?>"
-                                                         value="<? echo $col->product_image_id; ?>" <? if ($pid_count == 1) {
+                                                      <input class="radio-col-green" <? php echo ($col->default_image == 1) ? 'checked' : '' ?> name="product_image_id"
+                                                         id="product_image_id_<?  echo $col->product_image_id; ?>"
+                                                         value="<?  echo $col->product_image_id; ?>" <?  if ($pid_count == 1) {
                                                                echo "selected";
                                                             } ?> required type="radio" />
 
-                                                      <label for="product_image_id_<? echo $col->product_image_id; ?>">
+                                                      <label for="product_image_id_<?  echo $col->product_image_id; ?>">
 
-                                                         <img id="img_product_image_id_<? echo $col->product_image_id ?>"
-                                                            src="<?= _uploaded_files_ ?>product/small/<? echo $col->product_image_name; ?>"
+                                                         <img id="img_product_image_id_<?  echo $col->product_image_id ?>"
+                                                            src="<? php echo _uploaded_files_ ?>product/small/<?  echo $col->product_image_name; ?>"
                                                             width="80" />
                                                       </label>
                                                    </div>
                                                 </div>
 
-                                             <? } ?>
+                                             <?  } ?>
 
                                           </article>
 
@@ -2036,41 +2023,41 @@ if (!empty($product_category_detail)) {
 
                                     <br>
 
-                                    <?php /*?>
+                                    <? php /*?>
 
-                                  <div class="form-group">
+                             <div class="form-group">
 
-                                     <div class="col-md-3">
+                                <div class="col-md-3">
 
-                                        <div class="label-wrapper">
+                                   <div class="label-wrapper">
 
-                                           <label class="control-label" for="Name">Combinations Slug Url</label>
+                                      <label class="control-label" for="Name">Combinations Slug Url</label>
 
-                                           <div data-title="The name of the Main Category." class="ico-help icon_title_box"><i class="fa fa-question-circle"></i></div>
+                                      <div data-title="The name of the Main Category." class="ico-help icon_title_box"><i class="fa fa-question-circle"></i></div>
 
-                                        </div>
+                                   </div>
 
-                                     </div>
+                                </div>
 
-                                     <div class="col-md-9">
+                                <div class="col-md-9">
 
-                                        <div class="input-group input-group-required">
+                                   <div class="input-group input-group-required">
 
-                                           <? echo MAINSITE.$slug_url.'-';?> <input type="text" name="comb_slug_url" id="comb_slug_url" style="width:200px" placeholder="Combinations Slug Url" class="form-control" value="" required >
+                                      <?  echo MAINSITE.$slug_url.'-';?> <input type="text" name="comb_slug_url" id="comb_slug_url" style="width:200px" placeholder="Combinations Slug Url" class="form-control" value="" required >
 
-                                           <div class="input-group-btn"><span class="required">*</span>
+                                      <div class="input-group-btn"><span class="required">*</span>
 
-                                           </div>
+                                      </div>
 
-                                        </div>
+                                   </div>
 
-                                        <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                                   <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
 
-                                     </div>
+                                </div>
 
-                                  </div>
+                             </div>
 
-                                  <?php */ ?>
+                             <? php */ ?>
 
                                     <div class="form-group row">
 
@@ -2520,7 +2507,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-success d-inline">
 
                                                 <input type="radio" class="radio-col-green" name="status"
-                                                   id="combstatus1" value="1" <?php if ($status)
+                                                   id="combstatus1" value="1" <? php if ($status)
                                                       echo ' checked'; ?>
                                                    required />
 
@@ -2529,7 +2516,7 @@ if (!empty($product_category_detail)) {
                                              <div class="icheck-danger d-inline">
 
                                                 <input type="radio" class="radio-col-red" name="status" id="combstatus2"
-                                                   value="0" <?php if (!$status)
+                                                   value="0" <? php if (!$status)
                                                       echo ' checked'; ?> />
 
                                                 <label for="combstatus2"> Block &nbsp;&nbsp;</label>
@@ -2584,17 +2571,17 @@ if (!empty($product_category_detail)) {
 
                      <!-- /.box-header -->
 
-                     <? if ($product_id <= 0) { ?><span
+                     <?  if ($product_id <= 0) { ?><span
                            style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save this
-                           product before adding product combinations.</span><? } ?>
+                           product before adding product combinations.</span><?  } ?>
 
-                     <? if (empty($product_image_detail)) { ?><span
+                     <?  if (empty($product_image_detail)) { ?><span
                            style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save the
-                           atleast one image of this product before adding product combinations.</span><? } ?>
+                           atleast one image of this product before adding product combinations.</span><?  } ?>
 
                      <div class="box-body">
 
-                        <? if ($product_id >= 1 && !empty($product_image_detail)) { ?>
+                        <?  if ($product_id >= 1 && !empty($product_image_detail)) { ?>
 
                            <table class="table table-striped">
 
@@ -2638,11 +2625,11 @@ if (!empty($product_category_detail)) {
 
                                     type: "POST",
 
-                                    url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultCombination',
+                                    url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultCombination',
 
                                     //dataType : "json",
 
-                                    data: { "productId": productId, "id": id, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                                    data: { "productId": productId, "id": id, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                                     success: function (result) {
 
@@ -2685,92 +2672,92 @@ if (!empty($product_category_detail)) {
                                  //document.getElementById('select_product_attribute_id').focus();
 
                                  $('#select_product_attribute_id').focus();
-                                 <? foreach ($product_combination_detail as $row) {
+                                 <?  foreach ($product_combination_detail as $row) {
                                     $row = (array) $row; ?>
 
-                                    if (id == <? echo $row['product_combination_id'] ?>) {
+                                    if (id == <?  echo $row['product_combination_id'] ?>) {
 
                                        //alert(id);
 
-                                       document.getElementById('product_combination_id').value = '<? echo $row['product_combination_id'] ?>';
+                                       document.getElementById('product_combination_id').value = '<?  echo $row['product_combination_id'] ?>';
 
-                                       document.getElementById('combref_code').value = '<? echo addslashes($row['ref_code']) ?>';
+                                       document.getElementById('combref_code').value = '<?  echo addslashes($row['ref_code']) ?>';
 
-                                       document.getElementById('quantity').value = '<? echo $row['quantity'] ?>';
+                                       document.getElementById('quantity').value = '<?  echo $row['quantity'] ?>';
 
-                                       document.getElementById('uom_id').value = '<? echo $row['uom_id'] ?>';
+                                       document.getElementById('uom_id').value = '<?  echo $row['uom_id'] ?>';
 
-                                       document.getElementById('price').value = '<? echo $row['price'] ?>';
+                                       document.getElementById('price').value = '<?  echo $row['price'] ?>';
 
-                                       document.getElementById('discount').value = '<? echo $row['discount'] ?>';
+                                       document.getElementById('discount').value = '<?  echo $row['discount'] ?>';
 
-                                       document.getElementById('final_price').value = '<? echo $row['final_price'] ?>';
+                                       document.getElementById('final_price').value = '<?  echo $row['final_price'] ?>';
 
-                                       document.getElementById('discounted_price').value = '<? echo $row['final_price'] ?>';
+                                       document.getElementById('discounted_price').value = '<?  echo $row['final_price'] ?>';
 
-                                       <?php /*?>document.getElementById('comb_slug_url').value = '<? echo $row['comb_slug_url'] ?>';<?php */ ?>
+                                       <? php /*?>document.getElementById('comb_slug_url').value = '<?  echo $row['comb_slug_url'] ?>';<? php */ ?>
 
-                                       document.getElementById('product_l').value = '<? echo $row['product_l'] ?>';
+                                       document.getElementById('product_l').value = '<?  echo $row['product_l'] ?>';
 
-                                       document.getElementById('product_b').value = '<? echo $row['product_b'] ?>';
+                                       document.getElementById('product_b').value = '<?  echo $row['product_b'] ?>';
 
-                                       document.getElementById('product_h').value = '<? echo $row['product_h'] ?>';
+                                       document.getElementById('product_h').value = '<?  echo $row['product_h'] ?>';
 
-                                       document.getElementById('product_weight').value = '<? echo $row['product_weight'] ?>';
+                                       document.getElementById('product_weight').value = '<?  echo $row['product_weight'] ?>';
 
-                                       document.getElementById('product_display_name').value = '<? echo addslashes($row['product_display_name']) ?>';
+                                       document.getElementById('product_display_name').value = '<?  echo addslashes($row['product_display_name']) ?>';
 
-                                       document.getElementById('delivery_charges').value = '<? echo $row['delivery_charges'] ?>';
+                                       document.getElementById('delivery_charges').value = '<?  echo $row['delivery_charges'] ?>';
 
-                                       document.getElementById('current_viewers_msg').value = '<? echo $row['current_viewers_msg'] ?>';
+                                       document.getElementById('current_viewers_msg').value = '<?  echo $row['current_viewers_msg'] ?>';
 
-                                       document.getElementById('gtin').value = '<? echo $row['gtin'] ?>';
+                                       document.getElementById('gtin').value = '<?  echo $row['gtin'] ?>';
 
-                                       <? if (empty($row['product_seo_id'])) {
+                                       <?  if (empty($row['product_seo_id'])) {
                                           $row['product_seo_id'] = 0;
                                        } ?>
 
-                                       document.getElementById('auto_product_seo_id').value = '<? echo $row['product_seo_id'] ?>';
+                                       document.getElementById('auto_product_seo_id').value = '<?  echo $row['product_seo_id'] ?>';
 
-                                       document.getElementById('auto_slug_url').value = '<? echo $row['slug_url'] ?>';
+                                       document.getElementById('auto_slug_url').value = '<?  echo $row['slug_url'] ?>';
 
-                                       document.getElementById('auto_meta_title').value = '<? echo $row['meta_title'] ?>';
+                                       document.getElementById('auto_meta_title').value = '<?  echo $row['meta_title'] ?>';
 
-                                       document.getElementById('auto_meta_description').value = '<? echo $row['meta_description'] ?>';
+                                       document.getElementById('auto_meta_description').value = '<?  echo $row['meta_description'] ?>';
 
-                                       document.getElementById('auto_meta_keywords').value = '<? echo $row['meta_keywords'] ?>';
+                                       document.getElementById('auto_meta_keywords').value = '<?  echo $row['meta_keywords'] ?>';
 
 
 
-                                       document.getElementById('current_sold_msg').value = '<? echo $row['current_sold_msg'] ?>';
+                                       document.getElementById('current_sold_msg').value = '<?  echo $row['current_sold_msg'] ?>';
 
-                                       if (<? echo $row['is_msg_dynamic'] ?>== 1) { document.getElementById('is_msg_dynamic1').checked = true; }
+                                       if (<?  echo $row['is_msg_dynamic'] ?>== 1) { document.getElementById('is_msg_dynamic1').checked = true; }
 
                                        else { document.getElementById('is_msg_dynamic2').checked = true; }
 
-                                       if (<? echo $row['trending_now'] ?>== 1) { document.getElementById('trending_now1').checked = true; }
+                                       if (<?  echo $row['trending_now'] ?>== 1) { document.getElementById('trending_now1').checked = true; }
 
                                        else { document.getElementById('trending_now2').checked = true; }
 
-                                       if (<? echo $row['hot_selling_now'] ?>== 1) { document.getElementById('hot_selling_now1').checked = true; }
+                                       if (<?  echo $row['hot_selling_now'] ?>== 1) { document.getElementById('hot_selling_now1').checked = true; }
 
                                        else { document.getElementById('hot_selling_now2').checked = true; }
 
-                                       if (<? echo $row['best_sellers'] ?>== 1) { document.getElementById('best_sellers1').checked = true; }
+                                       if (<?  echo $row['best_sellers'] ?>== 1) { document.getElementById('best_sellers1').checked = true; }
 
                                        else { document.getElementById('best_sellers2').checked = true; }
 
-                                       if (<? echo $row['new_product'] ?>== 1) { document.getElementById('new_product1').checked = true; }
+                                       if (<?  echo $row['new_product'] ?>== 1) { document.getElementById('new_product1').checked = true; }
 
                                        else { document.getElementById('new_product2').checked = true; }
 
-                                       if (<? echo $row['status'] ?>== 1) { document.getElementById('combstatus1').checked = true; }
+                                       if (<?  echo $row['status'] ?>== 1) { document.getElementById('combstatus1').checked = true; }
 
                                        else { document.getElementById('combstatus2').checked = true; }
 
 
 
-                                       if (<? echo $row['is_google_product'] ?>== 1) { document.getElementById('is_google_product1').checked = true; }
+                                       if (<?  echo $row['is_google_product'] ?>== 1) { document.getElementById('is_google_product1').checked = true; }
 
                                        else { document.getElementById('is_google_product2').checked = true; }
 
@@ -2778,19 +2765,19 @@ if (!empty($product_category_detail)) {
 
 
 
-                                       if (<? echo $row['product_image_id'] ?>> 0) {
+                                       if (<?  echo $row['product_image_id'] ?>> 0) {
 
-                                          document.getElementById('product_image_id_<? echo $row['product_image_id'] ?>').checked = true;
+                                          document.getElementById('product_image_id_<?  echo $row['product_image_id'] ?>').checked = true;
 
-                                          document.getElementById('img_product_image_id_<? echo $row['product_image_id'] ?>').border = "5px !important";
+                                          document.getElementById('img_product_image_id_<?  echo $row['product_image_id'] ?>').border = "5px !important";
 
                                        }
 
-                                       if ('<? echo $row['discount_var'] ?>' == 'Rs')
+                                       if ('<?  echo $row['discount_var'] ?>' == 'Rs')
 
                                           document.getElementById('discount_var').getElementsByTagName('option')[1].selected = 'selected';
 
-                                       if ('<? echo $row['discount_var'] ?>' == '%')
+                                       if ('<?  echo $row['discount_var'] ?>' == '%')
 
                                           document.getElementById('discount_var').getElementsByTagName('option')[2].selected = 'selected';
 
@@ -2798,7 +2785,7 @@ if (!empty($product_category_detail)) {
 
                                        $('li', ul).each(function () { $(this).remove(); });
 
-                                       <?
+                                       <? 
 
                                        foreach ($product_combination_attribute_detail as $col) {
 
@@ -2842,15 +2829,15 @@ if (!empty($product_category_detail)) {
 
                                              var li = document.createElement("li");
 
-                                             li.appendChild(document.createTextNode('<? echo $attribute; ?>'));
+                                             li.appendChild(document.createTextNode('<?  echo $attribute; ?>'));
 
-                                             li.innerHTML = '<? echo addslashes("$attribute : $combination_value $attribute_val"); ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img width="22px" height="22px" src="<?= _admin_files_ . "images/cancel.png" ?>" /> <input type="hidden" name="product_attribute_id[]" value="<? echo $product_attribute_id ?>" /><input type="hidden" name="combination_value[]" value="<? echo addslashes($combination_value) ?>" /><input type="hidden" name="product_attribute_value_id[]" value="<? echo $product_attribute_value_id ?>"  />';
+                                             li.innerHTML = '<?  echo addslashes("$attribute : $combination_value $attribute_val"); ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img width="22px" height="22px" src="<? php echo _admin_files_ . "images/cancel.png" ?>" /> <input type="hidden" name="product_attribute_id[]" value="<?  echo $product_attribute_id ?>" /><input type="hidden" name="combination_value[]" value="<?  echo addslashes($combination_value) ?>" /><input type="hidden" name="product_attribute_value_id[]" value="<?  echo $product_attribute_value_id ?>"  />';
 
                                              li.setAttribute("onclick", "$(this).remove();");
 
                                              ul.appendChild(li);
 
-                                             <?
+                                          <? 
 
                                           }
 
@@ -2874,7 +2861,7 @@ if (!empty($product_category_detail)) {
 
                                     }
 
-                                 <? } ?>
+                                 <?  } ?>
 
 
 
@@ -2952,9 +2939,9 @@ if (!empty($product_category_detail)) {
 
                                     //$("#parentId input:radio[disabled=false]:first").attr('checked', true);
 
-                                    <?php /*?>//document.getElementById('product_image_id_<? echo $row['product_image_id'] ?>').checked = true;<?php */ ?>
+                                    <? php /*?>//document.getElementById('product_image_id_<?  echo $row['product_image_id'] ?>').checked = true;<? php */ ?>
 
-                                    <?php /*?>//document.getElementById('img_product_image_id_<? echo $row['product_image_id'] ?>').border = "5px !important";<?php */ ?>
+                                    <? php /*?>//document.getElementById('img_product_image_id_<?  echo $row['product_image_id'] ?>').border = "5px !important";<? php */ ?>
 
 
 
@@ -2972,7 +2959,7 @@ if (!empty($product_category_detail)) {
 
 
 
-                        <? } ?>
+                        <?  } ?>
 
                         <script>
 
@@ -3466,13 +3453,13 @@ if (!empty($product_category_detail)) {
 
                                  type: "POST",
 
-                                 url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/checkProductCombinationCombiRefCode',
+                                 url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/checkProductCombinationCombiRefCode',
 
                                  dataType: "json",
 
-                                 <?php /*?>data : {"product_id" : document.getElementById('product_id').value , "combref_code" : document.getElementById('combref_code').value, "product_combination_id" : document.getElementById('product_combination_id').value, "t_product_attribute_id" : Array.from(t_product_attribute_id), "t_product_attribute_value_id" : Array.from(t_product_attribute_value_id), "t_combination_value" : Array.from(t_combination_value) },<?php */ ?>
+                                 <? php /*?>data : {"product_id" : document.getElementById('product_id').value , "combref_code" : document.getElementById('combref_code').value, "product_combination_id" : document.getElementById('product_combination_id').value, "t_product_attribute_id" : Array.from(t_product_attribute_id), "t_product_attribute_value_id" : Array.from(t_product_attribute_value_id), "t_combination_value" : Array.from(t_combination_value) },<? php */ ?>
 
-                                   data: form_obj.serialize(),
+                                 data: form_obj.serialize(),
 
                                  success: function (result) {
 
@@ -3592,13 +3579,13 @@ if (!empty($product_category_detail)) {
 
 
 
-                              $slug_url = $slug_url.replace("#category#", "<?= $autoMetaCategory ?>");
+                              $slug_url = $slug_url.replace("#category#", "<? php echo $autoMetaCategory ?>");
 
-                              $title = $title.replace("#category#", "<?= $autoMetaCategory ?>");
+                              $title = $title.replace("#category#", "<? php echo $autoMetaCategory ?>");
 
-                              $keyword = $keyword.replace("#category#", "<?= $autoMetaCategory ?>");
+                              $keyword = $keyword.replace("#category#", "<? php echo $autoMetaCategory ?>");
 
-                              $description = $description.replace("#category#", "<?= $autoMetaCategory ?>");
+                              $description = $description.replace("#category#", "<? php echo $autoMetaCategory ?>");
 
 
 
@@ -3709,11 +3696,9 @@ if (!empty($product_category_detail)) {
 
                <!--Combination Position TAB-->
 
-               <div role="tabpanel"
-                  class="tab-pane fade images-sec <? if ($active_tab == "COMBINATIONS_POS") {
-                     echo " in active show ";
-                  } ?>"
-                  id="COMBINATIONS_POS">
+               <div role="tabpanel" class="tab-pane fade images-sec <?  if ($active_tab == "COMBINATIONS_POS") {
+                  echo " in active show ";
+               } ?>" id="COMBINATIONS_POS">
 
                   <div class="box box-primary">
 
@@ -3725,13 +3710,13 @@ if (!empty($product_category_detail)) {
 
                      <!-- /.box-header -->
 
-                     <? if (count($product_combination_detail) <= 0) { ?><span
+                     <?  if (count($product_combination_detail) <= 0) { ?><span
                            style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must add the
-                           product combination.</span><? } ?>
+                           product combination.</span><?  } ?>
 
                      <div class="box-body">
 
-                        <? if (count($product_combination_detail) > 0) { ?>
+                        <?  if (count($product_combination_detail) > 0) { ?>
 
                            <div class="tableDemo">
 
@@ -3759,7 +3744,7 @@ if (!empty($product_category_detail)) {
 
                                  <tr style="display:none">
 
-                                    <td><img src="<? echo MAINSITE ?>images/service-8.jpg" width="200" /></td>
+                                    <td><img src="<?  echo MAINSITE ?>images/service-8.jpg" width="200" /></td>
 
                                     <td class="text-center"><input id="checkBoxId_" class="checkBoxClass"
                                           onclick="setProductDefaultImage(id , productId)" type="checkbox" /></td>
@@ -3786,11 +3771,11 @@ if (!empty($product_category_detail)) {
 
                                     type: "POST",
 
-                                    url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultImage',
+                                    url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultImage',
 
                                     //dataType : "json",
 
-                                    data: { "productId": productId, "id": id, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                                    data: { "productId": productId, "id": id, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                                     success: function (result) {
 
@@ -3824,7 +3809,7 @@ if (!empty($product_category_detail)) {
 
                            </script>
 
-                        <? } ?>
+                        <?  } ?>
 
                      </div>
 
@@ -3834,11 +3819,9 @@ if (!empty($product_category_detail)) {
 
                <!--Image TAB-->
 
-               <div role="tabpanel"
-                  class="tab-pane fade images-sec <? if ($active_tab == "images") {
-                     echo " in active show ";
-                  } ?>"
-                  id="images">
+               <div role="tabpanel" class="tab-pane fade images-sec <?  if ($active_tab == "images") {
+                  echo " in active show ";
+               } ?>" id="images">
 
                   <div class="box box-primary">
 
@@ -3850,17 +3833,17 @@ if (!empty($product_category_detail)) {
 
                      <!-- /.box-header -->
 
-                     <? if ($product_id <= 0) { ?><span
+                     <?  if ($product_id <= 0) { ?><span
                            style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save this
-                           product before adding images.</span><? } ?>
+                           product before adding images.</span><?  } ?>
 
                      <div class="box-body">
 
-                        <? if ($product_id >= 1) { ?>
+                        <?  if ($product_id >= 1) { ?>
 
-                           <?php echo form_open(MAINSITE_Admin . "$user_access->class_name/doAddProductImages", array('method' => 'post', 'id' => 'product_image_form', "name" => "product_image_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateForm()')); ?>
+                           <? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doAddProductImages", array('method' => 'post', 'id' => 'product_image_form', "name" => "product_image_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateForm()')); ?>
 
-                           <input type="hidden" name="product_id" id="product_id" value="<?php echo $product_id; ?>" />
+                           <input type="hidden" name="product_id" id="product_id" value="<? php echo $product_id; ?>" />
 
                            <div class="form-group row">
 
@@ -3893,7 +3876,7 @@ if (!empty($product_category_detail)) {
 
                            </div>
 
-                           <?php echo form_close() ?>
+                           <? php echo form_close() ?>
 
                            <div class="tableDemo">
 
@@ -3907,7 +3890,7 @@ if (!empty($product_category_detail)) {
 
                                        <th>Position</th>
 
-                                       <?php /*?><th class="text-center">Set As Default</th><?php */ ?>
+                                       <? php /*?><th class="text-center">Set As Default</th><? php */ ?>
 
                                        <th class="text-right">Action</th>
 
@@ -3921,7 +3904,7 @@ if (!empty($product_category_detail)) {
 
                                  <tr style="display:none">
 
-                                    <td><img src="<? echo MAINSITE ?>images/service-8.jpg" width="200" /></td>
+                                    <td><img src="<?  echo MAINSITE ?>images/service-8.jpg" width="200" /></td>
 
                                     <td class="text-center"><input id="checkBoxId_" class="checkBoxClass"
                                           onclick="setProductDefaultImage(id , productId)" type="checkbox" /></td>
@@ -3968,7 +3951,7 @@ if (!empty($product_category_detail)) {
 
 
 
-                                       $('#ProductImageList').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<?= _admin_files_ . "images/load.gif"; ?>" /></div></td></tr>');
+                                       $('#ProductImageList').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<? php echo _admin_files_ . "images/load.gif"; ?>" /></div></td></tr>');
 
                                        $.ajax({
 
@@ -3976,11 +3959,11 @@ if (!empty($product_category_detail)) {
 
 
 
-                                          url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageListNewPos',
+                                          url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageListNewPos',
 
                                           //dataType : "json",
 
-                                          data: { "product_id": <? echo $product_id; ?> , 'podId': podId, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                                          data: { "product_id": <?  echo $product_id; ?> , 'podId': podId, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                                           success: function (result) {
 
@@ -4046,11 +4029,11 @@ if (!empty($product_category_detail)) {
 
                                     type: "POST",
 
-                                    url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultImage',
+                                    url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultImage',
 
                                     //dataType : "json",
 
-                                    data: { "productId": productId, "id": id, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                                    data: { "productId": productId, "id": id, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                                     success: function (result) {
 
@@ -4084,7 +4067,7 @@ if (!empty($product_category_detail)) {
 
                            </script>
 
-                        <? } ?>
+                        <?  } ?>
 
                      </div>
 
@@ -4094,10 +4077,9 @@ if (!empty($product_category_detail)) {
 
                <div role="tabpanel" class="tab-pane fade" id="messages">dshfbwi wfiwe fewiu</div>
 
-               <div role="tabpanel" class="tab-pane fade <? if ($active_tab == "settings") {
+               <div role="tabpanel" class="tab-pane fade <?  if ($active_tab == "settings") {
                   echo " in active show ";
-               } ?>"
-                  id="settings">
+               } ?>" id="settings">
 
                   <div class="box box-primary">
 
@@ -4109,32 +4091,32 @@ if (!empty($product_category_detail)) {
 
                      <!-- /.box-header -->
 
-                     <? if ($alert == "success" || $alert == "fail") { ?><span
-                           style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<? if ($alert == "success") {
+                     <?  if ($alert == "success" || $alert == "fail") { ?><span
+                           style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?  if ($alert == "success") {
                               echo "Record Updated Successfully.";
                            } else if ($alert == "fail") {
                               echo "Error in updating this input.";
-                           } ?></span><? } ?>
+                           } ?></span><?  } ?>
 
                      <div class="box-body">
 
-                        <? if ($product_id <= 0) { ?><span
+                        <?  if ($product_id <= 0) { ?><span
                               style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save this
-                              product before adding SEO Settings.</span><? } ?>
+                              product before adding SEO Settings.</span><?  } ?>
 
-                        <? if ($product_id >= 1) { ?>
+                        <?  if ($product_id >= 1) { ?>
 
-                           <? if (!empty($product_combination_detail)) { ?>
+                           <?  if (!empty($product_combination_detail)) { ?>
 
                               <div class="container col-md-12">
 
                                  <div class="panel-group" id="accordion">
 
-                                    <? $ss_count = 0;
+                                    <?  $ss_count = 0;
                                     foreach ($product_combination_detail as $pcd) {
                                        $ss_count++; ?>
 
-                                       <? //print_r($pcd);
+                                       <?  //print_r($pcd);
                                        
                                                 $pcd = (array) $pcd;
 
@@ -4210,9 +4192,9 @@ if (!empty($product_category_detail)) {
                                              <h4 class="panel-title">
 
                                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                                   href="#seo_setting_<? echo $ss_count; ?>">
+                                                   href="#seo_setting_<?  echo $ss_count; ?>">
 
-                                                   <? echo $pcd['product_display_name']; ?> - <? echo $show; ?> <br>
+                                                   <?  echo $pcd['product_display_name']; ?> - <?  echo $show; ?> <br>
 
                                                 </a>
 
@@ -4220,20 +4202,19 @@ if (!empty($product_category_detail)) {
 
                                           </div>
 
-                                          <div id="seo_setting_<? echo $ss_count; ?>"
-                                             class="panel-collapse collapse <? if ($ss_count == 1) {
+                                          <div id="seo_setting_<?  echo $ss_count; ?>" class="panel-collapse collapse <?  if ($ss_count == 1) {
                                                 echo ' in';
                                              } ?> ">
 
                                              <div class="panel-body">
 
-                                                <?php /*?>
+                                                <? php /*?>
 
-                                           <pre><? print_r($product_seo_detail) ?></pre>
+                                               <pre><?  print_r($product_seo_detail) ?></pre>
 
-                                           <?php */ ?>
+                                               <? php */ ?>
 
-                                                <?
+                                                <? 
 
                                                 $product_seo_id = 0;
 
@@ -4272,24 +4253,24 @@ if (!empty($product_category_detail)) {
                                                 ?>
 
                                                 <form role="form" class="form-horizontal"
-                                                   name="ProductFormSEO_<? echo $ss_count ?>"
-                                                   id="ProductFormSEO_<? echo $ss_count ?>"
-                                                   action="<?php echo MAINSITE_Admin . 'products/doAddProductSEO'; ?>" method="post"
-                                                   enctype="multipart/form-data">
+                                                   name="ProductFormSEO_<?  echo $ss_count ?>"
+                                                   id="ProductFormSEO_<?  echo $ss_count ?>"
+                                                   action="<? php echo MAINSITE_Admin . 'products/doAddProductSEO'; ?>"
+                                                   method="post" enctype="multipart/form-data">
 
-                                                   <input type="hidden" name="action" id="action_info_<? echo $ss_count ?>"
+                                                   <input type="hidden" name="action" id="action_info_<?  echo $ss_count ?>"
                                                       value="" />
 
-                                                   <input type="hidden" name="product_id" id="product_id_<? echo $ss_count ?>"
-                                                      value="<?php echo $product_id; ?>" /><br />
+                                                   <input type="hidden" name="product_id" id="product_id_<?  echo $ss_count ?>"
+                                                      value="<? php echo $product_id; ?>" /><br />
 
                                                    <input type="hidden" name="product_combination_id"
-                                                      id="product_combination_id_<? echo $ss_count ?>"
-                                                      value="<?php echo $pcd['product_combination_id']; ?>" /><br />
+                                                      id="product_combination_id_<?  echo $ss_count ?>"
+                                                      value="<? php echo $pcd['product_combination_id']; ?>" /><br />
 
                                                    <input type="hidden" name="product_seo_id"
-                                                      id="product_seo_id_<? echo $ss_count ?>"
-                                                      value="<? echo $product_seo_id ?>" /><br />
+                                                      id="product_seo_id_<?  echo $ss_count ?>"
+                                                      value="<?  echo $product_seo_id ?>" /><br />
 
                                                    <div class="form-group">
 
@@ -4311,7 +4292,7 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <input type="text" placeholder="Category" class="form-control"
-                                                               value="<? echo $pcd['final_price'] ?>">
+                                                               value="<?  echo $pcd['final_price'] ?>">
 
                                                          </div>
 
@@ -4342,7 +4323,7 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <input type="text" placeholder="Category" class="form-control"
-                                                               value="<? echo $category ?>">
+                                                               value="<?  echo $category ?>">
 
                                                          </div>
 
@@ -4372,9 +4353,9 @@ if (!empty($product_category_detail)) {
 
                                                          <div class="input-group input-group-required">
 
-                                                            <input type="text" name="slug_url" id="slug_url_<? echo $ss_count ?>"
+                                                            <input type="text" name="slug_url" id="slug_url_<?  echo $ss_count ?>"
                                                                placeholder="Slug URL" class="form-control"
-                                                               value="<? echo $slug_url ?>" required>
+                                                               value="<?  echo $slug_url ?>" required>
 
                                                             <div class="input-group-btn"><span class="required">*</span>
 
@@ -4409,8 +4390,8 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <input type="text" name="meta_title" maxlength="60"
-                                                               id="meta_title_<? echo $ss_count ?>" placeholder="Page Tite"
-                                                               class="form-control" value="<? echo $meta_title ?>" required>
+                                                               id="meta_title_<?  echo $ss_count ?>" placeholder="Page Tite"
+                                                               class="form-control" value="<?  echo $meta_title ?>" required>
 
                                                             <div class="input-group-btn"><span class="required">*</span>
 
@@ -4434,7 +4415,8 @@ if (!empty($product_category_detail)) {
                                                             <label class="control-label" for="Name"> Meta Description</label>
 
                                                             <div data-title="Meta Description." class="ico-help icon_title_box">
-                                                               <i class="fa fa-question-circle"></i></div>
+                                                               <i class="fa fa-question-circle"></i>
+                                                            </div>
 
                                                          </div>
 
@@ -4445,9 +4427,9 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <input type="text" name="meta_description" maxlength="160"
-                                                               id="meta_description_<? echo $ss_count ?>"
+                                                               id="meta_description_<?  echo $ss_count ?>"
                                                                placeholder="Meta Description" class="form-control"
-                                                               value="<? echo $meta_description ?>" required>
+                                                               value="<?  echo $meta_description ?>" required>
 
                                                             <div class="input-group-btn"><span class="required">*</span>
 
@@ -4482,9 +4464,9 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <input type="text" name="meta_keywords"
-                                                               id="meta_keywords_<? echo $ss_count ?>"
+                                                               id="meta_keywords_<?  echo $ss_count ?>"
                                                                placeholder="Meta Keywords" class="form-control"
-                                                               value="<? echo $meta_keywords ?>" required>
+                                                               value="<?  echo $meta_keywords ?>" required>
 
                                                             <div class="input-group-btn"><span class="required">*</span>
 
@@ -4519,8 +4501,8 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <textarea class="search_textbox " name="others"
-                                                               id="others_<? echo $ss_count ?>" placeholder="Others Tags"
-                                                               style="width: 576px; height: 200px;"><? echo $others ?></textarea>
+                                                               id="others_<?  echo $ss_count ?>" placeholder="Others Tags"
+                                                               style="width: 576px; height: 200px;"><?  echo $others ?></textarea>
 
                                                             <div class="input-group-btn"><span class="required"></span>
 
@@ -4538,11 +4520,11 @@ if (!empty($product_category_detail)) {
                                                    <div class="pull-right">
 
                                                       <button type="submit"
-                                                         onclick="return productSEOValidation('save' , <? echo $ss_count ?>)"
+                                                         onclick="return productSEOValidation('save' , <?  echo $ss_count ?>)"
                                                          class="btn bg-blue"><i class="fa fa-floppy-o"></i>Save</button>
 
                                                       <button type="submit"
-                                                         onclick="return productSEOValidation('save-edit' , <? echo $ss_count ?>)"
+                                                         onclick="return productSEOValidation('save-edit' , <?  echo $ss_count ?>)"
                                                          class="btn bg-blue"><i class="fa fa-floppy-o"></i>Save and Continue
                                                          Edit</button>
 
@@ -4556,7 +4538,7 @@ if (!empty($product_category_detail)) {
 
                                        </div>
 
-                                    <? } ?>
+                                    <?  } ?>
 
                                  </div>
 
@@ -4658,11 +4640,11 @@ if (!empty($product_category_detail)) {
 
 
 
-                                          url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/checkProductSEOSlugUrl',
+                                          url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/checkProductSEOSlugUrl',
 
                                           //dataType : "json",
 
-                                          data: { "product_id": product_id.value, "product_combination_id": product_combination_id.value, "slug_url": slug_url.value, "product_seo_id": product_seo_id.value, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                                          data: { "product_id": product_id.value, "product_combination_id": product_combination_id.value, "slug_url": slug_url.value, "product_seo_id": product_seo_id.value, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                                           success: function (result) {
 
@@ -4700,14 +4682,14 @@ if (!empty($product_category_detail)) {
 
                               </div>
 
-                           <? } else { ?>
+                           <?  } else { ?>
 
                               <span style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save
                                  any combination this product before adding SEO Settings.</span>
 
-                           <? } ?>
+                           <?  } ?>
 
-                        <? } ?>
+                        <?  } ?>
 
                      </div>
 
@@ -4715,11 +4697,9 @@ if (!empty($product_category_detail)) {
 
                </div>
 
-               <div role="tabpanel"
-                  class="tab-pane fade <? if ($active_tab == "add_review") {
-                     echo " in active show ";
-                  } ?>"
-                  id="add_review">
+               <div role="tabpanel" class="tab-pane fade <?  if ($active_tab == "add_review") {
+                  echo " in active show ";
+               } ?>" id="add_review">
 
                   <div class="box box-primary">
 
@@ -4731,32 +4711,32 @@ if (!empty($product_category_detail)) {
 
                      <!-- /.box-header -->
 
-                     <? if ($alert == "success" || $alert == "fail") { ?><span
-                           style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<? if ($alert == "success") {
+                     <?  if ($alert == "success" || $alert == "fail") { ?><span
+                           style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?  if ($alert == "success") {
                               echo "Record Updated Successfully.";
                            } else if ($alert == "fail") {
                               echo "Error in updating this input.";
-                           } ?></span><? } ?>
+                           } ?></span><?  } ?>
 
                      <div class="box-body">
 
-                        <? if ($product_id <= 0) { ?><span
+                        <?  if ($product_id <= 0) { ?><span
                               style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save this
-                              product before adding New Review.</span><? } ?>
+                              product before adding New Review.</span><?  } ?>
 
-                        <? if ($product_id >= 1) { ?>
+                        <?  if ($product_id >= 1) { ?>
 
-                           <? if (!empty($product_combination_detail)) { ?>
+                           <?  if (!empty($product_combination_detail)) { ?>
 
                               <div class="container col-md-12">
 
                                  <div class="panel-group" id="accordion">
 
-                                    <? $ss_count = 0;
+                                    <?  $ss_count = 0;
                                     foreach ($product_combination_detail as $pcd) {
                                        $ss_count++; ?>
 
-                                       <? //print_r($pcd);
+                                       <?  //print_r($pcd);
                                        
                                                 $pcd = (array) $pcd;
 
@@ -4805,9 +4785,9 @@ if (!empty($product_category_detail)) {
                                              <h4 class="panel-title">
 
                                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                                   href="#add_review_<? echo $ss_count; ?>">
+                                                   href="#add_review_<?  echo $ss_count; ?>">
 
-                                                   <? echo $pcd['product_display_name']; ?> - <? echo $show; ?>
+                                                   <?  echo $pcd['product_display_name']; ?> - <?  echo $show; ?>
 
                                                 </a>
 
@@ -4815,31 +4795,30 @@ if (!empty($product_category_detail)) {
 
                                           </div>
 
-                                          <div id="add_review_<? echo $ss_count; ?>"
-                                             class="panel-collapse collapse <? if ($ss_count == 1) {
+                                          <div id="add_review_<?  echo $ss_count; ?>" class="panel-collapse collapse <?  if ($ss_count == 1) {
                                                 echo ' in';
                                              } ?> ">
 
                                              <div class="panel-body">
 
-                                                <?php /*?>
+                                                <? php /*?>
 
-                                           <pre><? print_r($product_seo_detail) ?></pre>
+                                               <pre><?  print_r($product_seo_detail) ?></pre>
 
-                                           <?php */ ?>
+                                               <? php */ ?>
 
                                                 <form role="form" class="form-horizontal"
-                                                   name="ProductFormAddReview_<? echo $ss_count ?>"
-                                                   id="ProductFormAddReview_<? echo $ss_count ?>"
-                                                   action="<?php echo MAINSITE_Admin . 'products/doAddProductReview'; ?>"
+                                                   name="ProductFormAddReview_<?  echo $ss_count ?>"
+                                                   id="ProductFormAddReview_<?  echo $ss_count ?>"
+                                                   action="<? php echo MAINSITE_Admin . 'products/doAddProductReview'; ?>"
                                                    method="post" enctype="multipart/form-data">
 
-                                                   <input type="hidden" name="product_id" id="product_id_<? echo $ss_count ?>"
-                                                      value="<?php echo $product_id; ?>" /><br />
+                                                   <input type="hidden" name="product_id" id="product_id_<?  echo $ss_count ?>"
+                                                      value="<? php echo $product_id; ?>" /><br />
 
                                                    <input type="hidden" name="product_combination_id"
-                                                      id="product_combination_id_<? echo $ss_count ?>"
-                                                      value="<?php echo $pcd['product_combination_id']; ?>" /><br />
+                                                      id="product_combination_id_<?  echo $ss_count ?>"
+                                                      value="<? php echo $pcd['product_combination_id']; ?>" /><br />
 
                                                    <div class="form-group">
 
@@ -4861,7 +4840,7 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <input type="text" name="customer_name"
-                                                               id="customer_name_<? echo $ss_count ?>" placeholder="Name"
+                                                               id="customer_name_<?  echo $ss_count ?>" placeholder="Name"
                                                                class="form-control" value="" required>
 
                                                             <div class="input-group-btn"><span class="required">*</span>
@@ -4897,7 +4876,7 @@ if (!empty($product_category_detail)) {
                                                          <div class="input-group input-group-required">
 
                                                             <input type="text" name="review_title"
-                                                               id="review_title_<? echo $ss_count ?>" placeholder="Review Title"
+                                                               id="review_title_<?  echo $ss_count ?>" placeholder="Review Title"
                                                                class="form-control" value="" required>
 
                                                             <div class="input-group-btn"><span class="required">*</span>
@@ -4932,7 +4911,7 @@ if (!empty($product_category_detail)) {
 
                                                          <div class="input-group input-group-required">
 
-                                                            <textarea type="text" name="review" id="review_<? echo $ss_count ?>"
+                                                            <textarea type="text" name="review" id="review_<?  echo $ss_count ?>"
                                                                placeholder="Review" class="form-control" required></textarea>
 
                                                             <div class="input-group-btn"><span class="required">*</span>
@@ -4967,7 +4946,7 @@ if (!empty($product_category_detail)) {
 
                                                          <div class="input-group input-group-required">
 
-                                                            <select name="rating" id="rating_<? echo $ss_count ?>"
+                                                            <select name="rating" id="rating_<?  echo $ss_count ?>"
                                                                class="form-control" required>
 
                                                                <option value="">Select Rating</option>
@@ -5016,20 +4995,20 @@ if (!empty($product_category_detail)) {
 
                                        </div>
 
-                                    <? } ?>
+                                    <?  } ?>
 
                                  </div>
 
                               </div>
 
-                           <? } else { ?>
+                           <?  } else { ?>
 
                               <span style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save
                                  any combination this product before adding New Review.</span>
 
-                           <? } ?>
+                           <?  } ?>
 
-                        <? } ?>
+                        <?  } ?>
 
                      </div>
 
@@ -5049,7 +5028,8 @@ if (!empty($product_category_detail)) {
 
    </section>
 
-   <? ?>
+   <?  ?>
+
 
 </div>
 
@@ -5199,11 +5179,11 @@ if (!empty($product_category_detail)) {
 
 
 
-         url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageList',
+         url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageList',
 
          //dataType : "json",
 
-         data: { "product_id": <? echo $product_id; ?> , "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+         data: { "product_id": <?  echo $product_id; ?> , "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
          success: function (result) {
 
@@ -5225,11 +5205,11 @@ if (!empty($product_category_detail)) {
 
 
 
-         url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationListPOS',
+         url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationListPOS',
 
          //dataType : "json",
 
-         data: { "product_id": <? echo $product_id; ?> , "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+         data: { "product_id": <?  echo $product_id; ?> , "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
          success: function (result) {
 
@@ -5255,11 +5235,11 @@ if (!empty($product_category_detail)) {
 
 
 
-         url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationList',
+         url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationList',
 
          //dataType : "json",
 
-         data: { "product_id": <? echo $product_id; ?> , "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+         data: { "product_id": <?  echo $product_id; ?> , "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
          success: function (result) {
 
@@ -5351,7 +5331,7 @@ if (!empty($product_category_detail)) {
 
             li.appendChild(document.createTextNode(val));
 
-            li.innerHTML = val + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img width="22px" height="22px" src="<?= _admin_files_ . "images/cancel.png" ?>" /> <input type="hidden" name="product_attribute_id[]" value="' + select_product_attribute_id + '" /><input type="hidden" name="combination_value[]" value="' + combination_values + '" /><input type="hidden" name="product_attribute_value_id[]" value="' + select_product_attribute_value_id + '"  />';
+            li.innerHTML = val + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img width="22px" height="22px" src="<? php echo _admin_files_ . "images/cancel.png" ?>" /> <input type="hidden" name="product_attribute_id[]" value="' + select_product_attribute_id + '" /><input type="hidden" name="combination_value[]" value="' + combination_values + '" /><input type="hidden" name="product_attribute_value_id[]" value="' + select_product_attribute_value_id + '"  />';
 
             li.setAttribute("onclick", "$(this).remove();");
 
@@ -5393,13 +5373,13 @@ if (!empty($product_category_detail)) {
 
 
 
-      <? foreach ($attribute_value_list as $col) { ?>
+      <?  foreach ($attribute_value_list as $col) { ?>
 
-         if (attribute_value ==<? echo $col->product_attribute_id; ?>)
+         if (attribute_value ==<?  echo $col->product_attribute_id; ?>)
 
-            optionText += '<option value="<? echo $col->product_attribute_value_id; ?>"><? echo $col->name; ?></option>'
+            optionText += '<option value="<?  echo $col->product_attribute_value_id; ?>"><?  echo $col->name; ?></option>'
 
-      <? } ?>
+      <?  } ?>
 
 
 
@@ -5409,13 +5389,13 @@ if (!empty($product_category_detail)) {
 
    function getAttributePerProduct(attribute_value) {
 
-      <? foreach ($product_attribute_list as $col) { ?>
+      <?  foreach ($product_attribute_list as $col) { ?>
 
-         if (attribute_value ==<? echo $col->product_attribute_id; ?>)
+         if (attribute_value ==<?  echo $col->product_attribute_id; ?>)
 
-            return "<? echo $col->condition_per_product; ?>";
+            return "<?  echo $col->condition_per_product; ?>";
 
-      <? } ?>
+      <?  } ?>
 
       else return 1;
 
@@ -5451,7 +5431,7 @@ if (!empty($product_category_detail)) {
 
 
 
-            $('#ProductCombiListPOS').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<?= _admin_files_ . "images/load.gif"; ?>" /></div></td></tr>');
+            $('#ProductCombiListPOS').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<? php echo _admin_files_ . "images/load.gif"; ?>" /></div></td></tr>');
 
             $.ajax({
 
@@ -5459,11 +5439,11 @@ if (!empty($product_category_detail)) {
 
 
 
-               url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationListPOS',
+               url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationListPOS',
 
                //dataType : "json",
 
-               data: { "product_id": <? echo $product_id; ?> , 'podId': podId, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+               data: { "product_id": <?  echo $product_id; ?> , 'podId': podId, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                success: function (result) {
 
@@ -5525,9 +5505,9 @@ if (!empty($product_category_detail)) {
 
 </script>
 
-<script src="<?= _admin_files_ ?>js/jquery.easytree.js"></script>
+<script src="<? php echo _admin_files_ ?>js/jquery.easytree.js"></script>
 
-<script src="<?= _admin_files_ ?>js/jquery.tablednd.js" type="text/javascript"></script>
+<script src="<? php echo _admin_files_ ?>js/jquery.tablednd.js" type="text/javascript"></script>
 
 <script>
 
@@ -5638,9 +5618,9 @@ if (!empty($product_category_detail)) {
       $.ajax({
          type: "POST",
 
-         url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/checkProductRefCode',
+         url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/checkProductRefCode',
          dataType: "json",
-         data: { "product_id": document.getElementById('product_id').value, "ref_code": document.getElementById('ref_code').value, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+         data: { "product_id": document.getElementById('product_id').value, "ref_code": document.getElementById('ref_code').value, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
          success: function (result) {
             //alert(result);
             if (result.response == 1) {

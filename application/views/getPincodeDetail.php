@@ -1,19 +1,16 @@
-
-
-
 <?
 
 
 
-include_once( APPPATH."third_party/shiprocket/auth.php");
-$destination_pincode = $params['delivery_pin_code'] =  $pincode;
-$destination_pincode = $params['total_weight'] =  $total_weight;
+include_once (APPPATH . "third_party/shiprocket/auth.php");
+$destination_pincode = $params['delivery_pin_code'] = $pincode;
+$destination_pincode = $params['total_weight'] = $total_weight;
 $order_api_data = array(
-"pickup_postcode"=> 502101,
-"delivery_postcode"=> $params['delivery_pin_code'],
-"cod"=>1,
-//'declared_value'=>$params['order_total'],
-"weight"=>round(($params['total_weight']/1000) , 3)
+  "pickup_postcode" => 502101,
+  "delivery_postcode" => $params['delivery_pin_code'],
+  "cod" => 1,
+  //'declared_value'=>$params['order_total'],
+  "weight" => round(($params['total_weight'] / 1000), 3)
 );
 $order_api_data_json = $post_json_data = json_encode($order_api_data);
 
@@ -27,12 +24,13 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'GET',
-  CURLOPT_POSTFIELDS =>$post_json_data,
+  CURLOPT_POSTFIELDS => $post_json_data,
   CURLOPT_HTTPHEADER => array(
-  'Content-Type: application/json',
-  "Authorization: Bearer $token"
+    'Content-Type: application/json',
+    "Authorization: Bearer $token"
   ),
-));
+)
+);
 
 $responsejson = $response = curl_exec($curl);
 
@@ -58,19 +56,16 @@ $response = json_decode($response);
 // $result = json_decode($response, true);
 //print_r($result);
 ?>
-	<?
-    if(!empty($response->data->available_courier_companies))
-    {
+<?
+if (!empty($response->data->available_courier_companies)) {
 
-			?>
+  ?>
 
-    <span style="color:#14c614">Delivery Available</span>
-    <?
-  }
-		else
-		{
-			?>
-    <span style="color:#F00">There is No delivery</span>
-    <?
-		}
-    $count = 0;
+  <span style="color:#14c614">Delivery Available</span>
+<?
+} else {
+  ?>
+  <span style="color:#F00">There is No delivery</span>
+<?
+}
+$count = 0;

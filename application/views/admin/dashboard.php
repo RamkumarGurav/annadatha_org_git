@@ -29,7 +29,7 @@
           <div class="container-fluid">
             <!-- Info boxes -->
             <div class="row">
-            <? if($is_module_id_25==1){ ?>
+            <?php   if($is_module_id_25==1){ ?>
               <div class="col-12 col-md-12">  
                 <div class="card">
                       <div class="card-header border-transparent">
@@ -58,23 +58,23 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <? if(!empty($upcoming_follow_up_data)){ ?>
-                            <? foreach($upcoming_follow_up_data as $ufud){ ?>
+                            <?php   if(!empty($upcoming_follow_up_data)){ ?>
+                            <?php   foreach($upcoming_follow_up_data as $ufud){ ?>
                             <tr>
-                              <td><a href="<?=MAINSITE_Admin."Quotation-Module/quotation-view/".$ufud->quotation_id?>" target="_blank"><?=$ufud->quotation_number?></a></td>
-                              <td><?=$ufud->customer_name?></td>
-                              <td><?=$ufud->status_display?></td>
-                              <td><?=date('d-m-Y h:i:s A' , strtotime($ufud->next_followup))?></td>
+                              <td><a href="<?php echo MAINSITE_Admin."Quotation-Module/quotation-view/".$ufud->quotation_id?>" target="_blank"><?php echo $ufud->quotation_number?></a></td>
+                              <td><?php echo $ufud->customer_name?></td>
+                              <td><?php echo $ufud->status_display?></td>
+                              <td><?php echo date('d-m-Y h:i:s A' , strtotime($ufud->next_followup))?></td>
                               <td>
-                                <button type="button" class="btn btn-info btn-sm" title="View" onclick="view_quotation_followup_pop('<?=MAINSITE_Admin."Quotation-Module/view-quotation-followup-pop"?>' , <?=$ufud->quotation_id?> , <?=$ufud->reff_quotation_id?>)"><i class="fas fa-eye"></i> </button>
+                                <button type="button" class="btn btn-info btn-sm" title="View" onclick="view_quotation_followup_pop('<?php echo MAINSITE_Admin."Quotation-Module/view-quotation-followup-pop"?>' , <?php echo $ufud->quotation_id?> , <?php echo $ufud->reff_quotation_id?>)"><i class="fas fa-eye"></i> </button>
                               </td>
                             </tr>
-                            <? } ?>
-                            <? }else{ ?>
+                            <?php   } ?>
+                            <?php   }else{ ?>
                             <tr>
                               <td colspan="5">No Record to display...</td>
                              </tr>
-                            <? } ?>
+                            <?php   } ?>
                             </tbody>
                           </table>
                         </div>
@@ -82,23 +82,23 @@
                       </div>
                       <!-- /.card-body -->
                       <div class="card-footer clearfix">
-                       <?php /*?><a target="_blank" href="<?=MAINSITE_Admin.$is_module_id_25_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php */?>
-              <?
+                       <?php   /*?><a target="_blank" href="<?php echo MAINSITE_Admin.$is_module_id_25_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php   */?>
+              <?php  
 			  $a_link = $is_module_id_25_data->class_name.'/'.$is_module_id_25_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
                       </div>
                       <!-- /.card-footer -->
                     </div>
               </div>
-            <? } ?>
+            <?php   } ?>
             </div>
           </div>
       </section>
       <section class="content">
       <div class="row">
 	      <div class="col-md-8">
-          <? if($is_module_id_21==1){ ?>
+          <?php   if($is_module_id_21==1){ ?>
           <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Latest Quotation Enquiry(RFQ)</h3>
@@ -126,23 +126,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                     <? if(!empty($quotation_enquiry_data)){ ?>
+                     <?php   if(!empty($quotation_enquiry_data)){ ?>
                     
-                        <? 
+                        <?php   
                             foreach($quotation_enquiry_data as $urm) { 
                                 ?>
                         <tr>
-                            <td><a href="<?=MAINSITE_Admin.$is_module_id_21_data->class_name."/quotation-enquiry-view/".$urm->quotation_enquiry_id?>"><?=$urm->quotation_enquiry_number ?></a></td>
-                            <td><?=$urm->customer_unique_name?></td>
-                            <td><?php /*?><i class="fas fa-check"></i> <?php */?><?=date("d-m-Y" , strtotime($urm->inquiry_date))?></td>
-                            <td><?php /*?><i class="fas fa-times"></i> <?php */?><?=date("d-m-Y h:i A" , strtotime($urm->inquiry_closing_date))?></td>
-                            <td><?=$urm->status_display?></td>
+                            <td><a href="<?php echo MAINSITE_Admin.$is_module_id_21_data->class_name."/quotation-enquiry-view/".$urm->quotation_enquiry_id?>"><?php echo $urm->quotation_enquiry_number ?></a></td>
+                            <td><?php echo $urm->customer_unique_name?></td>
+                            <td><?php   /*?><i class="fas fa-check"></i> <?php   */?><?php echo date("d-m-Y" , strtotime($urm->inquiry_date))?></td>
+                            <td><?php   /*?><i class="fas fa-times"></i> <?php   */?><?php echo date("d-m-Y h:i A" , strtotime($urm->inquiry_closing_date))?></td>
+                            <td><?php echo $urm->status_display?></td>
                         </tr>
-                        <? } ?>
+                        <?php   } ?>
                     
-                    <? }else{ ?>
+                    <?php   }else{ ?>
                     
-                    <? } ?>
+                    <?php   } ?>
                     <tbody>
                     
                     
@@ -153,16 +153,16 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a target="_blank" href="<?=MAINSITE_Admin.$is_module_id_21_data->class_name.'/quotation-enquiry-edit'?>" class="btn btn-sm btn-info float-left">Add New</a>
-              <?
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$is_module_id_21_data->class_name.'/quotation-enquiry-edit'?>" class="btn btn-sm btn-info float-left">Add New</a>
+              <?php  
 			  $a_link = $is_module_id_21_data->class_name.'/'.$is_module_id_21_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_25==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_25==1){ ?>
           <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Latest Quotation </h3>
@@ -190,23 +190,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                     <? if(!empty($quotation_data)){ ?>
+                     <?php   if(!empty($quotation_data)){ ?>
                     
-                        <? 
+                        <?php   
                             foreach($quotation_data as $urm) { 
                                 ?>
                         <tr>
-                            <td><a href="<?=MAINSITE_Admin.$is_module_id_25_data->class_name."/quotation-view/".$urm->quotation_id?>"><?=$urm->quotation_number ?></a></td>
-                            <td><?=$urm->customer_unique_name?></td>
-                            <td><i class="fas fa-credit-card"></i> <?=$urm->total?><br><i class="fas fa-sort-amount-up"></i> <?=$urm->total_qty?></td>
-                            <td><?=$urm->added_by_name?></td>
-                            <td><?=$urm->status_display?></td>
+                            <td><a href="<?php echo MAINSITE_Admin.$is_module_id_25_data->class_name."/quotation-view/".$urm->quotation_id?>"><?php echo $urm->quotation_number ?></a></td>
+                            <td><?php echo $urm->customer_unique_name?></td>
+                            <td><i class="fas fa-credit-card"></i> <?php echo $urm->total?><br><i class="fas fa-sort-amount-up"></i> <?php echo $urm->total_qty?></td>
+                            <td><?php echo $urm->added_by_name?></td>
+                            <td><?php echo $urm->status_display?></td>
                         </tr>
-                        <? } ?>
+                        <?php   } ?>
                     
-                    <? }else{ ?>
+                    <?php   }else{ ?>
                     
-                    <? } ?>
+                    <?php   } ?>
                     <tbody>
                     
                     
@@ -217,16 +217,16 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <?php /*?><a target="_blank" href="<?=MAINSITE_Admin.$is_module_id_25_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php */?>
-              <?
+                <?php   /*?><a target="_blank" href="<?php echo MAINSITE_Admin.$is_module_id_25_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php   */?>
+              <?php  
 			  $a_link = $is_module_id_25_data->class_name.'/'.$is_module_id_25_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_26==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_26==1){ ?>
           <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Latest Proforma Invoice </h3>
@@ -254,23 +254,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                     <? if(!empty($proforma_invoice_data)){ ?>
+                     <?php   if(!empty($proforma_invoice_data)){ ?>
                     
-                        <? 
+                        <?php   
                             foreach($proforma_invoice_data as $urm) { 
                                 ?>
                         <tr>
-                            <td><a href="<?=MAINSITE_Admin.$is_module_id_26_data->class_name."/proforma-invoice-view/".$urm->proforma_invoice_id?>"><?=$urm->proforma_invoice_number ?></a></td>
-                            <td><?=$urm->customer_unique_name?></td>
-                            <td><i class="fas fa-credit-card"></i> <?=$urm->total?><br><i class="fas fa-sort-amount-up"></i> <?=$urm->total_qty?></td>
-                            <td><?=$urm->added_by_name?></td>
-                            <td><?=$urm->status_display?></td>
+                            <td><a href="<?php echo MAINSITE_Admin.$is_module_id_26_data->class_name."/proforma-invoice-view/".$urm->proforma_invoice_id?>"><?php echo $urm->proforma_invoice_number ?></a></td>
+                            <td><?php echo $urm->customer_unique_name?></td>
+                            <td><i class="fas fa-credit-card"></i> <?php echo $urm->total?><br><i class="fas fa-sort-amount-up"></i> <?php echo $urm->total_qty?></td>
+                            <td><?php echo $urm->added_by_name?></td>
+                            <td><?php echo $urm->status_display?></td>
                         </tr>
-                        <? } ?>
+                        <?php   } ?>
                     
-                    <? }else{ ?>
+                    <?php   }else{ ?>
                     
-                    <? } ?>
+                    <?php   } ?>
                     <tbody>
                     
                     
@@ -281,16 +281,16 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <?php /*?><a target="_blank" href="<?=MAINSITE_Admin.$is_module_id_26_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php */?>
-              <?
+                <?php   /*?><a target="_blank" href="<?php echo MAINSITE_Admin.$is_module_id_26_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php   */?>
+              <?php  
 			  $a_link = $is_module_id_26_data->class_name.'/'.$is_module_id_26_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_27==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_27==1){ ?>
           <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Latest Invoice </h3>
@@ -318,23 +318,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                     <? if(!empty($invoice_data)){ ?>
+                     <?php   if(!empty($invoice_data)){ ?>
                     
-                        <? 
+                        <?php   
                             foreach($invoice_data as $urm) { 
                                 ?>
                         <tr>
-                            <td><a href="<?=MAINSITE_Admin.$is_module_id_27_data->class_name."/invoice-view/".$urm->invoice_id?>"><?=$urm->invoice_number ?></a></td>
-                            <td><?=$urm->customer_unique_name?></td>
-                            <td><i class="fas fa-credit-card"></i> <?=$urm->total?><br><i class="fas fa-sort-amount-up"></i> <?=$urm->total_qty?></td>
-                            <td><?=$urm->added_by_name?></td>
-                            <td><?=$urm->status_display?></td>
+                            <td><a href="<?php echo MAINSITE_Admin.$is_module_id_27_data->class_name."/invoice-view/".$urm->invoice_id?>"><?php echo $urm->invoice_number ?></a></td>
+                            <td><?php echo $urm->customer_unique_name?></td>
+                            <td><i class="fas fa-credit-card"></i> <?php echo $urm->total?><br><i class="fas fa-sort-amount-up"></i> <?php echo $urm->total_qty?></td>
+                            <td><?php echo $urm->added_by_name?></td>
+                            <td><?php echo $urm->status_display?></td>
                         </tr>
-                        <? } ?>
+                        <?php   } ?>
                     
-                    <? }else{ ?>
+                    <?php   }else{ ?>
                     
-                    <? } ?>
+                    <?php   } ?>
                     <tbody>
                     
                     
@@ -345,16 +345,16 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <?php /*?><a target="_blank" href="<?=MAINSITE_Admin.$is_module_id_27_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php */?>
-              <?
+                <?php   /*?><a target="_blank" href="<?php echo MAINSITE_Admin.$is_module_id_27_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php   */?>
+              <?php  
 			  $a_link = $is_module_id_27_data->class_name.'/'.$is_module_id_27_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_39==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_39==1){ ?>
           <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Latest Delivery Note </h3>
@@ -382,23 +382,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                     <? if(!empty($invoice_delivery_note_data)){ ?>
+                     <?php   if(!empty($invoice_delivery_note_data)){ ?>
                     
-                        <? 
+                        <?php   
                             foreach($invoice_delivery_note_data as $urm) { 
                                 ?>
                         <tr>
-                            <td><a href="<?=MAINSITE_Admin.$is_module_id_39_data->class_name."/invoice-delivery-note-view/".$urm->invoice_delivery_note_id?>"><?=$urm->invoice_delivery_note_number ?></a></td>
-                            <td><?=$urm->customer_unique_name?></td>
-                            <td><i class="fas fa-credit-card"></i> <?=$urm->total?><br><i class="fas fa-sort-amount-up"></i> <?=$urm->total_qty?></td>
-                            <td><?=$urm->added_by_name?></td>
-                            <td><?=$urm->status_display?></td>
+                            <td><a href="<?php echo MAINSITE_Admin.$is_module_id_39_data->class_name."/invoice-delivery-note-view/".$urm->invoice_delivery_note_id?>"><?php echo $urm->invoice_delivery_note_number ?></a></td>
+                            <td><?php echo $urm->customer_unique_name?></td>
+                            <td><i class="fas fa-credit-card"></i> <?php echo $urm->total?><br><i class="fas fa-sort-amount-up"></i> <?php echo $urm->total_qty?></td>
+                            <td><?php echo $urm->added_by_name?></td>
+                            <td><?php echo $urm->status_display?></td>
                         </tr>
-                        <? } ?>
+                        <?php   } ?>
                     
-                    <? }else{ ?>
+                    <?php   }else{ ?>
                     
-                    <? } ?>
+                    <?php   } ?>
                     <tbody>
                     
                     
@@ -409,16 +409,16 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <?php /*?><a target="_blank" href="<?=MAINSITE_Admin.$is_module_id_39_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php */?>
-              <?
+                <?php   /*?><a target="_blank" href="<?php echo MAINSITE_Admin.$is_module_id_39_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php   */?>
+              <?php  
 			  $a_link = $is_module_id_39_data->class_name.'/'.$is_module_id_39_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_38==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_38==1){ ?>
           <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Latest Purchase Order </h3>
@@ -446,23 +446,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                     <? if(!empty($purchase_order_data)){ ?>
+                     <?php   if(!empty($purchase_order_data)){ ?>
                     
-                        <? 
+                        <?php   
                             foreach($purchase_order_data as $urm) { 
                                 ?>
                         <tr>
-                            <td><a href="<?=MAINSITE_Admin.$is_module_id_38_data->class_name."/purchase-order-view/".$urm->purchase_order_id?>"><?=$urm->purchase_order_number ?></a></td>
-                            <td><?=$urm->vendor_name?></td>
-                            <td><i class="fas fa-credit-card"></i> <?=$urm->total?><br><i class="fas fa-sort-amount-up"></i> <?=$urm->total_qty?></td>
-                            <td><?=$urm->added_by_name?></td>
-                            <td><?=$urm->status_display?></td>
+                            <td><a href="<?php echo MAINSITE_Admin.$is_module_id_38_data->class_name."/purchase-order-view/".$urm->purchase_order_id?>"><?php echo $urm->purchase_order_number ?></a></td>
+                            <td><?php echo $urm->vendor_name?></td>
+                            <td><i class="fas fa-credit-card"></i> <?php echo $urm->total?><br><i class="fas fa-sort-amount-up"></i> <?php echo $urm->total_qty?></td>
+                            <td><?php echo $urm->added_by_name?></td>
+                            <td><?php echo $urm->status_display?></td>
                         </tr>
-                        <? } ?>
+                        <?php   } ?>
                     
-                    <? }else{ ?>
+                    <?php   }else{ ?>
                     
-                    <? } ?>
+                    <?php   } ?>
                     <tbody>
                     
                     
@@ -473,18 +473,18 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <?php /*?><a target="_blank" href="<?=MAINSITE_Admin.$is_module_id_38_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php */?>
-              <?
+                <?php   /*?><a target="_blank" href="<?php echo MAINSITE_Admin.$is_module_id_38_data->class_name.'/quotation-edit'?>" class="btn btn-sm btn-info float-left">Add New</a><?php   */?>
+              <?php  
 			  $a_link = $is_module_id_38_data->class_name.'/'.$is_module_id_38_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="btn btn-sm btn-secondary float-right">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
+          <?php   } ?>
           </div>
 	      <div class="col-md-4">
-      	  <? if($is_module_id_21==1){ ?>
+      	  <?php   if($is_module_id_21==1){ ?>
       		<div class="card">
               <div class="card-header">
                 <h3 class="card-title">Quotation Enquiry(RFQ) Status</h3>
@@ -500,35 +500,35 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body ">
-              <? if(!empty($quotation_enquiry_status_data)){ ?>
-              <? foreach($quotation_enquiry_status_data as $qsd){ 
+              <?php   if(!empty($quotation_enquiry_status_data)){ ?>
+              <?php   foreach($quotation_enquiry_status_data as $qsd){ 
 			  $percent=(($qsd->counts/$qsd->total)*100);
 			  
 			  ?>
                 <div class="progress-group">
-                      <?=$qsd->status_name?>
-                      <span class="float-right"><b><?=$qsd->counts?></b>/<?=$qsd->total?></span>
+                      <?php echo $qsd->status_name?>
+                      <span class="float-right"><b><?php echo $qsd->counts?></b>/<?php echo $qsd->total?></span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar <?=$qsd->status_color_class?>" style="width: <?=$percent?>%"></div>
+                        <div class="progress-bar <?php echo $qsd->status_color_class?>" style="width: <?php echo $percent?>%"></div>
                       </div>
                     </div>
-               <? } ?>
-              <? }else{ ?>
+               <?php   } ?>
+              <?php   }else{ ?>
                 No data to display...
-              <? } ?>
+              <?php   } ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-              <?
+              <?php  
 			  $a_link = $is_module_id_21_data->class_name.'/'.$is_module_id_21_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
+          <?php   } ?>
           
-          <? if($is_module_id_22==1 && false){ ?>
+          <?php   if($is_module_id_22==1 && false){ ?>
       		<div class="card">
               <div class="card-header">
                 <h3 class="card-title">Procurement Status</h3>
@@ -544,34 +544,34 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body ">
-              <? if(!empty($quotation_status_data)){ ?>
-              <? foreach($quotation_status_data as $qsd){ 
+              <?php   if(!empty($quotation_status_data)){ ?>
+              <?php   foreach($quotation_status_data as $qsd){ 
 			  $percent=(($qsd->counts/$qsd->total)*100);
 			  
 			  ?>
                 <div class="progress-group">
-                      <?=$qsd->status_name?>
-                      <span class="float-right"><b><?=$qsd->counts?></b>/<?=$qsd->total?></span>
+                      <?php echo $qsd->status_name?>
+                      <span class="float-right"><b><?php echo $qsd->counts?></b>/<?php echo $qsd->total?></span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar <?=$qsd->status_color_class?>" style="width: <?=$percent?>%"></div>
+                        <div class="progress-bar <?php echo $qsd->status_color_class?>" style="width: <?php echo $percent?>%"></div>
                       </div>
                     </div>
-               <? } ?>
-              <? }else{ ?>
+               <?php   } ?>
+              <?php   }else{ ?>
                 No data to display...
-              <? } ?>
+              <?php   } ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-              <?
+              <?php  
 			  $a_link = $is_module_id_22_data->class_name.'/'.$is_module_id_22_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_25==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_25==1){ ?>
       		<div class="card">
               <div class="card-header">
                 <h3 class="card-title">Quotation Status</h3>
@@ -587,34 +587,34 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body ">
-              <? if(!empty($quotation_status_data)){ ?>
-              <? foreach($quotation_status_data as $qsd){ 
+              <?php   if(!empty($quotation_status_data)){ ?>
+              <?php   foreach($quotation_status_data as $qsd){ 
 			  $percent=(($qsd->counts/$qsd->total)*100);
 			  
 			  ?>
                 <div class="progress-group">
-                      <?=$qsd->status_name?>
-                      <span class="float-right"><b><?=$qsd->counts?></b>/<?=$qsd->total?></span>
+                      <?php echo $qsd->status_name?>
+                      <span class="float-right"><b><?php echo $qsd->counts?></b>/<?php echo $qsd->total?></span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar <?=$qsd->status_color_class?>" style="width: <?=$percent?>%"></div>
+                        <div class="progress-bar <?php echo $qsd->status_color_class?>" style="width: <?php echo $percent?>%"></div>
                       </div>
                     </div>
-               <? } ?>
-              <? }else{ ?>
+               <?php   } ?>
+              <?php   }else{ ?>
                 No data to display...
-              <? } ?>
+              <?php   } ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-              <?
+              <?php  
 			  $a_link = $is_module_id_25_data->class_name.'/'.$is_module_id_25_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_26==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_26==1){ ?>
       		<div class="card">
               <div class="card-header">
                 <h3 class="card-title">Proforma Invoice Status</h3>
@@ -630,34 +630,34 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body ">
-              <? if(!empty($proforma_invoice_status_data)){ ?>
-              <? foreach($proforma_invoice_status_data as $qsd){ 
+              <?php   if(!empty($proforma_invoice_status_data)){ ?>
+              <?php   foreach($proforma_invoice_status_data as $qsd){ 
 			  $percent=(($qsd->counts/$qsd->total)*100);
 			  
 			  ?>
                 <div class="progress-group">
-                      <?=$qsd->status_name?>
-                      <span class="float-right"><b><?=$qsd->counts?></b>/<?=$qsd->total?></span>
+                      <?php echo $qsd->status_name?>
+                      <span class="float-right"><b><?php echo $qsd->counts?></b>/<?php echo $qsd->total?></span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar <?=$qsd->status_color_class?>" style="width: <?=$percent?>%"></div>
+                        <div class="progress-bar <?php echo $qsd->status_color_class?>" style="width: <?php echo $percent?>%"></div>
                       </div>
                     </div>
-               <? } ?>
-              <? }else{ ?>
+               <?php   } ?>
+              <?php   }else{ ?>
                 No data to display...
-              <? } ?>
+              <?php   } ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-              <?
+              <?php  
 			  $a_link = $is_module_id_26_data->class_name.'/'.$is_module_id_26_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_27==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_27==1){ ?>
       		<div class="card">
               <div class="card-header">
                 <h3 class="card-title"> Invoice Status</h3>
@@ -673,34 +673,34 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body ">
-              <? if(!empty($invoice_status_data)){ ?>
-              <? foreach($invoice_status_data as $qsd){ 
+              <?php   if(!empty($invoice_status_data)){ ?>
+              <?php   foreach($invoice_status_data as $qsd){ 
 			  $percent=(($qsd->counts/$qsd->total)*100);
 			  
 			  ?>
                 <div class="progress-group">
-                      <?=$qsd->status_name?>
-                      <span class="float-right"><b><?=$qsd->counts?></b>/<?=$qsd->total?></span>
+                      <?php echo $qsd->status_name?>
+                      <span class="float-right"><b><?php echo $qsd->counts?></b>/<?php echo $qsd->total?></span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar <?=$qsd->status_color_class?>" style="width: <?=$percent?>%"></div>
+                        <div class="progress-bar <?php echo $qsd->status_color_class?>" style="width: <?php echo $percent?>%"></div>
                       </div>
                     </div>
-               <? } ?>
-              <? }else{ ?>
+               <?php   } ?>
+              <?php   }else{ ?>
                 No data to display...
-              <? } ?>
+              <?php   } ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-              <?
+              <?php  
 			  $a_link = $is_module_id_27_data->class_name.'/'.$is_module_id_27_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
-          <? if($is_module_id_39==1){ ?>
+          <?php   } ?>
+          <?php   if($is_module_id_39==1){ ?>
       		<div class="card">
               <div class="card-header">
                 <h3 class="card-title"> Delivery Note Status</h3>
@@ -716,36 +716,36 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body ">
-              <? if(!empty($invoice_delivery_note_status_data)){ ?>
-              <? foreach($invoice_delivery_note_status_data as $qsd){ 
+              <?php   if(!empty($invoice_delivery_note_status_data)){ ?>
+              <?php   foreach($invoice_delivery_note_status_data as $qsd){ 
 			  $percent=(($qsd->counts/$qsd->total)*100);
 			  
 			  ?>
                 <div class="progress-group">
-                      <?=$qsd->status_name?>
-                      <span class="float-right"><b><?=$qsd->counts?></b>/<?=$qsd->total?></span>
+                      <?php echo $qsd->status_name?>
+                      <span class="float-right"><b><?php echo $qsd->counts?></b>/<?php echo $qsd->total?></span>
                       <div class="progress progress-sm">
-                        <div class="progress-bar <?=$qsd->status_color_class?>" style="width: <?=$percent?>%"></div>
+                        <div class="progress-bar <?php echo $qsd->status_color_class?>" style="width: <?php echo $percent?>%"></div>
                       </div>
                     </div>
-               <? } ?>
-              <? }else{ ?>
+               <?php   } ?>
+              <?php   }else{ ?>
                 No data to display...
-              <? } ?>
+              <?php   } ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-              <?
+              <?php  
 			  $a_link = $is_module_id_39_data->class_name.'/'.$is_module_id_39_data->function_name;
 			  ?>
-                <a target="_blank" href="<?=MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
+                <a target="_blank" href="<?php echo MAINSITE_Admin.$a_link?>" class="uppercase">View All </a>
               </div>
               <!-- /.card-footer -->
             </div>
-          <? } ?>
+          <?php   } ?>
           </div>
        </div>
-      	<?php /*?><div class="row">
+      	<?php   /*?><div class="row">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
@@ -788,7 +788,7 @@
                     <p class="text-center">
                       <strong>Quotation Status</strong>
                     </p>
-                    <? if(!empty($quotation_status_data1)){ ?>
+                    <?php   if(!empty($quotation_status_data1)){ ?>
                     
                     
 
@@ -799,9 +799,9 @@
                         <div class="progress-bar bg-primary" style="width: 80%"></div>
                       </div>
                     </div>
-                    <? }else{ ?>
+                    <?php   }else{ ?>
                     No data to display...
-                    <? } ?>
+                    <?php   } ?>
                     <!-- /.progress-group -->
 
                     
@@ -863,10 +863,10 @@
             <!-- /.card -->
           </div>
           <!-- /.col -->
-        </div><?php */?>
+        </div><?php   */?>
       </section>
     
-    <?php /*?><section class="content">
+    <?php   /*?><section class="content">
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
@@ -1149,7 +1149,7 @@
                           <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                         </div>
                         <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="<?=_lte_files_?>dist/img/user1-128x128.jpg" alt="message user image">
+                        <img class="direct-chat-img" src="<?php echo _lte_files_?>dist/img/user1-128x128.jpg" alt="message user image">
                         <!-- /.direct-chat-img -->
                         <div class="direct-chat-text">
                           Is this template really for free? That's unbelievable!
@@ -1165,7 +1165,7 @@
                           <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                         </div>
                         <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="<?=_lte_files_?>dist/img/user3-128x128.jpg" alt="message user image">
+                        <img class="direct-chat-img" src="<?php echo _lte_files_?>dist/img/user3-128x128.jpg" alt="message user image">
                         <!-- /.direct-chat-img -->
                         <div class="direct-chat-text">
                           You better believe it!
@@ -1181,7 +1181,7 @@
                           <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                         </div>
                         <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="<?=_lte_files_?>dist/img/user1-128x128.jpg" alt="message user image">
+                        <img class="direct-chat-img" src="<?php echo _lte_files_?>dist/img/user1-128x128.jpg" alt="message user image">
                         <!-- /.direct-chat-img -->
                         <div class="direct-chat-text">
                           Working with AdminLTE on a great new app! Wanna join?
@@ -1197,7 +1197,7 @@
                           <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                         </div>
                         <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="<?=_lte_files_?>dist/img/user3-128x128.jpg" alt="message user image">
+                        <img class="direct-chat-img" src="<?php echo _lte_files_?>dist/img/user3-128x128.jpg" alt="message user image">
                         <!-- /.direct-chat-img -->
                         <div class="direct-chat-text">
                           I would love to.
@@ -1214,7 +1214,7 @@
                       <ul class="contacts-list">
                         <li>
                           <a href="#">
-                            <img class="contacts-list-img" src="<?=_lte_files_?>dist/img/user1-128x128.jpg">
+                            <img class="contacts-list-img" src="<?php echo _lte_files_?>dist/img/user1-128x128.jpg">
 
                             <div class="contacts-list-info">
                               <span class="contacts-list-name">
@@ -1229,7 +1229,7 @@
                         <!-- End Contact Item -->
                         <li>
                           <a href="#">
-                            <img class="contacts-list-img" src="<?=_lte_files_?>dist/img/user7-128x128.jpg">
+                            <img class="contacts-list-img" src="<?php echo _lte_files_?>dist/img/user7-128x128.jpg">
 
                             <div class="contacts-list-info">
                               <span class="contacts-list-name">
@@ -1244,7 +1244,7 @@
                         <!-- End Contact Item -->
                         <li>
                           <a href="#">
-                            <img class="contacts-list-img" src="<?=_lte_files_?>dist/img/user3-128x128.jpg">
+                            <img class="contacts-list-img" src="<?php echo _lte_files_?>dist/img/user3-128x128.jpg">
 
                             <div class="contacts-list-info">
                               <span class="contacts-list-name">
@@ -1259,7 +1259,7 @@
                         <!-- End Contact Item -->
                         <li>
                           <a href="#">
-                            <img class="contacts-list-img" src="<?=_lte_files_?>dist/img/user5-128x128.jpg">
+                            <img class="contacts-list-img" src="<?php echo _lte_files_?>dist/img/user5-128x128.jpg">
 
                             <div class="contacts-list-info">
                               <span class="contacts-list-name">
@@ -1274,7 +1274,7 @@
                         <!-- End Contact Item -->
                         <li>
                           <a href="#">
-                            <img class="contacts-list-img" src="<?=_lte_files_?>dist/img/user6-128x128.jpg">
+                            <img class="contacts-list-img" src="<?php echo _lte_files_?>dist/img/user6-128x128.jpg">
 
                             <div class="contacts-list-info">
                               <span class="contacts-list-name">
@@ -1289,7 +1289,7 @@
                         <!-- End Contact Item -->
                         <li>
                           <a href="#">
-                            <img class="contacts-list-img" src="<?=_lte_files_?>dist/img/user8-128x128.jpg">
+                            <img class="contacts-list-img" src="<?php echo _lte_files_?>dist/img/user8-128x128.jpg">
 
                             <div class="contacts-list-info">
                               <span class="contacts-list-name">
@@ -1342,42 +1342,42 @@
                   <div class="card-body p-0">
                     <ul class="users-list clearfix">
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user1-128x128.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user1-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Alexander Pierce</a>
                         <span class="users-list-date">Today</span>
                       </li>
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user8-128x128.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user8-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Norman</a>
                         <span class="users-list-date">Yesterday</span>
                       </li>
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user7-128x128.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user7-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Jane</a>
                         <span class="users-list-date">12 Jan</span>
                       </li>
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user6-128x128.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user6-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">John</a>
                         <span class="users-list-date">12 Jan</span>
                       </li>
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user2-160x160.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user2-160x160.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Alexander</a>
                         <span class="users-list-date">13 Jan</span>
                       </li>
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user5-128x128.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user5-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Sarah</a>
                         <span class="users-list-date">14 Jan</span>
                       </li>
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user4-128x128.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user4-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Nora</a>
                         <span class="users-list-date">15 Jan</span>
                       </li>
                       <li>
-                        <img src="<?=_lte_files_?>dist/img/user3-128x128.jpg" alt="User Image">
+                        <img src="<?php echo _lte_files_?>dist/img/user3-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Nadia</a>
                         <span class="users-list-date">15 Jan</span>
                       </li>
@@ -1625,7 +1625,7 @@
                 <ul class="products-list product-list-in-card pl-2 pr-2">
                   <li class="item">
                     <div class="product-img">
-                      <img src="<?=_lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                      <img src="<?php echo _lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">Samsung TV
@@ -1638,7 +1638,7 @@
                   <!-- /.item -->
                   <li class="item">
                     <div class="product-img">
-                      <img src="<?=_lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                      <img src="<?php echo _lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">Bicycle
@@ -1651,7 +1651,7 @@
                   <!-- /.item -->
                   <li class="item">
                     <div class="product-img">
-                      <img src="<?=_lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                      <img src="<?php echo _lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">
@@ -1667,7 +1667,7 @@
                   <!-- /.item -->
                   <li class="item">
                     <div class="product-img">
-                      <img src="<?=_lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                      <img src="<?php echo _lte_files_?>dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">PlayStation 4
@@ -1692,7 +1692,7 @@
         </div>
         <!-- /.row -->
       </div><!--/. container-fluid -->
-		</section><?php */?>
+		</section><?php   */?>
 		
     <!-- /.content -->
   </div>

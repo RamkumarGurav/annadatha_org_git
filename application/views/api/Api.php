@@ -1,6 +1,7 @@
 <?php
 
 namespace Razorpay\Api;
+
 class Api
 {
     protected static $baseUrl = 'https://api.razorpay.com/v1/';
@@ -62,7 +63,7 @@ class Api
      */
     public function __get($name)
     {
-        $className = __NAMESPACE__.'\\'.ucwords($name);
+        $className = __NAMESPACE__ . '\\' . ucwords($name);
 
         $entity = new $className();
 

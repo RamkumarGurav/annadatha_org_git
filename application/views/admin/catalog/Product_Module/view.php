@@ -1,6 +1,6 @@
-<link href="<?= _admin_files_ ?>skin-lion/ui.easytree.css" rel="stylesheet" type="text/css" />
+<link href="<? php echo _admin_files_ ?>skin-lion/ui.easytree.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="<? echo MAINSITE; ?>dist/css/lightbox.min.css">
+<link rel="stylesheet" href="<?  echo MAINSITE; ?>dist/css/lightbox.min.css">
 
 <style type="text/css">
    .card {
@@ -175,7 +175,7 @@
    }
 </style>
 
-<?
+<? 
 
 $page_module_name = "Product";
 
@@ -183,7 +183,7 @@ $record_action = "View Record";
 
 ?>
 
-<?php
+<? php
 
 $trending_now = 0;
 $hot_selling_now = 0;
@@ -320,7 +320,7 @@ if (!empty($product_category_detail)) {
 
             <div class="col-sm-6">
 
-               <h1 class="m-0 text-dark"><small><?= $page_module_name ?> </small></h1>
+               <h1 class="m-0 text-dark"><small><? php echo $page_module_name ?> </small></h1>
 
             </div>
 
@@ -330,20 +330,21 @@ if (!empty($product_category_detail)) {
 
                <ol class="breadcrumb float-sm-right">
 
-                  <li class="breadcrumb-item"><a href="<?= MAINSITE_Admin . "wam" ?>">Home</a></li>
+                  <li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 
                   <li class="breadcrumb-item"><a
-                        href="<?= MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?= $user_access->module_name ?>
+                        href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
                         List</a></li>
 
-                  <? if (!empty($product_detail)) { ?>
+                  <?  if (!empty($product_detail)) { ?>
 
                      <li class="breadcrumb-item"><a
-                           href="<?= MAINSITE_Admin . $user_access->class_name . "/view/" . $product_id ?>">View</a></li>
+                           href="<? php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $product_id ?>">View</a>
+                     </li>
 
-                  <? } ?>
+                  <?  } ?>
 
-                  <li class="breadcrumb-item"><?= $record_action ?></li>
+                  <li class="breadcrumb-item"><? php echo $record_action ?></li>
 
                </ol>
 
@@ -363,7 +364,7 @@ if (!empty($product_category_detail)) {
 
    <!-- Main content -->
 
-   <?= $this->session->flashdata('alert_message'); ?>
+   <? php echo $this->session->flashdata('alert_message'); ?>
 
    <section class="content">
 
@@ -377,17 +378,17 @@ if (!empty($product_category_detail)) {
 
          <div class="col-md-12">
 
-            <? if ($alert == "success" || $alert == "update" || $alert == "fail" || $alert == "imageUpdate" || $alert == "combiSuccess") { ?>   <? if ($alert == "success") {
-                                     echo "<div class='alert alert-success'>Record Inserted Successfully.</div>";
-                                  } else if ($alert == "update") {
-                                     echo "<div class='alert alert-success'>Record Updated Successfully.</div>";
-                                  } else if ($alert == "fail") {
-                                     echo "<div class='alert alert-danger'>Error in updating this input.</div>";
-                                  } else if ($alert == "imageUpdate") {
-                                     echo "<div class='alert alert-success'>Image Inserted Seccessfully.</div>";
-                                  } else if ($alert == "combiSuccess") {
-                                     echo "<div class='alert alert-success'>Combination Inserted Seccessfully.</div>";
-                                  } ?><? } ?>
+            <?  if ($alert == "success" || $alert == "update" || $alert == "fail" || $alert == "imageUpdate" || $alert == "combiSuccess") { ?>    <?  if ($alert == "success") {
+                                        echo "<div class='alert alert-success'>Record Inserted Successfully.</div>";
+                                     } else if ($alert == "update") {
+                                        echo "<div class='alert alert-success'>Record Updated Successfully.</div>";
+                                     } else if ($alert == "fail") {
+                                        echo "<div class='alert alert-danger'>Error in updating this input.</div>";
+                                     } else if ($alert == "imageUpdate") {
+                                        echo "<div class='alert alert-success'>Image Inserted Seccessfully.</div>";
+                                     } else if ($alert == "combiSuccess") {
+                                        echo "<div class='alert alert-success'>Combination Inserted Seccessfully.</div>";
+                                     } ?><?  } ?>
 
             <div class="row align-items-center bg-white tabb">
 
@@ -402,11 +403,11 @@ if (!empty($product_category_detail)) {
                   <li role="presentation"><a href="#images" aria-controls="messages" role="tab"
                         data-toggle="tab">IMAGES</a></li>
 
-                  <?php /*?>
+                  <? php /*?>
 
-             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
 
-             <?php */ ?>
+        <? php */ ?>
 
                   <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">SEO
                         Settings</a></li>
@@ -415,22 +416,22 @@ if (!empty($product_category_detail)) {
 
                <div class="col-md-6">
 
-                  <?php /*?><a href="<? echo MAINSITE."SecureRegions/wdm/products/list"; ?>" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back To Product List</a><?php */ ?>
-                  <a href="<?= MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"
-                     class="btn btn-warning"><?= $user_access->module_name ?> Back To Product List</a>
+                  <? php /*?><a href="<?  echo MAINSITE."SecureRegions/wdm/products/list"; ?>" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back To Product List</a><? php */ ?>
+                  <a href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"
+                     class="btn btn-warning"><? php echo $user_access->module_name ?> Back To Product List</a>
 
-                  <? if ($product_id > 0) { ?>
+                  <?  if ($product_id > 0) { ?>
 
-                     <?php if ($user_access->update_module == 1) { ?>
+                     <? php if ($user_access->update_module == 1) { ?>
 
-                        <a href="<?= MAINSITE_Admin ?>catalog/Product-Module/edit/<? echo $product_id ?>"
+                        <a href="<? php echo MAINSITE_Admin ?>catalog/Product-Module/edit/<?  echo $product_id ?>"
                            class="btn btn-info">Update Product</a>
 
-                        <a href="<?= MAINSITE_Admin ?>catalog/Product-Module/product_clone/<? echo $product_id ?>"
+                        <a href="<? php echo MAINSITE_Admin ?>catalog/Product-Module/product_clone/<?  echo $product_id ?>"
                            onclick="return confirm('Do you really want to clone this product? ')" class="btn bg-danger"><i
                               class="fa fa-clone"></i>Clone and Continue Edit</a>
 
-                     <? }
+                     <?  }
                   } ?>
 
                </div>
@@ -458,12 +459,12 @@ if (!empty($product_category_detail)) {
                      <div class="box-body ">
 
                         <form role="form" class="form-horizontal" name="ProductForm" id="ProductForm"
-                           action="<?php echo MAINSITE_Admin . 'products/doAddProduct'; ?>" method="post"
+                           action="<? php echo MAINSITE_Admin . 'products/doAddProduct'; ?>" method="post"
                            enctype="multipart/form-data">
 
                            <input type="hidden" name="action" id="action_info" value="" />
 
-                           <input type="hidden" name="product_id" id="product_id" value="<?php echo $product_id; ?>" />
+                           <input type="hidden" name="product_id" id="product_id" value="<? php echo $product_id; ?>" />
 
                            <div class="row">
 
@@ -482,7 +483,7 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <p><? echo $name; ?></p>
+                                       <p><?  echo $name; ?></p>
 
                                        <span class="field-validation-valid" data-valmsg-for="Name"
                                           data-valmsg-replace="true"></span>
@@ -500,13 +501,13 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <p> <? foreach ($brand_list as $row) { ?>
+                                       <p> <?  foreach ($brand_list as $row) { ?>
 
-                                             <? if ($brand_id == $row->brand_id) {
+                                             <?  if ($brand_id == $row->brand_id) {
                                                 echo $row->brand_name;
                                              } ?>
 
-                                          <? } ?>
+                                          <?  } ?>
 
                                        </p>
 
@@ -526,7 +527,7 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <p> <? echo $hsn_code; ?></p>
+                                       <p> <?  echo $hsn_code; ?></p>
 
                                        <span class="field-validation-valid" data-valmsg-for="Name"
                                           data-valmsg-replace="true"></span>
@@ -544,7 +545,7 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <p> <? echo $ref_code; ?></p>
+                                       <p> <?  echo $ref_code; ?></p>
 
                                        <span class="field-validation-valid" data-valmsg-for="Name"
                                           data-valmsg-replace="true"></span>
@@ -562,13 +563,13 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <p> <? foreach ($tax_list as $row) { ?>
+                                       <p> <?  foreach ($tax_list as $row) { ?>
 
-                                             <? if ($tax_id == $row->tax_id) {
+                                             <?  if ($tax_id == $row->tax_id) {
                                                 echo $row->tax_name;
                                              } ?>
 
-                                          <? } ?>
+                                          <?  } ?>
 
                                        </p>
 
@@ -591,7 +592,7 @@ if (!empty($product_category_detail)) {
                                        </label>
 
                                        <p>
-                                          <?
+                                          <? 
 
                                           if ($product_sell_to == 1) {
                                              echo "BOTH (Customer and Vendor)";
@@ -620,7 +621,7 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <p> <? if ($is_sell_local == 1) {
+                                       <p> <?  if ($is_sell_local == 1) {
                                           echo "Seasonkart Location";
                                        } else if ($is_sell_local == 1) {
                                           echo "All India";
@@ -643,7 +644,7 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <p> <? if ($is_bulk_enquiry == 1) {
+                                       <p> <?  if ($is_bulk_enquiry == 1) {
                                           echo "Yes";
                                        } else {
                                           echo "No";
@@ -667,12 +668,12 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <!-- <p><? echo $short_description; ?></p> -->
+                                       <!-- <p><?  echo $short_description; ?></p> -->
 
 
 
                                        <textarea class="search_textbox form-control" rows="8" name="short_description"
-                                          id="short_description"><? echo $short_description; ?></textarea>
+                                          id="short_description"><?  echo $short_description; ?></textarea>
 
                                        <span class="field-validation-valid" data-valmsg-for="Name"
                                           data-valmsg-replace="true"></span>
@@ -696,10 +697,10 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <!--  <div class="ex1"><p><? echo $description; ?></p></div> -->
+                                       <!--  <div class="ex1"><p><?  echo $description; ?></p></div> -->
 
                                        <textarea class="search_textbox ckeditor" name="description" id="description"
-                                          style="width: 576px; height: 200px;"><? echo $description; ?></textarea>
+                                          style="width: 576px; height: 200px;"><?  echo $description; ?></textarea>
 
 
 
@@ -723,10 +724,10 @@ if (!empty($product_category_detail)) {
 
                                        </label>
 
-                                       <!--  <div class="ex1"><p><? echo $application; ?></p></div> -->
+                                       <!--  <div class="ex1"><p><?  echo $application; ?></p></div> -->
 
                                        <textarea class="search_textbox ckeditor" name="application" id="application"
-                                          style="width: 576px; height: 200px;"><? echo $application; ?></textarea>
+                                          style="width: 576px; height: 200px;"><?  echo $application; ?></textarea>
 
 
 
@@ -749,12 +750,12 @@ if (!empty($product_category_detail)) {
                                        <div class="demo-radio-button">
 
                                           <input type="radio" class="radio-col-green" name="status" id="status1"
-                                             value="1" <?php if ($status)
+                                             value="1" <? php if ($status)
                                                 echo ' checked'; ?> required /> <label
                                              for="status1">Active &nbsp;&nbsp;</label>
 
                                           <input type="radio" class="radio-col-red" name="status" id="status2" value="0"
-                                             <?php if (!$status)
+                                             <? php if (!$status)
                                                 echo ' checked'; ?> />
 
                                           <label for="status2">Block &nbsp;&nbsp;</label>
@@ -763,7 +764,7 @@ if (!empty($product_category_detail)) {
 
                                     </div>
 
-                                    <? if ($product_id > 0) { ?>
+                                    <?  if ($product_id > 0) { ?>
 
                                        <div class="col-md-3">
 
@@ -776,7 +777,7 @@ if (!empty($product_category_detail)) {
 
                                           </label>
 
-                                          <p><?php if (!empty($added_by_name)) {
+                                          <p><? php if (!empty($added_by_name)) {
                                              echo $added_by_name;
                                           } else
                                              echo "N/A"; ?>
@@ -798,7 +799,7 @@ if (!empty($product_category_detail)) {
 
                                           </label>
 
-                                          <p><?php echo date('d-M-Y h:i:s A', strtotime($added_on)); ?></p>
+                                          <p><? php echo date('d-M-Y h:i:s A', strtotime($added_on)); ?></p>
 
                                           <span class="field-validation-valid" data-valmsg-for="Name"
                                              data-valmsg-replace="true"></span>
@@ -816,7 +817,7 @@ if (!empty($product_category_detail)) {
 
                                           </label>
 
-                                          <p><?php if ($updated_on != '0000-00-00 00:00:00') {
+                                          <p><? php if ($updated_on != '0000-00-00 00:00:00') {
                                              echo date('d-M-Y h:i:s A', strtotime($updated_on));
                                           } else
                                              echo "N/A"; ?>
@@ -838,7 +839,7 @@ if (!empty($product_category_detail)) {
 
                                           </label>
 
-                                          <p><?php if (!empty($updated_by_name)) {
+                                          <p><? php if (!empty($updated_by_name)) {
                                              echo $updated_by_name;
                                           } else
                                              echo "N/A"; ?>
@@ -849,7 +850,7 @@ if (!empty($product_category_detail)) {
 
                                        </div>
 
-                                    <? } ?>
+                                    <?  } ?>
 
                         </form>
 
@@ -880,16 +881,16 @@ if (!empty($product_category_detail)) {
 
                               <li class="isFolder isExpanded" title="New Parent Category">
 
-                                 <?php /*?><a href="0" target="super_category_id,0,true" ><?php */ ?> New Parent
-                                 Category<?php /*?></a><?php */ ?>
+                                 <? php /*?><a href="0" target="super_category_id,0,true" ><? php */ ?> New Parent
+                                 Category<? php /*?></a><? php */ ?>
 
-                                 <? foreach ($category_list as $row1) {
+                                 <?  foreach ($category_list as $row1) {
 
                                     if ($row1->super_category_id == 0) { ?>
 
                                        <ul>
 
-                                          <? $liClassExpend = '';
+                                          <?  $liClassExpend = '';
                                           $liClass = '';
                                           $liFolderCount = 0;
                                           foreach ($category_list as $row2) {
@@ -902,18 +903,18 @@ if (!empty($product_category_detail)) {
                                              $liClass = 'isFolder';
                                           } ?>
 
-                                          <li class="<? echo $liClass . " " . $liClassExpend; ?> " title="Parent Category">
+                                          <li class="<?  echo $liClass . " " . $liClassExpend; ?> " title="Parent Category">
 
-                                             <?php /*?><a href="0" target="super_category_id,<? echo $row1['category_id']; ?>,false" ><?php */ ?>      <? echo $row1->name; ?>      <?php /*?></a><?php */ ?>
+                                             <? php /*?><a href="0" target="super_category_id,<?  echo $row1['category_id']; ?>,false" ><? php */ ?>
+                                             <?  echo $row1->name; ?>       <? php /*?></a><? php */ ?>
 
-                                             <a href="0"
-                                                target="category_id[],<? echo $row1->category_id; ?>,<? if (in_array($row1->category_id, $category_id_arr)) {
-                                                      echo 'true';
-                                                   } else {
-                                                      echo "false";
-                                                   } ?>"><? echo $row1->name; ?></a>
+                                             <a href="0" target="category_id[],<?  echo $row1->category_id; ?>,<?  if (in_array($row1->category_id, $category_id_arr)) {
+                                                   echo 'true';
+                                                } else {
+                                                   echo "false";
+                                                } ?>"><?  echo $row1->name; ?></a>
 
-                                             <? foreach ($category_list as $row3) {
+                                             <?  foreach ($category_list as $row3) {
 
                                                 if ($row3->super_category_id == $row1->category_id) {
 
@@ -921,7 +922,7 @@ if (!empty($product_category_detail)) {
 
                                                    <ul>
 
-                                                      <? $liClassExpend = '';
+                                                      <?  $liClassExpend = '';
                                                       $liClass = '';
                                                       $liFolderCount = 0;
                                                       foreach ($category_list as $row4) {
@@ -934,30 +935,29 @@ if (!empty($product_category_detail)) {
                                                             $liClassExpend = 'isExpanded';
                                                       } ?>
 
-                                                      <li class="<? echo $liClass . " " . $liClassExpend; ?>  " title="Sub Category">
+                                                      <li class="<?  echo $liClass . " " . $liClassExpend; ?>  "
+                                                         title="Sub Category">
 
-                                                         <a href="0"
-                                                            target="category_id[],<? echo $row3->category_id; ?>,<? if (in_array($row3->category_id, $category_id_arr)) {
-                                                                  echo 'true';
-                                                               } else {
-                                                                  echo "false";
-                                                               } ?>"><? echo $row3->name; ?></a>
+                                                         <a href="0" target="category_id[],<?  echo $row3->category_id; ?>,<?  if (in_array($row3->category_id, $category_id_arr)) {
+                                                               echo 'true';
+                                                            } else {
+                                                               echo "false";
+                                                            } ?>"><?  echo $row3->name; ?></a>
 
                                                          <ul>
 
-                                                            <? foreach ($category_list as $row5) {
+                                                            <?  foreach ($category_list as $row5) {
 
                                                                if ($row5->super_category_id == $row3->category_id) { ?>
 
-                                                                  <li class="" title="Super Sub Category"><a href="0"
-                                                                        target="category_id[],<? echo $row5->category_id; ?>,<? if (in_array($row5->category_id, $category_id_arr)) {
-                                                                              echo 'true';
-                                                                           } else {
-                                                                              echo "false";
-                                                                           } ?>"><? echo $row5->name; ?></a>
+                                                                  <li class="" title="Super Sub Category"><a href="0" target="category_id[],<?  echo $row5->category_id; ?>,<?  if (in_array($row5->category_id, $category_id_arr)) {
+                                                                        echo 'true';
+                                                                     } else {
+                                                                        echo "false";
+                                                                     } ?>"><?  echo $row5->name; ?></a>
                                                                   </li>
 
-                                                               <? }
+                                                               <?  }
                                                             } ?>
 
                                                          </ul>
@@ -966,14 +966,14 @@ if (!empty($product_category_detail)) {
 
                                                    </ul>
 
-                                                <? }
+                                                <?  }
                                              } ?>
 
                                           </li>
 
                                        </ul>
 
-                                    <? }
+                                    <?  }
                                  } ?>
 
                               </li>
@@ -1012,12 +1012,13 @@ if (!empty($product_category_detail)) {
 
             <!-- /.box-header -->
 
-            <? if ($product_id <= 0) { ?><span style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You
-                  must save this product before adding product combinations.</span><? } ?>
+            <?  if ($product_id <= 0) { ?><span
+                  style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You
+                  must save this product before adding product combinations.</span><?  } ?>
 
             <div class="box-body">
 
-               <? if ($product_id >= 1) { ?>
+               <?  if ($product_id >= 1) { ?>
 
                   <table class="table table-striped">
 
@@ -1058,11 +1059,11 @@ if (!empty($product_category_detail)) {
                         type: "POST",
 
 
-                        url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationList',
+                        url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductCombinationList',
 
                         //dataType : "json", 
 
-                        data: { "product_id": <? echo $product_id; ?> , "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                        data: { "product_id": <?  echo $product_id; ?> , "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                         success: function (result) {
 
@@ -1082,7 +1083,7 @@ if (!empty($product_category_detail)) {
 
                            type: "POST",
 
-                           url: '<? echo MAINSITE_Admin ?>setProductDefaultCombination',
+                           url: '<?  echo MAINSITE_Admin ?>setProductDefaultCombination',
 
                            //dataType : "json", 
 
@@ -1122,68 +1123,68 @@ if (!empty($product_category_detail)) {
 
                         document.getElementById('select_product_attribute_id').focus();
 
-                        <? foreach ($product_combination_detail as $row) {
+                        <?  foreach ($product_combination_detail as $row) {
                            $row = (array) $row; ?>
 
-                           if (id == <? echo $row['product_combination_id'] ?>) {
+                           if (id == <?  echo $row['product_combination_id'] ?>) {
 
                               //alert(id);
 
-                              document.getElementById('product_combination_id').value = '<? echo $row['product_combination_id'] ?>';
+                              document.getElementById('product_combination_id').value = '<?  echo $row['product_combination_id'] ?>';
 
-                              document.getElementById('combref_code').value = '<? echo $row['ref_code'] ?>';
+                              document.getElementById('combref_code').value = '<?  echo $row['ref_code'] ?>';
 
-                              document.getElementById('quantity').value = '<? echo $row['quantity'] ?>';
+                              document.getElementById('quantity').value = '<?  echo $row['quantity'] ?>';
 
-                              document.getElementById('product_weight').value = '<? echo $row['product_weight'] ?>';
+                              document.getElementById('product_weight').value = '<?  echo $row['product_weight'] ?>';
 
-                              document.getElementById('product_dimension').value = '<? echo $row['product_dimension'] ?>';
+                              document.getElementById('product_dimension').value = '<?  echo $row['product_dimension'] ?>';
 
-                              document.getElementById('price').value = '<? echo $row['price'] ?>';
+                              document.getElementById('price').value = '<?  echo $row['price'] ?>';
 
-                              document.getElementById('discount').value = '<? echo $row['discount'] ?>';
+                              document.getElementById('discount').value = '<?  echo $row['discount'] ?>';
 
-                              document.getElementById('final_price').value = '<? echo $row['final_price'] ?>';
+                              document.getElementById('final_price').value = '<?  echo $row['final_price'] ?>';
 
-                              document.getElementById('comb_slug_url').value = '<? echo $row['comb_slug_url'] ?>';
+                              document.getElementById('comb_slug_url').value = '<?  echo $row['comb_slug_url'] ?>';
 
-                              document.getElementById('product_l').value = '<? echo $row['product_l'] ?>';
+                              document.getElementById('product_l').value = '<?  echo $row['product_l'] ?>';
 
-                              document.getElementById('product_b').value = '<? echo $row['product_b'] ?>';
+                              document.getElementById('product_b').value = '<?  echo $row['product_b'] ?>';
 
-                              document.getElementById('product_h').value = '<? echo $row['product_h'] ?>';
+                              document.getElementById('product_h').value = '<?  echo $row['product_h'] ?>';
 
-                              document.getElementById('product_weight').value = '<? echo $row['product_weight'] ?>';
+                              document.getElementById('product_weight').value = '<?  echo $row['product_weight'] ?>';
 
-                              if (<? echo $row['trending_now'] ?>== 1) { document.getElementById('trending_now1').checked = true; }
+                              if (<?  echo $row['trending_now'] ?>== 1) { document.getElementById('trending_now1').checked = true; }
 
                               else { document.getElementById('trending_now2').checked = true; }
 
-                              if (<? echo $row['hot_selling_now'] ?>== 1) { document.getElementById('hot_selling_now1').checked = true; }
+                              if (<?  echo $row['hot_selling_now'] ?>== 1) { document.getElementById('hot_selling_now1').checked = true; }
 
                               else { document.getElementById('hot_selling_now2').checked = true; }
 
-                              if (<? echo $row['best_sellers'] ?>== 1) { document.getElementById('best_sellers1').checked = true; }
+                              if (<?  echo $row['best_sellers'] ?>== 1) { document.getElementById('best_sellers1').checked = true; }
 
                               else { document.getElementById('best_sellers2').checked = true; }
 
-                              if (<? echo $row['new_product'] ?>== 1) { document.getElementById('new_product1').checked = true; }
+                              if (<?  echo $row['new_product'] ?>== 1) { document.getElementById('new_product1').checked = true; }
 
                               else { document.getElementById('new_product2').checked = true; }
 
-                              if (<? echo $row['status'] ?>== 1) { document.getElementById('combstatus1').checked = true; }
+                              if (<?  echo $row['status'] ?>== 1) { document.getElementById('combstatus1').checked = true; }
 
                               else { document.getElementById('combstatus2').checked = false; }
 
-                              document.getElementById('product_image_id_<? echo $row['product_image_id'] ?>').checked = true;
+                              document.getElementById('product_image_id_<?  echo $row['product_image_id'] ?>').checked = true;
 
-                              document.getElementById('img_product_image_id_<? echo $row['product_image_id'] ?>').border = "5px !important";
+                              document.getElementById('img_product_image_id_<?  echo $row['product_image_id'] ?>').border = "5px !important";
 
-                              if ('<? echo $row['discount_var'] ?>' == 'Rs')
+                              if ('<?  echo $row['discount_var'] ?>' == 'Rs')
 
                                  document.getElementById('discount_var').getElementsByTagName('option')[1].selected = 'selected';
 
-                              if ('<? echo $row['discount_var'] ?>' == '%')
+                              if ('<?  echo $row['discount_var'] ?>' == '%')
 
                                  document.getElementById('discount_var').getElementsByTagName('option')[2].selected = 'selected';
 
@@ -1191,7 +1192,7 @@ if (!empty($product_category_detail)) {
 
                               $('li', ul).each(function () { $(this).remove(); });
 
-                              <?
+                              <? 
 
                               foreach ($product_combination_attribute_detail as $col) {
                                  $col = (array) $col;
@@ -1235,15 +1236,15 @@ if (!empty($product_category_detail)) {
 
                                     var li = document.createElement("li");
 
-                                    li.appendChild(document.createTextNode('<? echo $attribute; ?>'));
+                                    li.appendChild(document.createTextNode('<?  echo $attribute; ?>'));
 
-                                    li.innerHTML = '<? echo "$attribute : $combination_value $attribute_val"; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img width="22px" height="22px" src="<?= _admin_files_ . "images/cancel.png" ?>" /> <input type="hidden" name="product_attribute_id[]" value="<? echo $product_attribute_id ?>" /><input type="hidden" name="combination_value[]" value="<? echo $combination_value ?>" /><input type="hidden" name="product_attribute_value_id[]" value="<? echo $product_attribute_value_id ?>"  />';
+                                    li.innerHTML = '<?  echo "$attribute : $combination_value $attribute_val"; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img width="22px" height="22px" src="<? php echo _admin_files_ . "images/cancel.png" ?>" /> <input type="hidden" name="product_attribute_id[]" value="<?  echo $product_attribute_id ?>" /><input type="hidden" name="combination_value[]" value="<?  echo $combination_value ?>" /><input type="hidden" name="product_attribute_value_id[]" value="<?  echo $product_attribute_value_id ?>"  />';
 
                                     li.setAttribute("onclick", "$(this).remove();");
 
                                     ul.appendChild(li);
 
-                                    <?
+                                 <? 
 
                                  }
 
@@ -1267,7 +1268,7 @@ if (!empty($product_category_detail)) {
 
                            }
 
-                        <? } ?>
+                        <?  } ?>
 
 
 
@@ -1275,7 +1276,7 @@ if (!empty($product_category_detail)) {
 
                   </script>
 
-               <? } ?>
+               <?  } ?>
 
                <script>
 
@@ -1391,14 +1392,15 @@ if (!empty($product_category_detail)) {
 
             <!-- /.box-header -->
 
-            <? if ($product_id <= 0) { ?><span style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You
-                  must save this product before adding images.</span><? } ?>
+            <?  if ($product_id <= 0) { ?><span
+                  style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You
+                  must save this product before adding images.</span><?  } ?>
 
             <div class="box-body">
 
-               <? if ($product_id >= 1) { ?>
+               <?  if ($product_id >= 1) { ?>
 
-                  <link rel="stylesheet" href="<? echo MAINSITE ?>assets/administrator/css/tablednd.css" type="text/css" />
+                  <link rel="stylesheet" href="<?  echo MAINSITE ?>assets/administrator/css/tablednd.css" type="text/css" />
 
                   <div class="tableDemo">
 
@@ -1412,7 +1414,7 @@ if (!empty($product_category_detail)) {
 
                               <th>Position</th>
 
-                              <?php /*?><th class="text-center">Set As Default</th><?php */ ?>
+                              <? php /*?><th class="text-center">Set As Default</th><? php */ ?>
 
                               <th class="text-right">Action</th>
 
@@ -1426,7 +1428,7 @@ if (!empty($product_category_detail)) {
 
                         <tr style="display:none">
 
-                           <td><img src="<? echo MAINSITE ?>images/service-8.jpg" width="200" /></td>
+                           <td><img src="<?  echo MAINSITE ?>images/service-8.jpg" width="200" /></td>
 
                            <td class="text-center"><input id="checkBoxId_" class="checkBoxClass"
                                  onclick="setProductDefaultImage(id , productId)" type="checkbox" /></td>
@@ -1442,7 +1444,7 @@ if (!empty($product_category_detail)) {
 
                   </div>
 
-                  <script src="<?= _admin_files_ ?>js/jquery.tablednd.js" type="text/javascript"></script>
+                  <script src="<? php echo _admin_files_ ?>js/jquery.tablednd.js" type="text/javascript"></script>
 
                   <script>
 
@@ -1452,11 +1454,11 @@ if (!empty($product_category_detail)) {
 
 
 
-                        url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageList',
+                        url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageList',
 
                         //dataType : "json", 
 
-                        data: { "product_id": <? echo $product_id; ?> , "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                        data: { "product_id": <?  echo $product_id; ?> , "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                         success: function (result) {
 
@@ -1500,7 +1502,7 @@ if (!empty($product_category_detail)) {
 
 
 
-                              $('#ProductImageList').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<?= _admin_files_ . "images/load.gif"; ?>" /></div></td></tr>');
+                              $('#ProductImageList').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<? php echo _admin_files_ . "images/load.gif"; ?>" /></div></td></tr>');
 
                               $.ajax({
 
@@ -1508,11 +1510,11 @@ if (!empty($product_category_detail)) {
 
 
 
-                                 url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageListNewPos',
+                                 url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/GetCompleteProductImageListNewPos',
 
                                  //dataType : "json", 
 
-                                 data: { "product_id": <? echo $product_id; ?> , 'podId': podId, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                                 data: { "product_id": <?  echo $product_id; ?> , 'podId': podId, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                                  success: function (result) {
 
@@ -1578,11 +1580,11 @@ if (!empty($product_category_detail)) {
 
                            type: "POST",
 
-                           url: '<? echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultImage',
+                           url: '<?  echo MAINSITE_Admin ?>catalog/Product-Module/setProductDefaultImage',
 
                            //dataType : "json", 
 
-                           data: { "productId": productId, "id": id, "<?= $csrf['name'] ?>": "<?= $csrf['hash'] ?>" },
+                           data: { "productId": productId, "id": id, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
 
                            success: function (result) {
 
@@ -1616,7 +1618,7 @@ if (!empty($product_category_detail)) {
 
                   </script>
 
-               <? } ?>
+               <?  } ?>
 
             </div>
 
@@ -1638,35 +1640,35 @@ if (!empty($product_category_detail)) {
 
             <!-- /.box-header -->
 
-            <?
+            <? 
 
             if ($alert == "success" || $alert == "fail") { ?><span
-                  style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<? if ($alert == "success") {
+                  style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?  if ($alert == "success") {
                      echo "Record Updated Successfully.";
                   } else if ($alert == "fail") {
                      echo "Error in updating this input.";
-                  } ?></span><? } ?>
+                  } ?></span><?  } ?>
 
             <div class="box-body">
 
-               <? if ($product_id <= 0) { ?><span
+               <?  if ($product_id <= 0) { ?><span
                      style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save this product
-                     before adding SEO Settings.</span><? } ?>
+                     before adding SEO Settings.</span><?  } ?>
 
-               <? if ($product_id >= 1) { ?>
+               <?  if ($product_id >= 1) { ?>
 
-                  <? if (!empty($product_combination_detail)) { ?>
+                  <?  if (!empty($product_combination_detail)) { ?>
 
                      <div class="container col-md-12">
 
                         <div class="panel-group" id="accordion">
 
-                           <? $ss_count = 0;
+                           <?  $ss_count = 0;
                            foreach ($product_combination_detail as $pcd) {
                               $ss_count++;
                               $pcd = (array) $pcd; ?>
 
-                              <? //print_r($pcd);
+                              <?  //print_r($pcd);
                               
                                        foreach ($product_combination_attribute_detail as $col) {
                                           $show = "";
@@ -1713,9 +1715,9 @@ if (!empty($product_category_detail)) {
                                     <h4 class="panel-title">
 
                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                          href="#seo_setting_<? echo $ss_count; ?>">
+                                          href="#seo_setting_<?  echo $ss_count; ?>">
 
-                                          <? echo $pcd['product_display_name']; ?> - <? echo $show; ?>
+                                          <?  echo $pcd['product_display_name']; ?> - <?  echo $show; ?>
 
                                        </a>
 
@@ -1723,20 +1725,19 @@ if (!empty($product_category_detail)) {
 
                                  </div>
 
-                                 <div id="seo_setting_<? echo $ss_count; ?>"
-                                    class="panel-collapse collapse <? if ($ss_count == 1) {
+                                 <div id="seo_setting_<?  echo $ss_count; ?>" class="panel-collapse collapse <?  if ($ss_count == 1) {
                                        echo ' in';
                                     } ?> ">
 
                                     <div class="panel-body">
 
-                                       <?php /*?>
+                                       <? php /*?>
 
-                                           <pre><? print_r($product_seo_detail) ?></pre>
+                                               <pre><?  print_r($product_seo_detail) ?></pre>
 
-                                           <?php */ ?>
+                                               <? php */ ?>
 
-                                       <?
+                                       <? 
 
                                        $product_seo_id = 0;
 
@@ -1770,22 +1771,22 @@ if (!empty($product_category_detail)) {
 
                                        ?>
 
-                                       <form role="form" class="form-horizontal" name="ProductFormSEO_<? echo $ss_count ?>"
-                                          id="ProductFormSEO_<? echo $ss_count ?>"
-                                          action="<?php echo MAINSITE_Admin . 'products/doAddProductSEO'; ?>" method="post"
+                                       <form role="form" class="form-horizontal" name="ProductFormSEO_<?  echo $ss_count ?>"
+                                          id="ProductFormSEO_<?  echo $ss_count ?>"
+                                          action="<? php echo MAINSITE_Admin . 'products/doAddProductSEO'; ?>" method="post"
                                           enctype="multipart/form-data">
 
-                                          <input type="hidden" name="action" id="action_info_<? echo $ss_count ?>" value="" />
+                                          <input type="hidden" name="action" id="action_info_<?  echo $ss_count ?>" value="" />
 
-                                          <input type="hidden" name="product_id" id="product_id_<? echo $ss_count ?>"
-                                             value="<?php echo $product_id; ?>" />
+                                          <input type="hidden" name="product_id" id="product_id_<?  echo $ss_count ?>"
+                                             value="<? php echo $product_id; ?>" />
 
                                           <input type="hidden" name="product_combination_id"
-                                             id="product_combination_id_<? echo $ss_count ?>"
-                                             value="<?php echo $pcd['product_combination_id']; ?>" />
+                                             id="product_combination_id_<?  echo $ss_count ?>"
+                                             value="<? php echo $pcd['product_combination_id']; ?>" />
 
-                                          <input type="hidden" name="product_seo_id" id="product_seo_id_<? echo $ss_count ?>"
-                                             value="<? echo $product_seo_id ?>" />
+                                          <input type="hidden" name="product_seo_id" id="product_seo_id_<?  echo $ss_count ?>"
+                                             value="<?  echo $product_seo_id ?>" />
 
                                           <div class="form-group form-horizontal">
 
@@ -1806,7 +1807,7 @@ if (!empty($product_category_detail)) {
 
                                                 <div class="input-group input-group-required">
 
-                                                   <? echo $slug_url ?>
+                                                   <?  echo $slug_url ?>
 
                                                    <div class="input-group-btn">
 
@@ -1840,7 +1841,7 @@ if (!empty($product_category_detail)) {
 
                                                 <div class="input-group input-group-required">
 
-                                                   <? echo $meta_title ?>
+                                                   <?  echo $meta_title ?>
 
                                                    <div class="input-group-btn">
 
@@ -1874,7 +1875,7 @@ if (!empty($product_category_detail)) {
 
                                                 <div class="input-group input-group-required">
 
-                                                   <? echo $meta_description ?>
+                                                   <?  echo $meta_description ?>
 
                                                    <div class="input-group-btn">
 
@@ -1908,7 +1909,7 @@ if (!empty($product_category_detail)) {
 
                                                 <div class="input-group input-group-required">
 
-                                                   <? echo $meta_keywords ?>
+                                                   <?  echo $meta_keywords ?>
 
                                                    <div class="input-group-btn">
 
@@ -1942,7 +1943,7 @@ if (!empty($product_category_detail)) {
 
                                                 <div class="input-group input-group-required">
 
-                                                   <? echo $others ?>
+                                                   <?  echo $others ?>
 
                                                    <div class="input-group-btn"><span class="required"></span>
 
@@ -1965,20 +1966,20 @@ if (!empty($product_category_detail)) {
 
                               </div>
 
-                           <? } ?>
+                           <?  } ?>
 
                         </div>
 
                      </div>
 
-                  <? } else { ?>
+                  <?  } else { ?>
 
                      <span style="color:#FF0000; font-size:14px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must save any
                         combination this product before adding SEO Settings.</span>
 
-                  <? } ?>
+                  <?  } ?>
 
-               <? } ?> 
+               <?  } ?> 
 
             </div>
 
@@ -2010,9 +2011,9 @@ if (!empty($product_category_detail)) {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-<script src="<?= _admin_files_ ?>js/jquery.easytree.js"></script>
+<script src="<? php echo _admin_files_ ?>js/jquery.easytree.js"></script>
 
-<?php /*?><script src="<? echo MAINSITE?>dist/js/lightbox-plus-jquery.min.js"></script><?php */ ?>
+<? php /*?><script src="<?  echo MAINSITE?>dist/js/lightbox-plus-jquery.min.js"></script><? php */ ?>
 
 <script>
 

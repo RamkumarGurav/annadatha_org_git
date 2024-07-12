@@ -1,4 +1,4 @@
-<?
+<?php 
 require_once(APPPATH.'third_party/dtdc_auth.php');
 
 function str_limit($value , $start=0, $limit = 100, $end = '...')
@@ -75,7 +75,7 @@ foreach($od->details as $odd){
 
 ?>
 
-<?php
+<?php 
 $hdr = array('messageType'=>"CPDP_API",
 'messageDateTime'=>date('Y-m-d').'T'.date('H:i:s').'+05:30',
 'accessToken'=>$key,

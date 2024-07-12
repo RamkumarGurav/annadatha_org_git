@@ -205,8 +205,8 @@ $products_image = array_merge($products_image_d, $products_image_o);
                      <div class="alert alert-danger hidden" role="alert" id='bulk_enquiry_form_err'></div>
                   </div>
                   <?php echo form_open(base_url() . __contactUs__, array('method' => 'post', 'id' => 'bulk_enquiry_form', 'name' => 'bulk_enquiry_form', 'style' => '', 'class' => '')); ?>
-                  <input type="hidden" name="product_id" value="<?= $product_id ?>" />
-                  <input type="hidden" name="product_name" value="<?= $product_main_name ?>" />
+                  <input type="hidden" name="product_id" value="<?php echo $product_id ?>" />
+                  <input type="hidden" name="product_name" value="<?php echo $product_main_name ?>" />
                   <?php echo $message; ?>
                   <div id='not_find_product_form_msg'></div>
                   <div class="alert alert-danger hidden" role="alert" id='not_find_product_form_err'></div>
@@ -356,14 +356,14 @@ $products_image = array_merge($products_image_d, $products_image_o);
                                     $picount++; ?>
                                     <div class="carousel-item <? if ($picount == 1) {
                                        echo "active";
-                                    } ?>"
-                                       data-bs-interval="10000">
-                                       <div class="zoom-outer" data-image="<?= $LimagePath . $pi['product_image_name'] ?>">
+                                    } ?>" data-bs-interval="10000">
+                                       <div class="zoom-outer"
+                                          data-image="<?php echo $LimagePath . $pi['product_image_name'] ?>">
                                           <figure class="zoom" onmousemove="zoom(event)"
-                                             style="background-image: url(<?= $LimagePath . $pi['product_image_name'] ?>)">
+                                             style="background-image: url(<?php echo $LimagePath . $pi['product_image_name'] ?>)">
                                              <img class="img-fluid" id="zoom"
-                                                src="<?= $LimagePath . $pi['product_image_name'] ?>"
-                                                alt="<?= $product_name ?>" title="<?= $product_name ?>" />
+                                                src="<?php echo $LimagePath . $pi['product_image_name'] ?>"
+                                                alt="<?php echo $product_name ?>" title="<?php echo $product_name ?>" />
                                           </figure>
                                        </div>
                                     </div>
@@ -385,11 +385,11 @@ $products_image = array_merge($products_image_d, $products_image_o);
                                  foreach ($products_image as $pi) {
                                     ?>
                                     <button type="button" data-bs-target="#carouselExampleDark"
-                                       data-bs-slide-to="<?= $picount ?>" class="active" aria-current="true"
+                                       data-bs-slide-to="<?php echo $picount ?>" class="active" aria-current="true"
                                        aria-label="Slide <? echo $picount + 1; ?>" style="    width: 80px;"> <img
-                                          src="<?= $SimagePath . $pi['product_image_name'] ?>"
-                                          data-mdb-img="<?= $LimagePath . $pi['product_image_name'] ?>"
-                                          alt="<?= $product_name ?>" title="<?= $product_name ?>"
+                                          src="<?php echo $SimagePath . $pi['product_image_name'] ?>"
+                                          data-mdb-img="<?php echo $LimagePath . $pi['product_image_name'] ?>"
+                                          alt="<?php echo $product_name ?>" title="<?php echo $product_name ?>"
                                           class=" d-block w-100 img-fluid" style="height: auto !important" /></button>
                                     <? $picount++;
                                  } ?>
@@ -404,31 +404,31 @@ $products_image = array_merge($products_image_d, $products_image_o);
                      <ol>
                         <? echo $breadcrumbs; ?>&nbsp;<i class="fa fa-angle-right"></i>
                         <li>
-                           <?= $product_name ?>
+                           <?php echo $product_name ?>
                         </li>
                      </ol>
                   </nav>
 
                   <h3 class="tt-product-category">
-                     <? //=$sub_cat_slug ?><!-- Brass Products -->
+                     <?  //=$sub_cat_slug ?><!-- Brass Products -->
                   </h3>
                   <h1 class="h1 tt-producttitle">
-                     <?= $product_display_name ?>
+                     <?php echo $product_display_name ?>
                   </h1>
 
 
                   <div class="product-prices js-product-prices col-sm-10 col-xs-10">
                      <div class="product-price h5 ">
                         <div class="current-price d-flex align-items-center">
-                           <span class="current-price-value" content="12.9"><?= $currency->symbol ?>
+                           <span class="current-price-value" content="12.9"><?php echo $currency->symbol ?>
                               <? echo number_format($final_price) ?>
                            </span>&nbsp;
                            <? if (!empty($discount) && $discount > 0) { ?>
-                              <strike class="strike"><?= $currency->symbol ?>
+                              <strike class="strike"><?php echo $currency->symbol ?>
                                  <? echo number_format($price) ?>
                               </strike>&nbsp;<span class="pdisc1"><span class="disc-price">You Save:
-                                    <span><span><?= $currency->symbol ?>
-                                          <?= number_format($discounted_price) ?>
+                                    <span><span><?php echo $currency->symbol ?>
+                                          <?php echo number_format($discounted_price) ?>
                                        </span></span></span></span>
                            <?php } ?>
                            <div class="showhim">
@@ -443,7 +443,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
                                              Maximum Retail Price
                                              <div class="">(incl. of all taxes)</div>
                                           </div>
-                                          <div class=""> <?= $currency->symbol ?>
+                                          <div class=""> <?php echo $currency->symbol ?>
                                              <? echo number_format($price) ?>
                                           </div>
                                        </div>
@@ -451,13 +451,13 @@ $products_image = array_merge($products_image_d, $products_image_o);
                                           <div class="showme-s-price">
                                              <div class="showme-price">
                                                 <div class="">Selling Price</div>
-                                                <div class=""> <?= $currency->symbol ?>
+                                                <div class=""> <?php echo $currency->symbol ?>
                                                    <? echo number_format($final_price) ?>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="">
-                                             <div class="showme-overall">Overall you save <?= $currency->symbol ?>
+                                             <div class="showme-overall">Overall you save <?php echo $currency->symbol ?>
                                                 <? echo number_format($discounted_price) ?> on this product
                                              </div>
                                           </div>
@@ -492,7 +492,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
                   <div class="product-information">
                      <div id="product-description-short-18">
                         <p class="main_parag2">
-                           <?= $short_description_string ?><i class="fa fa-hand-o-left"></i>
+                           <?php echo $short_description_string ?><i class="fa fa-hand-o-left"></i>
                         </p>
                      </div>
 
@@ -505,7 +505,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
                      <div class="row">
                         <div class="col-lg-12">
                            <p class="newp"><strong>Product code:</strong>
-                              <?= $combi_ref_code ?>
+                              <?php echo $combi_ref_code ?>
                            </p>
 
                         </div>
@@ -549,7 +549,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
             <? $picount = 1;
             foreach ($products_image as $pi) {
                ?>
-                    <a class="fancybox-buttons" href="<?= $LimagePath . $pi['product_image_name'] ?>" data-fancybox-group="button" ><li><img src="<?= $LimagePath . $pi['product_image_name'] ?>"></li></a>
+                    <a class="fancybox-buttons" href="<?php echo $LimagePath . $pi['product_image_name'] ?>" data-fancybox-group="button" ><li><img src="<?php echo $LimagePath . $pi['product_image_name'] ?>"></li></a>
                     <? } ?>
         </ul>
          <div class="exzoom_nav1"></div>
@@ -566,80 +566,80 @@ $products_image = array_merge($products_image_d, $products_image_o);
 </div>
 </div> -->
 
-            <?php /*?><div class="sticky-carousel">
-          <div class="row">
+            <?php  /*?><div class="sticky-carousel">
+<div class="row">
 
-             <div id="myCarousel" class="carousel slide" data-bs-interval="false">
+   <div id="myCarousel" class="carousel slide" data-bs-interval="false">
 
-                <div id="carousel" class="carousel slide gallery" data-ride="carousel">
-                   <div class="carousel-inner ">
-                      <? $picount = 1;
-                         foreach ($products_image as $pi) {
-                           ?>
-                      <div class="carousel-item <? if($picount==1){echo "active";} ?>" data-bs-slide-number="<?=$picount?>">
-                         <img  class="magniflier" src="<?= $LimagePath . $pi['product_image_name'] ?>" alt="<?=$product_name ?>" title="<?=$product_name ?>" >
-                      </div>
-                      <? $picount++; } ?>
-                   </div>
-
-
-
-                   <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">
-                  <span class="icon-prev  iconbck hidden-xs" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-           <span class="sr-only">Previous</span>
-                   </a>
-                   <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">
-                  <span class="icon-next iconbck " aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-           <span class="sr-only">Next</span>
-                   </a>
-                </div>
+      <div id="carousel" class="carousel slide gallery" data-ride="carousel">
+         <div class="carousel-inner ">
+            <?  $picount = 1;
+               foreach ($products_image as $pi) {
+                 ?>
+            <div class="carousel-item <?  if($picount==1){echo "active";} ?>" data-bs-slide-number="<?php  echo $picount?>">
+               <img  class="magniflier" src="<?php  echo  $LimagePath . $pi['product_image_name'] ?>" alt="<?php  echo $product_name ?>" title="<?php  echo $product_name ?>" >
+            </div>
+            <?  $picount++; } ?>
+         </div>
 
 
 
-
-                <div id="carousel-thumbs" class="carousel slide" data-bs-ride="carousel">
-                   <div class="carousel-inner">
-                      <? $thumb_image_count=1;$i_count = 1;$four_items = 1;
-                      foreach ($products_image as $pi) { ?>
-                      <? if(($i_count %4) == 1 ){ ?>
-                      <div class="carousel-item <?=($thumb_image_count==1)?"active":"" ?>" data-bs-slide-number="<?=$four_items?>">
-                         <div class="row mx-0">
-                            <? } ?>
-                            <div id="carousel-selector-<?=$thumb_image_count;?>" class="thumb col-lg-3 col-3 px-0 py-2 <?php if($thumb_image_count<1) { echo "selected"; }?>" data-bs-target="#carousel" data-bs-slide-to="<?=$thumb_image_count;?>">
-                               <img src="<?= $SimagePath . $pi['product_image_name'] ?>" class="img-fluid" alt="<?=$product_name ?>" title="<?= $product_name ?>">
-                            </div>
-                            <?php
-                               if($i_count > 1){
-                                  ?>
-                            <? if(($i_count %4) == 0 || $i_count == count($products_image) ){ ?>
-                               <? $four_items++;?>
-                         </div>
-                      </div>
-                      <? } ?>
-                      <?php
-                         }
-                         ?>
-
-                      <?php $i_count++; $thumb_image_count++;} ?>
-
-                      <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-bs-slide="prev">
-                  <span class="icon-prev  iconbck hidden-xs" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-           <span class="sr-only">Previous</span>
-                   </a>
-                   <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-bs-slide="next">
-                  <span class="icon-next iconbck " aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-           <span class="sr-only">Next</span>
-                   </a>
-
-
-                   </div>
-                </div>
+         <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">
+        <span class="icon-prev  iconbck hidden-xs" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
+ <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">
+        <span class="icon-next iconbck " aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+ <span class="sr-only">Next</span>
+         </a>
+      </div>
 
 
 
-             </div>
-          </div>
-       </div><?php */ ?>
+
+      <div id="carousel-thumbs" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-inner">
+            <?  $thumb_image_count=1;$i_count = 1;$four_items = 1;
+            foreach ($products_image as $pi) { ?>
+            <?  if(($i_count %4) == 1 ){ ?>
+            <div class="carousel-item <?php  echo ($thumb_image_count==1)?"active":"" ?>" data-bs-slide-number="<?php  echo $four_items?>">
+               <div class="row mx-0">
+                  <?  } ?>
+                  <div id="carousel-selector-<?php  echo $thumb_image_count;?>" class="thumb col-lg-3 col-3 px-0 py-2 <?php  if($thumb_image_count<1) { echo "selected"; }?>" data-bs-target="#carousel" data-bs-slide-to="<?php  echo $thumb_image_count;?>">
+                     <img src="<?php  echo  $SimagePath . $pi['product_image_name'] ?>" class="img-fluid" alt="<?php  echo $product_name ?>" title="<?php  echo  $product_name ?>">
+                  </div>
+                  <?php 
+                     if($i_count > 1){
+                        ?>
+                  <?  if(($i_count %4) == 0 || $i_count == count($products_image) ){ ?>
+                     <?  $four_items++;?>
+               </div>
+            </div>
+            <?  } ?>
+            <?php 
+               }
+               ?>
+
+            <?php  $i_count++; $thumb_image_count++;} ?>
+
+            <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-bs-slide="prev">
+        <span class="icon-prev  iconbck hidden-xs" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
+ <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-bs-slide="next">
+        <span class="icon-next iconbck " aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+ <span class="sr-only">Next</span>
+         </a>
+
+
+         </div>
+      </div>
+
+
+
+   </div>
+</div>
+</div><?php  */ ?>
 
 
          </div>
@@ -654,10 +654,10 @@ $products_image = array_merge($products_image_d, $products_image_o);
             <div class="">
 
                <?
-               include(APPPATH . 'views/template/product-list-detail.php');
+               include (APPPATH . 'views/template/product-list-detail.php');
 
                ob_start();
-               require(APPPATH . 'views/template/product-list-detail-footer.php');
+               require (APPPATH . 'views/template/product-list-detail-footer.php');
                $footer_data = ob_get_clean();
 
                //$footer_data = include(APPPATH.'views/templates/product-list-detail-footer.php' );  ?>
@@ -667,7 +667,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
                   ?>
 
 
-                  <? //$this->load->view('templates/product-list',$this->data);  ?>
+                  <?  //$this->load->view('templates/product-list',$this->data);  ?>
 
                   <?
 
@@ -734,12 +734,12 @@ $products_image = array_merge($products_image_d, $products_image_o);
 
 
 
-                        <? include(APPPATH . 'views/template/product-list-detail.php'); ?>
+                        <? include (APPPATH . 'views/template/product-list-detail.php'); ?>
 
                      <? }
                   } ?>
 
-                  <?
+               <?
                } ?>
 
                <div class="clearfix"></div>
@@ -759,7 +759,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
             <? } ?>
          </div>
          <div class="col-lg-8">
-         <div class="container">
+            <div class="container">
                <div class="row">
                   <div class="product-tab" id="down">
                      <div class="dt-sc-tabs-container">
@@ -774,7 +774,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
                         <div class="dt-sc-tabs-content  product-single__description rte" id="tab-description"
                            style="display: block;">
                            <p> <strong>Description : </strong>
-                              <?= $description ?>
+                              <?php echo $description ?>
                            </p>
                         </div>
 
@@ -782,7 +782,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
                         <div class="dt-sc-tabs-content" id="tab-custom" style="display: none;">
                            <p><strong>Application : </strong></p>
                            <p>
-                              <?= $application ?>
+                              <?php echo $application ?>
                            </p>
                         </div>
 
@@ -927,7 +927,7 @@ $products_image = array_merge($products_image_d, $products_image_o);
                      <div id="smartblog-carousel" class="owl-carousel product_list owl-loaded owl-drag">
                         <div class="owl-slider">
                            <div id="slider_related_products_now" class="owl-carousel"
-                              data-val="<?= $product_id ?> , <?= $product_combination_id ?>">
+                              data-val="<?php echo $product_id ?> , <?php echo $product_combination_id ?>">
 
                            </div>
                         </div>
@@ -971,7 +971,7 @@ $short_description = str_replace("'", '', $short_description);
   "mpn": "<? echo $combi_ref_code; ?>",
   "brand": {
     "@type": "Brand",
-    "name": "<?= $brand_name ?>"
+    "name": "<?php echo $brand_name ?>"
   },
   "review": {
     "@type": "Review",
@@ -982,7 +982,7 @@ $short_description = str_replace("'", '', $short_description);
     },
     "author": {
       "@type": "Person",
-      "name": "<?= _project_name_ ?>"
+      "name": "<?php echo _project_name_ ?>"
     }
   },
   "aggregateRating": {
@@ -1000,7 +1000,7 @@ $short_description = str_replace("'", '', $short_description);
     "availability": "InStock",
     "seller": {
       "@type": "Organization",
-      "name": "<?= _project_name_ ?>"
+      "name": "<?php echo _project_name_ ?>"
     }
   }
 }
@@ -1044,7 +1044,7 @@ $short_description = str_replace("'", '', $short_description);
   "@type":"Place",
   "image": "<? echo $LimagePath . $product_image_name; ?>",
   "@id":"<? echo $product_url; ?>",
-  "name":"Rs.<? echo $final_price; ?>-<? echo $product_name; ?> <?= _project_name_ ?>",
+  "name":"Rs.<? echo $final_price; ?>-<? echo $product_name; ?> <?php echo _project_name_ ?>",
   "address":{
     "@type":"PostalAddress",
     "streetAddress":"MPP Complex, Shop No. 14 15 Siddipet Road Ramayampet ",
@@ -1154,7 +1154,7 @@ $short_description = str_replace("'", '', $short_description);
 
          $('#PincodeData').html('');
          var pincode_d = document.getElementById('pincode_d');
-         var total_weight = <?= $product_weight ?>;
+         var total_weight = <?php echo $product_weight ?>;
          if (pincode_d.value == '') {
             return false;
          }
@@ -1175,7 +1175,7 @@ $short_description = str_replace("'", '', $short_description);
          $('#PincodeData').html('Checking Availability...');
          $.ajax({
             type: "POST",
-            url: '<?= MAINSITE ?>Products/getPincodeDetail/',
+            url: '<?php echo MAINSITE ?>Products/getPincodeDetail/',
             data: { 'pincode': pincode_d.value, 'total_weight': total_weight },
             success: function (result) {
                $('#PincodeData').html(result);

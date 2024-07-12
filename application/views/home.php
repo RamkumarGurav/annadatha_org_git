@@ -18,57 +18,57 @@
                   </div> -->
 <section class="sliderarea">
 
-   <?php if (!empty($banners)) { ?>
+   <?php  if (!empty($banners)) { ?>
 
 
       <div id="carousel" class="carousel slide carousel-fade homeslider  " data-bs-ride="carousel" data-bs-interval="1000"
          data-bs-wrap="true" data-pause="hover" autoplay="true">
          <div class="carousel-indicators">
-            <?
+            <? 
             $img_count = 0;
             foreach ($banners as $b) {
                $img_count++;
                ?>
-               <button type="button" data-bs-target="#carousel" data-bs-slide-to="<?= ($img_count - 1) ?>"
-                  class="<? if ($img_count == 1) { ?>active<? } ?>" aria-current="true"
-                  aria-label="Slide <?= $img_count ?>"></button>
-            <? } ?>
+               <button type="button" data-bs-target="#carousel" data-bs-slide-to="<?php  echo ($img_count - 1) ?>"
+                  class="<?  if ($img_count == 1) { ?>active<?  } ?>" aria-current="true"
+                  aria-label="Slide <?php  echo $img_count ?>"></button>
+            <?  } ?>
          </div>
 
          <div class="ttloading-bg" style="display: none;"></div>
          <ul class="carousel-inner" role="listbox">
-            <?
+            <? 
             $img_count = 0;
             foreach ($banners as $b) {
                $img_count++;
                ?>
-               <li class="carousel-item <? if ($img_count == 1) { ?>active<? } ?>" role="option" aria-hidden="false"
+               <li class="carousel-item <?  if ($img_count == 1) { ?>active<?  } ?>" role="option" aria-hidden="false"
                   data-bs-interval="3000">
-                  <a href="<?php if (!empty($b->link) && $b->link != '#') {
+                  <a href="<?php  if (!empty($b->link) && $b->link != '#') {
                      echo $b->link;
                   } else {
                   }
                   ; ?>">
                      <figure>
-                        <img src="<?= _uploaded_files_ ?>banner/<?= $b->image ?>" class="">
+                        <img src="<?php  echo _uploaded_files_ ?>banner/<?php  echo $b->image ?>" class="">
 
                         <figcaption class="caption">
                            <h2 class="display-1 text-uppercase">
-                              <?= $b->title1 ?>
+                              <?php  echo $b->title1 ?>
                            </h2>
                            <div class="caption-description">
                               <h3>
-                                 <?= $b->title2 ?>
+                                 <?php  echo $b->title2 ?>
                               </h3>
                               <p>
-                                 <?= $b->title3 ?>
+                                 <?php  echo $b->title3 ?>
                               </p>
                            </div>
                         </figcaption>
                      </figure>
                   </a>
                </li>
-            <?php } ?>
+            <?php  } ?>
 
 
          </ul>
@@ -84,7 +84,7 @@
             </a>
          </div>
       </div>
-   <?php } ?>
+   <?php  } ?>
 
 </section>
 <section class="home-about">
@@ -98,7 +98,11 @@
                      <h3>Together, let's sow the seeds of prosperity and harvest a brighter future for agriculture.</h3>
                   </div>
                   <div class="hail-content">
-                     <p>At Annadatha Rythu Seva Kendram, we're more than just a business - we're your dedicated partner in agriculture. With a rich legacy spanning over three decades, we've been a trusted name in providing farmers with the finest quality pesticides, seeds, and fertilizers. Our commitment to nurturing your crops and helping your yields flourish has been unwavering since our inception.</p>
+                     <p>At Annadatha Rythu Seva Kendram, we're more than just a business - we're your dedicated partner
+                        in agriculture. With a rich legacy spanning over three decades, we've been a trusted name in
+                        providing farmers with the finest quality pesticides, seeds, and fertilizers. Our commitment to
+                        nurturing your crops and helping your yields flourish has been unwavering since our inception.
+                     </p>
                   </div>
                   <div class="hail-btn">
                      <a href="#" class="ab-btn">Read More</a>
@@ -109,24 +113,28 @@
                <div class="hair-inner">
                   <div class="row">
                      <div class="col-6 haic">
-                        <img src="<?= IMAGE ?>ab-i1.png" alt="">
+                        <img src="<?php  echo IMAGE ?>ab-i1.png" alt="">
                         <h3>Expertise</h3>
-                        <p>With three decades of experience, we possess the knowledge and insight to provide you with tailored solutions for your crops.</p>
+                        <p>With three decades of experience, we possess the knowledge and insight to provide you with
+                           tailored solutions for your crops.</p>
                      </div>
                      <div class="col-6 haic">
-                        <img src="<?= IMAGE ?>ab-i2.png" alt="">
+                        <img src="<?php  echo IMAGE ?>ab-i2.png" alt="">
                         <h3>Quality Assurance</h3>
-                        <p>Our products undergo rigorous testing to ensure they meet the highest standards of quality and effectiveness.</p>
+                        <p>Our products undergo rigorous testing to ensure they meet the highest standards of quality
+                           and effectiveness.</p>
                      </div>
                      <div class="col-6 haic">
-                        <img src="<?= IMAGE ?>ab-i2.png" alt="">
+                        <img src="<?php  echo IMAGE ?>ab-i2.png" alt="">
                         <h3>Convenience</h3>
-                        <p>Through our user-friendly e-commerce platform, you can access the products you need from the comfort of your farm. </p>
+                        <p>Through our user-friendly e-commerce platform, you can access the products you need from the
+                           comfort of your farm. </p>
                      </div>
                      <div class="col-6 haic">
-                        <img src="<?= IMAGE ?>ab-i1.png" alt="">
+                        <img src="<?php  echo IMAGE ?>ab-i1.png" alt="">
                         <h3>Community</h3>
-                        <p>Join a community of like-minded farmers who trust Annadatha Rythu Seva Kendram for their agricultural needs.</p>
+                        <p>Join a community of like-minded farmers who trust Annadatha Rythu Seva Kendram for their
+                           agricultural needs.</p>
                      </div>
                   </div>
                </div>
@@ -135,7 +143,7 @@
          </div>
          <div class="hai-badge">
             <div class="haib-inner">
-               <img src="<?= IMAGE ?>about-badge1.png" alt="">
+               <img src="<?php  echo IMAGE ?>about-badge1.png" alt="">
             </div>
          </div>
       </div>
@@ -152,7 +160,7 @@
                   <div class="dt-sc-grid-banner  overlay-style  ">
                      <div class="dt-sc-grid-banner-image with-overlay">
                         <img class="dt-sc-brand-image lazyautosizes ls-is-cached lazyloaded"
-                           src="<?= IMAGE ?>home-banner3.jpg">
+                           src="<?php  echo IMAGE ?>home-banner3.jpg">
                      </div>
 
                   </div>
@@ -162,10 +170,10 @@
                   <div class="dt-sc-heading text-start">
                   </div>
                   <div class="comman-block-section dt-sc-column two-column">
-                     <a href="<?= base_url() . 'all-products?order=5' ?>">
+                     <a href="<?php  echo base_url() . 'all-products?order=5' ?>">
                         <div class="dt-sc-support-block default  ">
                            <div class="dt-sc-support-icon-image">
-                              <img src="<?= IMAGE ?>best-seller.png" alt="">
+                              <img src="<?php  echo IMAGE ?>best-seller.png" alt="">
                            </div>
                            <div class="dt-sc-support-content">
                               <h3 class="dt-sc-support-heading">Best Sellers</h3>
@@ -176,7 +184,7 @@
                      <a href="gardening-tips">
                         <div class="dt-sc-support-block default  ">
                            <div class="dt-sc-support-icon-image">
-                              <img src="<?= IMAGE ?>gardening.png" alt="">
+                              <img src="<?php  echo IMAGE ?>gardening.png" alt="">
                            </div>
                            <div class="dt-sc-support-content">
                               <h3 class="dt-sc-support-heading">Gardening Tips &amp; Techniques</h3>
@@ -187,7 +195,7 @@
                      <a href="groundwater-targeting">
                         <div class="dt-sc-support-block default  ">
                            <div class="dt-sc-support-icon-image">
-                              <img src="<?= IMAGE ?>ground-water.png" alt="">
+                              <img src="<?php  echo IMAGE ?>ground-water.png" alt="">
                            </div>
                            <div class="dt-sc-support-content">
                               <h3 class="dt-sc-support-heading">Groundwater targeting</h3>
@@ -199,7 +207,7 @@
                      <a href="make-your-own-mixes">
                         <div class="dt-sc-support-block default  ">
                            <div class="dt-sc-support-icon-image">
-                              <img src="<?= IMAGE ?>base-ingredients.png" alt="">
+                              <img src="<?php  echo IMAGE ?>base-ingredients.png" alt="">
                            </div>
                            <div class="dt-sc-support-content">
                               <h3 class="dt-sc-support-heading">Base Ingredients</h3>
@@ -214,7 +222,7 @@
                   <div class="dt-sc-grid-banner  overlay-style  ">
                      <div class="dt-sc-grid-banner-image with-overlay">
                         <img class="dt-sc-brand-image lazyautosizes ls-is-cached lazyloaded"
-                           src="<?= IMAGE ?>home-banner-2.png">
+                           src="<?php  echo IMAGE ?>home-banner-2.png">
                      </div>
 
                   </div>
@@ -246,18 +254,18 @@
                      <div class="owl-slider">
                         <div class="owl-slider">
                            <div id="categories" class="owl-carousel dt-sc-testimonial-section default swiper-wrapper">
-                              <?php
+                              <?php 
                               foreach ($index_category as $homepage_category_list) {
                                  ?>
                                  <div class="item">
                                     <div class="products">
                                        <div class="product-container">
-                                          <a href="<?= $homepage_category_list->slug_url; ?>"
+                                          <a href="<?php  echo $homepage_category_list->slug_url; ?>"
                                              class="grid-link product-group">
                                              <div class="image_group">
                                                 <div class="ImageOverlayCa"></div>
                                                 <img
-                                                   src="<?= _uploaded_files_ ?>category/<?= $homepage_category_list->cover_image; ?>"
+                                                   src="<?php  echo _uploaded_files_ ?>category/<?php  echo $homepage_category_list->cover_image; ?>"
                                                    alt="" width="370" height="475" loading="lazy"
                                                    class="featured-image teaser lazyloaded">
                                              </div>
@@ -267,15 +275,15 @@
                                        </div>
                                        <div class="product-detail content-left">
                                           <h4 class="grid-link__title"><a
-                                                href="<?= $homepage_category_list->slug_url; ?>"><?= $homepage_category_list->name ?></a>
+                                                href="<?php  echo $homepage_category_list->slug_url; ?>"><?php  echo $homepage_category_list->name ?></a>
                                           </h4>
                                           <div class="grid-link__meta">
-                                             <a href="<?= $homepage_category_list->slug_url; ?>">View More</a>
+                                             <a href="<?php  echo $homepage_category_list->slug_url; ?>">View More</a>
                                           </div>
                                        </div>
                                     </div>
                                  </div>
-                              <?php } ?>
+                              <?php  } ?>
                            </div>
                         </div>
                      </div>
@@ -297,8 +305,8 @@
                <div class="dt-sc-grid-banner  list-style  dt-sc-reverse-columns content-1642049210359db732-0">
                   <div class="dt-sc-grid-banner-image with-overlay">
                      <div class="img-display">
-                        <img class="lazyautosizes ls-is-cached lazyloaded" src="<?= IMAGE ?>farmer.jpg"
-                           data-src="<?= IMAGE ?>farmer.jpg"
+                        <img class="lazyautosizes ls-is-cached lazyloaded" src="<?php  echo IMAGE ?>farmer.jpg"
+                           data-src="<?php  echo IMAGE ?>farmer.jpg"
                            data-widths="[180, 360, 470, 600, 770, 970, 1060, 1280, 1512, 1728, 2048]"
                            data-aspectratio="0.9007633587786259" data-sizes="auto" alt="Planting New Fresh Plants"
                            sizes="549px">
@@ -333,7 +341,7 @@
                               </li>
                            </ul>
                         </div>
-                        <a href="<?= base_url(); ?>make-your-own-mixes" class="dt-sc-btn">Order Now</a>
+                        <a href="<?php  echo base_url(); ?>make-your-own-mixes" class="dt-sc-btn">Order Now</a>
                      </div>
                   </div>
                </div>
@@ -358,7 +366,7 @@
    </div>
 </section> -->
 <section class="home-offer">
-  <a href="#"><img src="<?= IMAGE ?>d-banner.jpg" alt="discount-banner"></a>
+   <a href="#"><img src="<?php  echo IMAGE ?>d-banner.jpg" alt="discount-banner"></a>
 </section>
 <div id="greenfield-section-template--14390924181538__1642049865b7c92687"
    class="greenfield-section index-section home-product-carousel home-product-tab">
@@ -370,7 +378,7 @@
                <div class="cont-form">
                   <h1 class="dt-sc-main-heading">Most Popular Products</h1>
                   <!-- <div class="btn-display">
-                     <a href="<?= base_url() . 'all-products?order=5' ?>" class="dt-sc-btn">View More</a>
+                     <a href="<?php  echo base_url() . 'all-products?order=5' ?>" class="dt-sc-btn">View More</a>
                   </div> -->
                </div>
             </div>
@@ -402,7 +410,7 @@
                <div class="cont-form">
                   <h1 style="color:white;" class="dt-sc-main-heading">Featured Products</h1>
                   <!-- <div class="btn-display">
-                     <a href="<?= base_url() . 'all-products?order=3' ?>" class="dt-sc-btn">View More</a>
+                     <a href="<?php  echo base_url() . 'all-products?order=3' ?>" class="dt-sc-btn">View More</a>
                   </div> -->
                </div>
             </div>
@@ -427,7 +435,7 @@
                <div class="cont-form">
                   <h1 class="dt-sc-main-heading">Recently Viewed Products</h1>
                   <!-- <div class="btn-display">
-                     <a href="<?= base_url() . 'all-products?order=3' ?>" class="dt-sc-btn">View More</a>
+                     <a href="<?php  echo base_url() . 'all-products?order=3' ?>" class="dt-sc-btn">View More</a>
                   </div> -->
                </div>
             </div>
@@ -442,114 +450,115 @@
       </div>
    </div>
 </div>
-<?
-if(!empty($testimonial_videos)){
-?>
-<div id="greenfield-section-template--14390924181538__1642049865b7c92687 bg1main1 "
-   class="greenfield-section index-section home-product-carousel home-product-tab mt-4 home-fp">
-   <div class="dt-sc-section-wrapper    " style="
+<? 
+if (!empty($testimonial_videos)) {
+   ?>
+   <div id="greenfield-section-template--14390924181538__1642049865b7c92687 bg1main1 "
+      class="greenfield-section index-section home-product-carousel home-product-tab mt-4 home-fp">
+      <div class="dt-sc-section-wrapper    " style="
             background-size:auto;  background-repeat:no-repeat;">
-      <div class="container">
-         <div class="row  product-tab">
-            <div class="dt-sc-heading  text-center" style="    margin-bottom: 0px !important;">
-               <div class="cont-form">
-                  <h1 class="dt-sc-main-heading">Testimonials</h1>
-                  <!-- <div class="btn-display">
-                     <a href="<?= base_url() . 'all-products?order=3' ?>" class="dt-sc-btn">View More</a>
+         <div class="container">
+            <div class="row  product-tab">
+               <div class="dt-sc-heading  text-center" style="    margin-bottom: 0px !important;">
+                  <div class="cont-form">
+                     <h1 class="dt-sc-main-heading">Testimonials</h1>
+                     <!-- <div class="btn-display">
+                     <a href="<?php  echo base_url() . 'all-products?order=3' ?>" class="dt-sc-btn">View More</a>
                   </div> -->
+                  </div>
                </div>
-            </div>
-            <div class="owl-slider mt-4">
-               <div class="owl-slider">
-                  <div class="owl-carousel dt-sc-testimonial-section default swiper-wrapper"
-                     id="testimonial_videos">
-                     <?php
+               <div class="owl-slider mt-4">
+                  <div class="owl-slider">
+                     <div class="owl-carousel dt-sc-testimonial-section default swiper-wrapper" id="testimonial_videos">
+                        <?php 
 
-          if(!empty($testimonial_videos)){
-            $count =0;
+                        if (!empty($testimonial_videos)) {
+                           $count = 0;
 
-            foreach ($testimonial_videos as $testimonial_video) {
-              $count++;
-              ?>
-              <div class="item">
-              <div class="testimonials-item">
-                    <?=$testimonial_video->testimonial_video?>
+                           foreach ($testimonial_videos as $testimonial_video) {
+                              $count++;
+                              ?>
+                              <div class="item">
+                                 <div class="testimonials-item">
+                                    <?php  echo $testimonial_video->testimonial_video ?>
 
-                                    <h3><?=$testimonial_video->testimonial_name?></h3>
-                                    <span><?=$testimonial_video->content?></span>
+                                    <h3><?php  echo $testimonial_video->testimonial_name ?></h3>
+                                    <span><?php  echo $testimonial_video->content ?></span>
                                  </div>
-                        </div>
-              <?php
-            }
+                              </div>
+                              <?php 
+                           }
 
-          }
-               ?>
+                        }
+                        ?>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
    </div>
-</div>
-<?
+<? 
 }
 ?>
-<?
-if(!empty($working_methods)){
-  ?>
-  <div id="greenfield-section-template--14390924181538__164205117913d8ee1c"
-     class="greenfield-section index-section home-support-block">
-     <div class="dt-sc-section-wrapper    " style="
+<? 
+if (!empty($working_methods)) {
+   ?>
+   <div id="greenfield-section-template--14390924181538__164205117913d8ee1c"
+      class="greenfield-section index-section home-support-block">
+      <div class="dt-sc-section-wrapper    " style="
               background-size:auto;  background-repeat:no-repeat;">
 
-        <div class="container mb-4">
-           <div class="row home-support-block support-page">
-              <div class="dt-sc-heading  text-center">
-                 <div class="cont-form">
-                    <h1 class="dt-sc-main-heading">Working Method</h1>
-                    <div class="btn-display">
-                    </div>
-                 </div>
-              </div>
+         <div class="container mb-4">
+            <div class="row home-support-block support-page">
+               <div class="dt-sc-heading  text-center">
+                  <div class="cont-form">
+                     <h1 class="dt-sc-main-heading">Working Method</h1>
+                     <div class="btn-display">
+                     </div>
+                  </div>
+               </div>
 
-              <!-- <div class="container"> -->
-              <div class="row">
-                <?php foreach ($working_methods as $working_method): ?>
-                  <div class="col-lg-4 col-md-6 margin-30px-bottom xs-margin-20px-bottom">
-                     <div class="services-block-three">
-                        <a href="<?=  $working_method->working_method_link ?>">
-                           <!-- <div class="padding-15px-bottom">
+               <!-- <div class="container"> -->
+               <div class="row">
+                  <?php  foreach ($working_methods as $working_method): ?>
+                     <div class="col-lg-4 col-md-6 margin-30px-bottom xs-margin-20px-bottom">
+                        <div class="services-block-three">
+                           <a href="<?php  echo $working_method->working_method_link ?>">
+                              <!-- <div class="padding-15px-bottom">
 
                                    </div> -->
 
-                           <div class="col-md-12 p-4">
-                              <div class="d-flex align-items-center">
-                                 <div class="mr-4">
-                                    <div
-                                       class="p-4 rounded-circle text-white font-weight-bold d-flex align-items-center justify-content-center">
-                                       <img src="<?= MAINSITE.'assets/uploads/working_method/'.$working_method->working_method_image ?>" alt="">
+                              <div class="col-md-12 p-4">
+                                 <div class="d-flex align-items-center">
+                                    <div class="mr-4">
+                                       <div
+                                          class="p-4 rounded-circle text-white font-weight-bold d-flex align-items-center justify-content-center">
+                                          <img
+                                             src="<?php  echo MAINSITE . 'assets/uploads/working_method/' . $working_method->working_method_image ?>"
+                                             alt="">
+                                       </div>
+                                    </div>
+                                    <div class="">
+                                       <h5 class="mb-2" style="font-weight: 600;"><?php  echo $working_method->content ?>
+                                       </h5>
                                     </div>
                                  </div>
-                                 <div class="">
-                                    <h5 class="mb-2" style="font-weight: 600;"><?=  $working_method->content ?>
-                                    </h5>
-                                 </div>
                               </div>
-                           </div>
-                        </a>
+                           </a>
+                        </div>
                      </div>
-                  </div>
-                <?php endforeach; ?>
+                  <?php  endforeach; ?>
 
 
-                 <!-- end -->
-                 <!-- </div> -->
-              </div>
+                  <!-- end -->
+                  <!-- </div> -->
+               </div>
 
-           </div>
-        </div>
-     </div>
-  </div>
-  <?
+            </div>
+         </div>
+      </div>
+   </div>
+<? 
 }
 ?>

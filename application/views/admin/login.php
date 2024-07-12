@@ -1,74 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<title><?php echo _project_complete_name_ ?> | Log in</title>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="<?=base_url()?>assets/admin/css/login.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><?php echo _project_complete_name_ ?> | Log in</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="<?php  echo _lte_files_ ?>plugins/fontawesome-free/css/all.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="<?php  echo _lte_files_ ?>dist/css/ionicons.min.css">
+	<!-- icheck bootstrap -->
+	<link rel="stylesheet" href="<?php  echo _lte_files_ ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="<?php  echo _lte_files_ ?>dist/css/adminlte.min.css">
+	<!-- Google Font: Source Sans Pro -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body>
 
-<div class="box-form">
-<div class="left">
-<div class="overlay">
-<h1>Hello World.</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Curabitur et est sed felis aliquet sollicitudin</p>
+<body class="hold-transition login-page">
+	<div class="login-box">
+		<div class="login-logo">
+			<!-- <a href="<?php  echo _lte_files_ ?>index2.html"><?php  echo _project_complete_name_ ?></a> -->
+			<img src="<?php  echo MAINSITE . "assets/admin/images/logo.png" ?>" style="height:90px">
+		</div>
+		<!-- /.login-logo -->
+		<div class="card">
+			<div class="card-body login-card-body">
+				<p class="login-box-msg">Sign in to start your session</p>
+				<?php  echo $alert_message; ?>
+				<?php  echo form_open(MAINSITE_Admin . 'Login', array('method' => 'post', 'id' => '', 'style' => '', 'class' => '')); ?>
+				<div class="input-group mb-3">
+					<?php 
+					$attributes = array(
+						'name' => 'username',
+						'id' => 'username',
+						'value' => set_value('username'),
+						'class' => 'form-control',
+						'placeholder' => "Email / User Name",
+						'autofocus' => 'autofocus',
+						'type' => 'text',
+						'required' => 'required'
+					);
+					echo form_input($attributes); ?>
+					<?php  //echo form_error('username'); ?>
 
-</div>
-</div>
-<div class="right text-center">
-<img src="<?=base_url()?>assets/front/images/logo.png" class="img-size">
-<p>Sign in to start your session</p>
-<?php echo $alert_message; ?>
-<?php echo form_open(MAINSITE_Admin.'Login', array('method' => 'post', 'id' => '', 'style' => '', 'class' => '')); ?>
-<div class="inputs">
-<?php 
-								$attributes = array(
-								'name'	=> 'username',
-								'id'	=> 'username',
-								'value'	=> set_value('username'),
-								'class' => 'form-control',
-								'placeholder' => "Email / User Name",
-								'autofocus' => 'autofocus',
-								'type' => 'text',
-								'required' => 'required'
-								);
-								echo form_input($attributes);?>	
-<br>
-<?php 
-								$attributes = array(
-								'name'	=> 'password',
-								'id'	=> 'password',
-								'value'	=> set_value('password'),
-								'class' => 'form-control',
-								'placeholder' => "Password",
-								'type' => 'password',
-								'required' => 'required'
-								);
-								echo form_input($attributes);?>	
-</div>
-<br><br>
-<div class="remember-me--forget-password">
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<span class="fas fa-envelope"></span>
+						</div>
+					</div>
+				</div>
+				<div class="input-group mb-3">
+					<?php 
+					$attributes = array(
+						'name' => 'password',
+						'id' => 'password',
+						'value' => set_value('password'),
+						'class' => 'form-control',
+						'placeholder' => "Password",
+						'type' => 'password',
+						'required' => 'required'
+					);
+					echo form_input($attributes); ?>
+					<?php  //echo form_error('password'); ?>
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<span class="fas fa-lock"></span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<!-- <div class="col-8">
+						<div class="icheck-primary">
+							<input type="checkbox" id="remember">
+							<label for="remember">
+								Remember Me
+							</label>
+						</div>
+					</div> -->
+					<!-- /.col -->
+					<div class="col-4">
+					</div>
+					<div class="col-4">
+						<centre><button type="submit" name="login_btn" value="1" class="btn btn-primary btn-block">Sign In</button>
+						</centre>
+					</div>
+					<div class="col-4">
+					</div>
+					<!-- /.col -->
+				</div>
+				<?php  echo form_close() ?>
+				<?php  /* ?>
+							<div class="social-auth-links text-center mb-3">
+							<p>- OR -</p>
+							<a href="#" class="btn btn-block btn-primary">
+							<i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+							</a>
+							<a href="#" class="btn btn-block btn-danger">
+							<i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+							</a>
+							</div>
+							<!-- /.social-auth-links -->
 
-<label>
-<input type="checkbox" name="item" checked />
-<span class="text-checkbox">Remember me</span>
-</label>
-<a class="forget">forget password?</a>
-</div>
-<br>
-<button type="submit" name="login_btn" value="1" class="btn btn-primary btn-block">Sign In</button>
-<?php echo form_close() ?>
-</div>
-</div>
+							<p class="mb-1">
+							<a href="forgot-password.html">I forgot my password</a>
+							</p>
+							<p class="mb-0">
+							<a href="register.html" class="text-center">Register a new membership</a>
+							</p>
+							</div>
+							<!-- /.login-card-body -->
+							</div>
+							</div>
+							<?php  */ ?>
+				<!-- /.login-box -->
 
-<script>
-	$.ajaxSetup({
-		headers: {
-		    '<?= $csrf['name'] ?>': '<?= $csrf['hash'] ?>'
-		}
-	});
-</script>
+				<!-- jQuery -->
+				<script src="<?php  echo _lte_files_ ?>plugins/jquery/jquery.min.js"></script>
+				<!-- Bootstrap 4 -->
+				<script src="<?php  echo _lte_files_ ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+				<!-- AdminLTE App -->
+				<script src="<?php  echo _lte_files_ ?>dist/js/adminlte.min.js"></script>
+
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 <?
-$CI=&get_instance();
-$payment_gateway_data['temp_orders_id'] = "#".__order_initial__."-".$payment_gateway_data['temp_orders_id'];
+$CI =& get_instance();
+$payment_gateway_data['temp_orders_id'] = "#" . __order_initial__ . "-" . $payment_gateway_data['temp_orders_id'];
 
 $payment_gateway_data['status'] = 'success';
 $payment_gateway_data['mode'] = 'COD';

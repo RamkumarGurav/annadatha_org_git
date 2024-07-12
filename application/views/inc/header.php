@@ -1,4 +1,4 @@
-<?
+<?php  
    $CI=&get_instance();
    if(empty($meta_title))
    {
@@ -35,27 +35,27 @@
       <meta name="robots" content="index,follow" />
       <meta name="GOOGLEBOT" content="index,follow" />
       <meta name="theme-color" content="#fbc91d" />
-      <base href="<?=base_url()?>">
+      <base href="<?php echo base_url()?>">
       <meta property="og:type" content="object" />
-      <meta property="og:site_name" content="<?=_project_complete_name_?>" />
-      <title><?=$meta_title?></title>
-      <meta name="description" content="<?=$meta_description?>">
-      <meta name="keywords" content="<?=$meta_keywords?>">
+      <meta property="og:site_name" content="<?php echo _project_complete_name_?>" />
+      <title><?php echo $meta_title?></title>
+      <meta name="description" content="<?php echo $meta_description?>">
+      <meta name="keywords" content="<?php echo $meta_keywords?>">
       <meta name="google-signin-scope" content="profile email">
       <meta name="google-signin-client_id" content="330446368143-adivlbaqh63du7mu7ledj52eof2e6ki1.apps.googleusercontent.com">
-      <?=nl2br($meta_others)?>
+      <?php echo nl2br($meta_others)?>
       <link rel="canonical" href="https://www.annadatha.in/" />
-      <link href="<?=IMAGE?>favicon.ico" rel="shortcut icon" type="x-image">
+      <link href="<?php echo IMAGE?>favicon.ico" rel="shortcut icon" type="x-image">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
       <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/> -->
-      <link href="<?=CSS?>style.css" rel="stylesheet">
-      <link href="<?=CSS?>responsive.css" rel="stylesheet">
-      <?php /*?><script>const _switch_google_ecom_ = <?=_switch_google_ecom_?></script><?php */?>
-      <?php if (!empty($direct_css)) { foreach ($direct_css as $dcss) { echo '<link rel="stylesheet" href="'.$dcss.'"  crossorigin="anonymous">'; } } ?>
-      <?php if (!empty($css)) { foreach ($css as $css) { echo '<link rel="stylesheet" href="'.CSS.$css.'"  crossorigin="anonymous">'; } } ?>
-      <?php if (!empty($cart_css)) { foreach ($cart_css as $cart_css) { echo '<link rel="stylesheet" href="'.CSS.$cart_css.'"  crossorigin="anonymous">'; } } ?>
-      <?php if (!empty($wishlist_css)) { foreach ($wishlist_css as $wishlist_css) { echo '<link rel="stylesheet" href="'.CSS.$wishlist_css.'"  crossorigin="anonymous">'; } } ?>
-      <?php if (!empty($cart_js)) { foreach ($cart_js as $cart_js) { echo '<link rel="stylesheet" href="'.CSS.$cart_js.'"  crossorigin="anonymous">'; } } ?>
+      <link href="<?php echo CSS?>style.css" rel="stylesheet">
+      <link href="<?php echo CSS?>responsive.css" rel="stylesheet">
+      <?php   /*?><script>const _switch_google_ecom_ = <?php echo _switch_google_ecom_?></script><?php   */?>
+      <?php   if (!empty($direct_css)) { foreach ($direct_css as $dcss) { echo '<link rel="stylesheet" href="'.$dcss.'"  crossorigin="anonymous">'; } } ?>
+      <?php   if (!empty($css)) { foreach ($css as $css) { echo '<link rel="stylesheet" href="'.CSS.$css.'"  crossorigin="anonymous">'; } } ?>
+      <?php   if (!empty($cart_css)) { foreach ($cart_css as $cart_css) { echo '<link rel="stylesheet" href="'.CSS.$cart_css.'"  crossorigin="anonymous">'; } } ?>
+      <?php   if (!empty($wishlist_css)) { foreach ($wishlist_css as $wishlist_css) { echo '<link rel="stylesheet" href="'.CSS.$wishlist_css.'"  crossorigin="anonymous">'; } } ?>
+      <?php   if (!empty($cart_js)) { foreach ($cart_js as $cart_js) { echo '<link rel="stylesheet" href="'.CSS.$cart_js.'"  crossorigin="anonymous">'; } } ?>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,8 +116,8 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
 });
 </script>
    <body>
-      <!-- <div style="display:none" class="siteUrl"><?=base_url()?></div> -->
-      <input type="hidden" class="siteUrl" value="<?=base_url()?>">
+      <!-- <div style="display:none" class="siteUrl"><?php echo base_url()?></div> -->
+      <input type="hidden" class="siteUrl" value="<?php echo base_url()?>">
       <!-- <div class="cv_sticky"><div class="cvText-desktop"><p>Free Delivery of all products</a></p></div></div> -->
 
       <div class="top-header ">
@@ -127,7 +127,7 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                <ul class="contact-info slash">
                               <li class="contact-phone pb-1">
                                  <i class="fa fa-phone"></i>
-                                 <a href="tel:<?=_project_contact_?>"><?=_project_contact_?>  <br> <a href="/ tel:<?=_project_contact2_?>"><?=_project_contact2_?></a></li>
+                                 <a href="tel:<?php echo _project_contact_?>"><?php echo _project_contact_?>  <br> <a href="/ tel:<?php echo _project_contact2_?>"><?php echo _project_contact2_?></a></li>
 
                            </ul>
                </div>
@@ -153,7 +153,7 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                      <!-- <div class="header-note">
                         <div class="site-branding"> -->
                            <div class="headerlogo">
-                              <h1 class="site-title"><a class="navbar-brand home-link" href="<?=base_url()?>"><span class="themestek-sc-logo themestek-sc-logo-type-image"><img src="<?=IMAGE?>logo.jpg" alt="<?=_project_complete_name_?>" title="<?=_project_complete_name_?>"></span></a></h1>
+                              <h1 class="site-title"><a class="navbar-brand home-link" href="<?php echo base_url()?>"><span class="themestek-sc-logo themestek-sc-logo-type-image"><img src="<?php echo IMAGE?>logo.jpg" alt="<?php echo _project_complete_name_?>" title="<?php echo _project_complete_name_?>"></span></a></h1>
                            </div>
                         <!-- </div>
                      </div> -->
@@ -162,17 +162,17 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                      <div class="cv_sticky">
                         <div class="cvText-desktop">
                            <p style="display: flex;">
-                              <? if(!empty($runningLines)){ ?>
-                              <? foreach($runningLines as $rl){ ?>
-                              <? if(!empty($rl->running_line_link)){echo '<a href="">';} ?>
-                              <marquee><?=$rl->running_line_title?></marquee>
-                              <? if(!empty($rl->running_line_link)){echo '</a>';} ?>
-                              <? } ?>
-                              <? } ?>
+                              <?php   if(!empty($runningLines)){ ?>
+                              <?php   foreach($runningLines as $rl){ ?>
+                              <?php   if(!empty($rl->running_line_link)){echo '<a href="">';} ?>
+                              <marquee><?php echo $rl->running_line_title?></marquee>
+                              <?php   if(!empty($rl->running_line_link)){echo '</a>';} ?>
+                              <?php   } ?>
+                              <?php   } ?>
                            </p>
                         </div>
                      </div>
-                     <? if($check_screen == 'isdesktop'){ ?>
+                     <?php   if($check_screen == 'isdesktop'){ ?>
                      <div class="searchbar">
                         <form  name="searchSuggForm" id="autocomplete" method="get" action="" autocomplete="off">
                            <a class="nav-link-ser " id="navbarDropdownMenuLink1">
@@ -184,7 +184,7 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                      </div>
                      <div class=" dropdown-menu  getSuggestionDropdown" style="float:left;width:1000px;overflow-y: auto;height: 450px;display:none">
                      </div>
-                     <? } ?>
+                     <?php   } ?>
                   </div>
                   <div class="col-lg-5 col-3">
                      <nav class="navbar navbar-expand-lg navbar-light">
@@ -194,31 +194,31 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                <div class="collapse navbar-collapse flex-lg-column" id="navbarRightAlignExample">
                   <ul class="nav navbar-nav menu mr-auto ">
                      <!-- main -->
-                     <li class="nav-item  " ><a  href="<?=MAINSITE?>">Home</a></li>
-                     <? if(!empty($menu)){ ?>
-                     <? foreach($menu as $m){ ?>
-                     <li class="nav-item <? if(!empty($m->sub_category)){ ?> dropdown submenu1<? } ?>" style="position: relative !important;">
-                        <a class="nav-link  <? if(!empty($m->sub_category)){ ?>dropdown-toggle  <? } ?>" href="<?=$m->slug_url?>" id="navbarDropdownMenuLink" role="button" <? if(!empty($m->sub_category)){ ?>  <? } ?><? if(!empty($m->sub_category)){ ?> <? } ?>>  <?=$m->name?>  <? if(!empty($m->sub_category)){ ?><i class="fa fa-angle-down" aria-hidden="true"></i><?php } ?>
+                     <li class="nav-item  " ><a  href="<?php echo MAINSITE?>">Home</a></li>
+                     <?php   if(!empty($menu)){ ?>
+                     <?php   foreach($menu as $m){ ?>
+                     <li class="nav-item <?php   if(!empty($m->sub_category)){ ?> dropdown submenu1<?php   } ?>" style="position: relative !important;">
+                        <a class="nav-link  <?php   if(!empty($m->sub_category)){ ?>dropdown-toggle  <?php   } ?>" href="<?php echo $m->slug_url?>" id="navbarDropdownMenuLink" role="button" <?php   if(!empty($m->sub_category)){ ?>  <?php   } ?><?php   if(!empty($m->sub_category)){ ?> <?php   } ?>>  <?php echo $m->name?>  <?php   if(!empty($m->sub_category)){ ?><i class="fa fa-angle-down" aria-hidden="true"></i><?php   } ?>
                         </a>
-                        <? if(!empty($m->sub_category)){ ?>
+                        <?php   if(!empty($m->sub_category)){ ?>
                         <ul class="dropdown-menu submenu2" aria-labelledby="navbarDropdownMenuLink">
-                           <? foreach($m->sub_category as $sc){ ?>
-                           <li class="dropdown-item <? if(!empty($sc->super_sub_category)){ ?>dropdown <? } ?>">
-                              <a class="dropdown-item" href="<?=$m->slug_url?>/<?=$sc->slug_url?>"> <?=$sc->name?> <? if(!empty($sc->super_sub_category)){ ?>&raquo; <? } ?></a>
-                              <? if(!empty($sc->super_sub_category)){ ?>
+                           <?php   foreach($m->sub_category as $sc){ ?>
+                           <li class="dropdown-item <?php   if(!empty($sc->super_sub_category)){ ?>dropdown <?php   } ?>">
+                              <a class="dropdown-item" href="<?php echo $m->slug_url?>/<?php echo $sc->slug_url?>"> <?php echo $sc->name?> <?php   if(!empty($sc->super_sub_category)){ ?>&raquo; <?php   } ?></a>
+                              <?php   if(!empty($sc->super_sub_category)){ ?>
                               <ul class="submenu dropdown-menu">
-                                 <? foreach($sc->super_sub_category as $ssc){ ?>
-                                 <li><a class="dropdown-item" href="<?=$m->slug_url?>/<?=$sc->slug_url?>/<?=$ssc->slug_url?>"><?=$ssc->name?></a></li>
-                                 <? } ?>
+                                 <?php   foreach($sc->super_sub_category as $ssc){ ?>
+                                 <li><a class="dropdown-item" href="<?php echo $m->slug_url?>/<?php echo $sc->slug_url?>/<?php echo $ssc->slug_url?>"><?php echo $ssc->name?></a></li>
+                                 <?php   } ?>
                               </ul>
-                              <? } ?>
+                              <?php   } ?>
                            </li>
-                           <? } ?>
+                           <?php   } ?>
                         </ul>
-                        <? } ?>
+                        <?php   } ?>
                      </li>
-                     <? } ?>
-                     <? } ?>
+                     <?php   } ?>
+                     <?php   } ?>
 
                   </ul>
                </div>
@@ -228,24 +228,24 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                      <ul class="cart_sectin">
                         <li class="dropdown11">
                            <span class="dropbtn">
-                              <? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?><a href="<?=base_url(__dashboard__)?>"><i class="fa fa-user"></i></a><?php } else { ?><a href="<?=base_url(__login__)?>"><i class="fa fa-user"></i></a><?php } ?>
+                              <?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?><a href="<?php echo base_url(__dashboard__)?>"><i class="fa fa-user"></i></a><?php   } else { ?><a href="<?php echo base_url(__login__)?>"><i class="fa fa-user"></i></a><?php   } ?>
                               <div class="dropdown-content">
                                  <ul class="profile-dropdown">
-                                    <?php if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){} else { ?>
-                                    <li><a  href="<?=base_url(__signup__);?>"><img src="assets/front/images/prof.png" style="width: 15px">  New Customer? Sign Up</a></li>
-                                    <?php } ?>
-                                    <li><a  href="<? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__dashboard__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/prof.png" style="width: 15px">  My Profile</a></li>
-                                    <li><a  href="<? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__orderHistory__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/card.png" style="width: 15px"> Orders</a></li>
-                                    <li><a  href="<? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__wishlist__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/wishlist.png" style="width: 20px" > Wishlist</a></li>
-                                    <? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?>
-                                    <li ><a href="<?=base_url(__logout__)?>" ><img src="assets/front/images/log.png" style="width: 20px">  Logout</a></li>
-                                    <?php } ?>
+                                    <?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){} else { ?>
+                                    <li><a  href="<?php echo base_url(__signup__);?>"><img src="assets/front/images/prof.png" style="width: 15px">  New Customer? Sign Up</a></li>
+                                    <?php   } ?>
+                                    <li><a  href="<?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__dashboard__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/prof.png" style="width: 15px">  My Profile</a></li>
+                                    <li><a  href="<?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__orderHistory__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/card.png" style="width: 15px"> Orders</a></li>
+                                    <li><a  href="<?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__wishlist__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/wishlist.png" style="width: 20px" > Wishlist</a></li>
+                                    <?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?>
+                                    <li ><a href="<?php echo base_url(__logout__)?>" ><img src="assets/front/images/log.png" style="width: 20px">  Logout</a></li>
+                                    <?php   } ?>
                                  </ul>
                               </div>
                            </span>
                         </li>
-                        <li><a style="cursor: pointer;" <? if(empty($is_cart_btn)){ ?>onClick="cartopenNav()"<? } ?>><i class="fa fa-shopping-cart"></i><span class="cart_counts sess_cart_count"><?=$this->session->userdata('application_sess_cart_count');?></span></a></li>
-                        <li><a href="<?=__wishlist__?>" title="Wishlist" ><i class="fa fa-heart-o img-responsive"></i><span class="wishlist_counts sess_wishlist_count"><?=$this->session->userdata('application_sess_wishlist_count');?></span></a></li>
+                        <li><a style="cursor: pointer;" <?php   if(empty($is_cart_btn)){ ?>onClick="cartopenNav()"<?php   } ?>><i class="fa fa-shopping-cart"></i><span class="cart_counts sess_cart_count"><?php echo $this->session->userdata('application_sess_cart_count');?></span></a></li>
+                        <li><a href="<?php echo __wishlist__?>" title="Wishlist" ><i class="fa fa-heart-o img-responsive"></i><span class="wishlist_counts sess_wishlist_count"><?php echo $this->session->userdata('application_sess_wishlist_count');?></span></a></li>
                      </ul>
                   </div>
                </div>
@@ -265,9 +265,9 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                  <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
                                  </button>
-                                 <a class="navbar-brand home-link" href="<?=base_url()?>">
+                                 <a class="navbar-brand home-link" href="<?php echo base_url()?>">
                                  <span class="themestek-sc-logo themestek-sc-logo-type-image">
-                                 <img src="<?=IMAGE?>logo.jpg">
+                                 <img src="<?php echo IMAGE?>logo.jpg">
                                  </span>
                                  </a>
                               </h1>
@@ -276,30 +276,30 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                            <ul class="nav navbar-nav menu mr-auto">
 
-                              <? if(!empty($menu)){ ?>
-                                 <li class="nav-item  " ><a style="color:white;" href="<?=MAINSITE?>">Home</a></li>
-                              <? foreach($menu as $m){ ?>
-                              <li class="nav-item <? if(!empty($m->sub_category)){ ?> dropdown submenu1<? } ?>" style="position: relative !important;">
-                                <a class="nav-link1  " href="<?=$m->slug_url?>" >  <?=$m->name?>  <? if(!empty($m->sub_category)){ ?>  </a><a class=" <? if(!empty($m->sub_category)){ ?>dropdown-toggle  <? } ?>" id="navbarDropdownMenuLink" role="button" <? if(!empty($m->sub_category)){ ?> data-bs-toggle="dropdown" aria-expanded="false" <? } ?><? if(!empty($m->sub_category)){ ?> <? } ?>><i class="fa fa-angle-down" aria-hidden="true"></i><?php } ?></a>
-                                 <? if(!empty($m->sub_category)){ ?>
+                              <?php   if(!empty($menu)){ ?>
+                                 <li class="nav-item  " ><a style="color:white;" href="<?php echo MAINSITE?>">Home</a></li>
+                              <?php   foreach($menu as $m){ ?>
+                              <li class="nav-item <?php   if(!empty($m->sub_category)){ ?> dropdown submenu1<?php   } ?>" style="position: relative !important;">
+                                <a class="nav-link1  " href="<?php echo $m->slug_url?>" >  <?php echo $m->name?>  <?php   if(!empty($m->sub_category)){ ?>  </a><a class=" <?php   if(!empty($m->sub_category)){ ?>dropdown-toggle  <?php   } ?>" id="navbarDropdownMenuLink" role="button" <?php   if(!empty($m->sub_category)){ ?> data-bs-toggle="dropdown" aria-expanded="false" <?php   } ?><?php   if(!empty($m->sub_category)){ ?> <?php   } ?>><i class="fa fa-angle-down" aria-hidden="true"></i><?php   } ?></a>
+                                 <?php   if(!empty($m->sub_category)){ ?>
                                  <ul class="dropdown-menu submenu2" aria-labelledby="navbarDropdownMenuLink">
-                                    <? foreach($m->sub_category as $sc){ ?>
-                                    <li class="dropdown-item <? if(!empty($sc->super_sub_category)){ ?>dropdown <? } ?>">
-                                       <a class="dropdown-item" href="<?=$m->slug_url?>/<?=$sc->slug_url?>"> <?=$sc->name?> <? if(!empty($sc->super_sub_category)){ ?>&raquo; <? } ?></a>
-                                       <? if(!empty($sc->super_sub_category)){ ?>
+                                    <?php   foreach($m->sub_category as $sc){ ?>
+                                    <li class="dropdown-item <?php   if(!empty($sc->super_sub_category)){ ?>dropdown <?php   } ?>">
+                                       <a class="dropdown-item" href="<?php echo $m->slug_url?>/<?php echo $sc->slug_url?>"> <?php echo $sc->name?> <?php   if(!empty($sc->super_sub_category)){ ?>&raquo; <?php   } ?></a>
+                                       <?php   if(!empty($sc->super_sub_category)){ ?>
                                        <ul class="submenu dropdown-menu">
-                                          <? foreach($sc->super_sub_category as $ssc){ ?>
-                                          <li><a class="dropdown-item" href="<?=$m->slug_url?>/<?=$sc->slug_url?>/<?=$ssc->slug_url?>"><?=$ssc->name?></a></li>
-                                          <? } ?>
+                                          <?php   foreach($sc->super_sub_category as $ssc){ ?>
+                                          <li><a class="dropdown-item" href="<?php echo $m->slug_url?>/<?php echo $sc->slug_url?>/<?php echo $ssc->slug_url?>"><?php echo $ssc->name?></a></li>
+                                          <?php   } ?>
                                        </ul>
-                                       <? } ?>
+                                       <?php   } ?>
                                     </li>
-                                    <? } ?>
+                                    <?php   } ?>
                                  </ul>
-                                 <? } ?>
+                                 <?php   } ?>
                               </li>
-                              <? } ?>
-                              <? } ?>
+                              <?php   } ?>
+                              <?php   } ?>
                            </ul>
                         </div>
                      </nav>
@@ -308,28 +308,28 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                      <ul class="cart_sectin">
                         <li class="dropdown11">
                            <span class="dropbtn">
-                              <? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?>
-                              <a href="<?=base_url(__dashboard__)?>"><i class="fa fa-user"></i></a><?php } else { ?>
+                              <?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?>
+                              <a href="<?php echo base_url(__dashboard__)?>"><i class="fa fa-user"></i></a><?php   } else { ?>
                               <a href="" data-bs-toggle="collapse" data-bs-target="#user12"><i class="fa fa-user"></i></a>
-                              <!-- <a href="<?=base_url(__login__)?>"><i class="fa fa-user"></i></a> -->
-                              <?php } ?>
+                              <!-- <a href="<?php echo base_url(__login__)?>"><i class="fa fa-user"></i></a> -->
+                              <?php   } ?>
                            </span>
                         </li>
-                        <li onClick="cartopenNav()"><a ><i class="fa fa-shopping-cart"></i> <span class="cart_counts sess_cart_count"><?=$this->session->userdata('application_sess_cart_count');?></span></a></li>
-                        <!--   <li><a href="<?=__cart__?>"><i class="fa fa-shopping-cart"></i> Cart<span class="cart_counts sess_cart_count"><?=$this->session->userdata('application_sess_cart_count');?></span></a></li> -->
-                        <li><a href="<?=__wishlist__?>" title="Wishlist" ><i class="fa fa-heart-o img-responsive"></i><span class="wishlist_counts sess_wishlist_count"><?=$this->session->userdata('application_sess_wishlist_count');?></span></a></li>
+                        <li onClick="cartopenNav()"><a ><i class="fa fa-shopping-cart"></i> <span class="cart_counts sess_cart_count"><?php echo $this->session->userdata('application_sess_cart_count');?></span></a></li>
+                        <!--   <li><a href="<?php echo __cart__?>"><i class="fa fa-shopping-cart"></i> Cart<span class="cart_counts sess_cart_count"><?php echo $this->session->userdata('application_sess_cart_count');?></span></a></li> -->
+                        <li><a href="<?php echo __wishlist__?>" title="Wishlist" ><i class="fa fa-heart-o img-responsive"></i><span class="wishlist_counts sess_wishlist_count"><?php echo $this->session->userdata('application_sess_wishlist_count');?></span></a></li>
                         <div class="collapse navbar-collapse offset" id="user12">
                            <div class="collapse navbar-collapse offset" id="user12">
                               <ul class="profile-dropdown nav navbar-nav">
-                                 <?php if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){} else { ?>
-                                 <li class="dropdown-item"><a  href="<?=base_url(__signup__);?>"><img src="assets/front/images/prof.png" style="width: 15px">  New Customer? Sign Up</a></li>
-                                 <?php } ?>
-                                 <li><a  href="<? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__dashboard__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/prof.png" style="width: 15px">  My Profile</a></li>
-                                 <li><a  href="<? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__orderHistory__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/card.png" style="width: 15px"> Orders</a></li>
-                                 <li><a  href="<? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__wishlist__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/wishlist.png" style="width: 20px" > Wishlist</a></li>
-                                 <? if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?>
-                                 <li ><a href="<?=base_url(__logout__)?>" ><img src="assets/front/images/log.png" style="width: 20px">  Logout</a></li>
-                                 <?php } ?>
+                                 <?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){} else { ?>
+                                 <li class="dropdown-item"><a  href="<?php echo base_url(__signup__);?>"><img src="assets/front/images/prof.png" style="width: 15px">  New Customer? Sign Up</a></li>
+                                 <?php   } ?>
+                                 <li><a  href="<?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__dashboard__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/prof.png" style="width: 15px">  My Profile</a></li>
+                                 <li><a  href="<?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__orderHistory__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/card.png" style="width: 15px"> Orders</a></li>
+                                 <li><a  href="<?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ echo base_url(__wishlist__); } else {echo base_url(__login__);}?>"><img src="assets/front/images/wishlist.png" style="width: 20px" > Wishlist</a></li>
+                                 <?php   if(!empty($temp_name) && !empty($temp_id) && $login_type != 'guest'){ ?>
+                                 <li ><a href="<?php echo base_url(__logout__)?>" ><img src="assets/front/images/log.png" style="width: 20px">  Logout</a></li>
+                                 <?php   } ?>
                               </ul>
                            </div>
                         </div>
@@ -338,7 +338,7 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
                </div>
             </div>
          </section>
-         <? if($check_screen != 'isdesktop'){ ?>
+         <?php   if($check_screen != 'isdesktop'){ ?>
          <div class="searchbar mt-2 mb-2">
             <form  name="searchSuggForm" id="autocomplete" method="get" action="" autocomplete="off">
                <a class="nav-link-ser " id="navbarDropdownMenuLink1">
@@ -350,7 +350,7 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
          </div>
          <div class=" dropdown-menu  getSuggestionDropdown" style="float:left;width:1000px;overflow-y: auto;height: 450px;display:none">
          </div>
-         <? } ?>
+         <?php   } ?>
       </header>
 
       <div id="overlay" class=""></div>
@@ -360,7 +360,7 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
             <div class="cartleftFilterHead"><span class="contact_opener" onClick="cartcloseNav()"></span>&nbsp; Cart </div>
          </div>
          <div class="float_cart">
-         <?php /*?><div class="row align-items-center justify-content-center">
+         <?php   /*?><div class="row align-items-center justify-content-center">
             <div class="col-lg-4 col-4">
                <img src="assets/uploads/product/medium/product_4_4.png">
             </div>
@@ -449,7 +449,7 @@ src="https://www.facebook.com/tr?id=1482707232575994&ev=PageView&noscript=1"
          <span>Checkout - Rs. 14,565</span>
         </button>
       </div>
-         </div><?php */?>
+         </div><?php   */?>
          </div>
 
       </div>
