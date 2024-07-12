@@ -54,7 +54,7 @@ class City_Module extends Main
 	{
 		$this->data['page_type'] = "list";
 		$this->data['page_module_id'] = 4;
-		$this->data['user_access'] = $this->data['User_auth_obj']->check_user_access(array("module_id" => $this->data['page_module_id']));
+		$user_access = $this->data['user_access'] = $this->data['User_auth_obj']->check_user_access(array("module_id" => $this->data['page_module_id']));
 		//print_r($this->data['user_access']);
 		if (empty($this->data['user_access'])) {
 			REDIRECT(MAINSITE_Admin . "wam/access-denied");
@@ -158,7 +158,7 @@ class City_Module extends Main
 	{
 		$this->data['page_type'] = "list";
 		$this->data['page_module_id'] = 4;
-		$this->data['user_access'] = $this->data['User_auth_obj']->check_user_access(array("module_id" => $this->data['page_module_id']));
+		$user_access = $this->data['user_access'] = $this->data['User_auth_obj']->check_user_access(array("module_id" => $this->data['page_module_id']));
 		//print_r($this->data['user_access']);
 		if (empty($this->data['user_access'])) {
 			REDIRECT(MAINSITE_Admin . "wam/access-denied");
@@ -468,3 +468,4 @@ class City_Module extends Main
 		$this->pdf->stream("welcome.pdf");
 	}
 }
+

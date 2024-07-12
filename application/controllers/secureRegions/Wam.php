@@ -63,24 +63,24 @@ class Wam extends Main
 		$this->data['is_module_id_38_data'] = '';
 		#Quotation 
 		/*
-			$this->data['page_module_id'] = 25;
-			$t_user_access= $this->data['User_auth_obj']->check_user_access(array("module_id"=>$this->data['page_module_id']));
-			
-			if(!empty($t_user_access->view_module))
-			{
-				$this->data['is_module_id_25_data'] = $t_user_access;
-				$this->data['is_module_id_25'] = 1;
+				$this->data['page_module_id'] = 25;
+				$t_user_access= $this->data['User_auth_obj']->check_user_access(array("module_id"=>$this->data['page_module_id']));
+				
+				if(!empty($t_user_access->view_module))
+				{
+					$this->data['is_module_id_25_data'] = $t_user_access;
+					$this->data['is_module_id_25'] = 1;
 
-				$this->data['upcoming_follow_up_data'] = $this->Quotation_Model->get_upcoming_follow_up();
-				unset($search);
-				$search['limit'] = 5;
-				$search['company_profile_id'] = $this->data['sess_company_profile_id'];
-				//print_r($this->data['quotation_data']);
-			
-			}
-			
+					$this->data['upcoming_follow_up_data'] = $this->Quotation_Model->get_upcoming_follow_up();
+					unset($search);
+					$search['limit'] = 5;
+					$search['company_profile_id'] = $this->data['sess_company_profile_id'];
+					//print_r($this->data['quotation_data']);
+				
+				}
+				
 
-			*/
+				*/
 
 		parent::get_header();
 		parent::get_left_nav();
@@ -242,5 +242,3 @@ class Wam extends Main
 }
 
 
-
-?>

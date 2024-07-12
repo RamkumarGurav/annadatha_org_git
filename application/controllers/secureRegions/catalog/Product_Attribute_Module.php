@@ -889,3 +889,5 @@ class Product_Attribute_Module extends Main
 
 	}
 }
+
+?>

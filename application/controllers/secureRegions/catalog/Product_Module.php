@@ -1837,3 +1837,4 @@ class Product_Module extends Main
 	}
 
 }
+?>

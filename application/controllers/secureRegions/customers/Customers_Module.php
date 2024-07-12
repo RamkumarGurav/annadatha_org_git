@@ -532,3 +532,6 @@ class Customers_Module extends Main {
 	
 	
 }
+
+
+?>

@@ -1304,3 +1304,4 @@ class Category_Module extends Main
 
 }
 
+?>

@@ -28,9 +28,7 @@ class Login extends CI_Controller
 	function index()
 	{
 
-		echo "<pre> <br>";
-		print_r("hi");
-		exit;
+
 
 		if (!empty($this->data['session_uid']) && !empty($this->data['session_name']) && !empty($this->data['session_email'])) {
 			REDIRECT(MAINSITE_Admin . "wam");
