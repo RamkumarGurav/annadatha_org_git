@@ -1,4 +1,4 @@
-<? php
+<?php
 
 $page_module_name = "City";
 
@@ -15,12 +15,12 @@ $page_module_name = "City";
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark"><? php echo $page_module_name ?> <small>List</small></h1>
+                    <h1 class="m-0 text-dark"><?php echo $page_module_name ?> <small>List</small></h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
-                        <li class="breadcrumb-item active"><? php echo $page_module_name ?></li>
+                        <li class="breadcrumb-item"><a href="<?php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+                        <li class="breadcrumb-item active"><?php echo $page_module_name ?></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@ $page_module_name = "City";
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <?  ?>
+    <?php ?>
 
     <section class="content">
         <div class="row">
@@ -48,7 +48,7 @@ $page_module_name = "City";
                         <div id="collapseOne" class="panel-collapse collapse" style="">
                             <div class="card-body">
 
-                                <? php echo form_open(MAINSITE_Admin . "$user_access->class_name/$user_access->function_name", array('method' => 'post', 'id' => 'search_report_form', "name" => "search_report_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
+                                <?php echo form_open(MAINSITE_Admin . "$user_access->class_name/$user_access->function_name", array('method' => 'post', 'id' => 'search_report_form', "name" => "search_report_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
 
                                 <div class="card-body">
                                     <div class="row">
@@ -58,11 +58,11 @@ $page_module_name = "City";
                                                 <select name="field_name" id="field_name" class="form-control"
                                                     style="width: 100%;">
                                                     <!-- <option value=''>Select Field</option> -->
-                                                    <option value='urm.city_name' <?  if ($field_name == 'urm.city_name') {
+                                                    <option value='urm.city_name' <?php if ($field_name == 'urm.city_name') {
                                                         echo 'selected';
                                                     } ?>>City
                                                     </option>
-                                                    <option value='urm.city_code' <?  if ($field_name == 'urm.city_code') {
+                                                    <option value='urm.city_code' <?php if ($field_name == 'urm.city_code') {
                                                         echo 'selected';
                                                     } ?>>City Code
                                                     </option>
@@ -76,7 +76,7 @@ $page_module_name = "City";
                                                 <label>Field Value</label>
                                                 <input type="text" name="field_value" id="field_value"
                                                     placeholder="Field Value" style="width: 100%;" class="form-control"
-                                                    value="<? php echo $field_value ?>">
+                                                    value="<?php echo $field_value ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -89,19 +89,19 @@ $page_module_name = "City";
                                                     name="country_id" onchange="getState(this.value ,0)"
                                                     style="width: 100%;">
                                                     <option value="">Select Country</option>
-                                                    <?  foreach ($country_data as $cd) {
+                                                    <?php foreach ($country_data as $cd) {
                                                         $selected = "";
                                                         if ($cd->country_id == $country_id) {
                                                             $selected = "selected";
                                                         }
                                                         ?>
-                                                        <option value="<? php echo $cd->country_id ?>" <? php echo $selected ?>>
-                                                            <? php echo $cd->country_name ?>
-                                                            <?  if ($cd->status != 1) {
+                                                        <option value="<?php echo $cd->country_id ?>" <?php echo $selected ?>>
+                                                            <?php echo $cd->country_name ?>
+                                                            <?php if ($cd->status != 1) {
                                                                 echo " [Block]";
                                                             } ?>
                                                         </option>
-                                                    <?  } ?>
+                                                    <?php } ?>
                                                 </select>
 
                                             </div>
@@ -125,7 +125,7 @@ $page_module_name = "City";
                                                 <label>Start Date</label>
                                                 <div class="input-group date reservationdate" id="reservationdate"
                                                     data-target-input="nearest">
-                                                    <input type="text" value="<? php echo $start_date ?>"
+                                                    <input type="text" value="<?php echo $start_date ?>"
                                                         name="start_date" id="start_date" placeholder="Start Date"
                                                         style="width: 100%;" class="form-control datetimepicker-input"
                                                         data-target="#reservationdate" />
@@ -144,7 +144,7 @@ $page_module_name = "City";
                                                 <label>End Date</label>
                                                 <div class="input-group date reservationdate1" id="reservationdate1"
                                                     data-target-input="nearest">
-                                                    <input type="text" value="<? php echo $end_date ?>" name="end_date"
+                                                    <input type="text" value="<?php echo $end_date ?>" name="end_date"
                                                         id="end_date" placeholder="End Date" style="width: 100%;"
                                                         class="form-control datetimepicker-input"
                                                         data-target="#reservationdate1" />
@@ -166,11 +166,11 @@ $page_module_name = "City";
                                                 <select name="record_status" id="record_status" class="form-control"
                                                     style="width: 100%;">
                                                     <option value=''>Active / Block</option>
-                                                    <option value='1' <?  if ($record_status == 1) {
+                                                    <option value='1' <?php if ($record_status == 1) {
                                                         echo 'selected';
                                                     } ?>>
                                                         Active</option>
-                                                    <option value='zero' <?  if ($record_status == 'zero') {
+                                                    <option value='zero' <?php if ($record_status == 'zero') {
                                                         echo 'selected';
                                                     } ?>>Block</option>
                                                 </select>
@@ -193,7 +193,7 @@ $page_module_name = "City";
                                         </center>
                                     </div>
                                 </div>
-                                <? php echo form_close() ?>
+                                <?php echo form_close() ?>
 
                             </div>
                         </div>
@@ -204,49 +204,49 @@ $page_module_name = "City";
                         <!-- card-header/. -->
                         <div class="card-header">
                             <h3 class="card-title"><span style="color:#FF0000;">Total Records:
-                                    <? php echo $row_count; ?></span></h3>
+                                    <?php echo $row_count; ?></span></h3>
                             <div class="float-right">
-                                <? php
+                                <?php
                                 if ($user_access->add_module == 1) {
                                     ?>
-                                    <a href="<? php echo MAINSITE_Admin . $user_access->class_name ?>/city-edit">
+                                    <a href="<?php echo MAINSITE_Admin . $user_access->class_name ?>/city-edit">
                                         <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add
                                             New</button></a>
-                                <?  } ?>
-                                <? php
+                                <?php } ?>
+                                <?php
                                 if ($user_access->update_module == 1) {
                                     ?>
                                     <button type="button" class="btn btn-success btn-sm"
                                         onclick="validateRecordsActivate()"><i class="fas fa-check"></i> Active</button>
                                     <button type="button" class="btn btn-dark btn-sm" onclick="validateRecordsBlock()"><i
                                             class="fas fa-ban"></i> Block</button>
-                                <?  } ?>
-                                <? php
+                                <?php } ?>
+                                <?php
                                 if ($user_access->export_data == 1) {
                                     ?>
                                     <button type="button" class="btn btn-success btn-sm export_excel"><i
                                             class="fas fa-file-excel"></i> Export</button>
-                                <?  } ?>
+                                <?php } ?>
                             </div>
                         </div>
                         <!-- /.card-header -->
-                        <? php
+                        <?php
                         if ($user_access->view_module == 1) {
                             ?>
                             <div class="card-body">
 
-                                <? php echo form_open(MAINSITE_Admin . "$user_access->class_name/userCity-doUpdateStatus", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
+                                <?php echo form_open(MAINSITE_Admin . "$user_access->class_name/userCity-doUpdateStatus", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
 
                                 <input type="hidden" name="task" id="task" value="" />
-                                <?  echo $this->session->flashdata('alert_message'); ?>
+                                <?php echo $this->session->flashdata('alert_message'); ?>
                                 <table id="example1" class="table table-bordered table-hover table-striped">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <? php if ($user_access->update_module == 1) { ?>
+                                            <?php if ($user_access->update_module == 1) { ?>
                                                 <th width="4%"><input type="checkbox" name="main_check" id="main_check"
                                                         onclick="check_uncheck_All_records()" value="" /></th>
-                                            <?  } ?>
+                                            <?php } ?>
                                             <th>City</th>
                                             <th>State</th>
                                             <th>Country</th>
@@ -257,9 +257,9 @@ $page_module_name = "City";
                                             <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <?  if (!empty($city_data)) { ?>
+                                    <?php if (!empty($city_data)) { ?>
                                         <tbody>
-                                            <? 
+                                            <?
                                             $offset_val = (int) $this->uri->segment(5);
 
                                             $count = $offset_val;
@@ -268,43 +268,43 @@ $page_module_name = "City";
                                                 $count++;
                                                 ?>
                                                 <tr>
-                                                    <td><? php echo $count ?>.</td>
-                                                    <? php if ($user_access->update_module == 1) { ?>
+                                                    <td><?php echo $count ?>.</td>
+                                                    <?php if ($user_access->update_module == 1) { ?>
                                                         <td><input type="checkbox" name="sel_recds[]"
-                                                                id="sel_recds<? php echo $count; ?>"
-                                                                value="<? php echo $urm->city_id; ?>" /></td>
-                                                    <?  } ?>
+                                                                id="sel_recds<?php echo $count; ?>"
+                                                                value="<?php echo $urm->city_id; ?>" /></td>
+                                                    <?php } ?>
                                                     <td><a
-                                                            href="<? php echo MAINSITE_Admin . $user_access->class_name . "/city-view/" . $urm->city_id ?>"><? php echo $urm->city_name ?></a>
+                                                            href="<?php echo MAINSITE_Admin . $user_access->class_name . "/city-view/" . $urm->city_id ?>"><?php echo $urm->city_name ?></a>
                                                     </td>
-                                                    <td><? php echo $urm->state_name ?></td>
-                                                    <td><? php echo $urm->country_name ?></td>
-                                                    <td><? php echo $urm->city_code ?></td>
+                                                    <td><?php echo $urm->state_name ?></td>
+                                                    <td><?php echo $urm->country_name ?></td>
+                                                    <td><?php echo $urm->city_code ?></td>
                                                     <td>
-                                                        <?  if ($urm->is_display == 1) { ?> <i
+                                                        <?php if ($urm->is_display == 1) { ?> <i
                                                                 class="fas fa-check btn-success btn-sm "></i>
-                                                        <?  } else { ?><i class="fas fa-ban btn-danger btn-sm "></i>
-                                                        <?  } ?>
+                                                        <?php } else { ?><i class="fas fa-ban btn-danger btn-sm "></i>
+                                                        <?php } ?>
                                                     </td>
-                                                    <td><? php echo date("d-m-Y", strtotime($urm->added_on)) ?></td>
-                                                    <td><? php echo $urm->added_by_name ?></td>
+                                                    <td><?php echo date("d-m-Y", strtotime($urm->added_on)) ?></td>
+                                                    <td><?php echo $urm->added_by_name ?></td>
                                                     <td>
-                                                        <?  if ($urm->status == 1) { ?> <i
+                                                        <?php if ($urm->status == 1) { ?> <i
                                                                 class="fas fa-check btn-success btn-sm "></i>
-                                                        <?  } else { ?><i class="fas fa-ban btn-danger btn-sm "></i>
-                                                        <?  } ?>
+                                                        <?php } else { ?><i class="fas fa-ban btn-danger btn-sm "></i>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
-                                            <?  } ?>
+                                            <?php } ?>
                                         </tbody>
-                                    <?  } ?>
+                                    <?php } ?>
                                 </table>
-                                <? php echo form_close() ?>
+                                <?php echo form_close() ?>
                                 <center>
-                                    <div class="pagination_custum"><?  echo $this->pagination->create_links(); ?></div>
+                                    <div class="pagination_custum"><?php echo $this->pagination->create_links(); ?></div>
                                 </center>
                             </div>
-                        <?  } else {
+                        <?php } else {
                             $this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
                             $this->load->view('admin/template/access_denied', $this->data);
                         } ?>
@@ -315,7 +315,7 @@ $page_module_name = "City";
 
 
     </section>
-    <?  ?>
+    <?php ?>
 
 </div>
 
@@ -387,10 +387,10 @@ $page_module_name = "City";
         if (country_id > 0) {
             Pace.restart();
             $.ajax({
-                url: "<? php echo MAINSITE_Admin . 'Ajax/getState' ?>",
+                url: "<?php echo MAINSITE_Admin . 'Ajax/getState' ?>",
                 type: 'post',
                 dataType: "json",
-                data: { 'country_id': country_id, 'state_id': state_id, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
+                data: { 'country_id': country_id, 'state_id': state_id, "<?php echo $csrf['name'] ?>": "<?php echo $csrf['hash'] ?>" },
                 success: function (response) {
                     $("#state_id").html(response.state_html);
                 },
@@ -427,7 +427,7 @@ $page_module_name = "City";
 
             // Set the form action attribute to export URL.
             $('#search_report_form').attr('action',
-                '<?  echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name . "-export"; ?>');
+                '<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name . "-export"; ?>');
             // Set the form target to '_blank' to open in a new tab.
             $('#search_report_form').attr('target',
                 '_blank');
@@ -437,14 +437,14 @@ $page_module_name = "City";
 
             // Reset the form action attribute and target.
             $('#search_report_form').attr('action',
-                '<?  echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name; ?>');
+                '<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name; ?>');
             $('#search_report_form').attr('target', '');
         });
 
-        <?  if (!empty($country_id) && !empty($state_id)) { ?>
+        <?php if (!empty($country_id) && !empty($state_id)) { ?>
             // If country_id and state_id are not empty, call getState function with these values.
-            getState(<? php echo $country_id ?>, <? php echo $state_id ?>)
-        <?  } ?>
+            getState(<?php echo $country_id ?>, <?php echo $state_id ?>)
+        <?php } ?>
 
     })
 

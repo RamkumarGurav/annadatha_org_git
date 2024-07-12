@@ -1,12 +1,12 @@
-<link href="<? php echo _admin_files_ ?>skin-lion/ui.easytree.css" rel="stylesheet" type="text/css" />
+<link href="<?php  echo  _admin_files_ ?>skin-lion/ui.easytree.css" rel="stylesheet" type="text/css" />
 
-<? php
+<?php 
 
 $page_module_name = "Enquiry";
 
 ?>
 
-<? 
+<?php 
 
 $category_id = $is_outer_menu = $super_category_id = $is_display_home_page = 0;
 
@@ -296,7 +296,7 @@ if (!empty($category_data)) {
 
             <div class="col-sm-6">
 
-               <h1 class="m-0 text-dark"><small><? php echo $page_module_name ?> </small></h1>
+               <h1 class="m-0 text-dark"><small><?php  echo  $page_module_name ?> </small></h1>
 
             </div>
 
@@ -306,21 +306,20 @@ if (!empty($category_data)) {
 
                <ol class="breadcrumb float-sm-right">
 
-                  <li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+                  <li class="breadcrumb-item"><a href="<?php  echo  MAINSITE_Admin . "wam" ?>">Home</a></li>
 
                   <li class="breadcrumb-item"><a
-                        href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
+                        href="<?php  echo  MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?php  echo  $user_access->module_name ?>
                         List</a></li>
 
-                  <?  if (!empty($category_data)) { ?>
+                  <?php  if (!empty($category_data)) { ?>
 
                      <li class="breadcrumb-item"><a
-                           href="<? php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $category_id ?>">View</a>
-                     </li>
+                           href="<?php  echo  MAINSITE_Admin . $user_access->class_name . "/view/" . $category_id ?>">View</a></li>
 
-                  <?  } ?>
+                  <?php  } ?>
 
-                  <li class="breadcrumb-item"><? php echo $record_action ?></li>
+                  <li class="breadcrumb-item"><?php  echo  $record_action ?></li>
 
                </ol>
 
@@ -342,8 +341,7 @@ if (!empty($category_data)) {
 
    <!-- Main content -->
 
-   <?  ?>
-
+   <?php  ?>
 
    <section class="content">
 
@@ -355,7 +353,7 @@ if (!empty($category_data)) {
 
                <div class="card-header">
 
-                  <h3 class="card-title"> <small><? php echo $record_action ?></small></h3>
+                  <h3 class="card-title"> <small><?php  echo  $record_action ?></small></h3>
 
                </div>
 
@@ -365,19 +363,19 @@ if (!empty($category_data)) {
 
                   <div class="col-12">
 
-                     <? php
+                     <?php 
 
                      if ($user_access->view_module == 1 || true) {
 
                         ?>
 
-                        <?  echo $this->session->flashdata('alert_message'); ?>
+                        <?php  echo $this->session->flashdata('alert_message'); ?>
 
                         <div class="card-body">
 
-                           <? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'category_form', "name" => "category_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateForm()')); ?>
+                           <?php  echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'category_form', "name" => "category_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data', 'onsubmit' => 'return validateForm()')); ?>
 
-                           <input type="hidden" name="category_id" id="category_id" value="<? php echo $category_id ?>" />
+                           <input type="hidden" name="category_id" id="category_id" value="<?php  echo  $category_id ?>" />
 
                            <input type="hidden" name="redirect_type" id="redirect_type" value="" />
 
@@ -397,7 +395,7 @@ if (!empty($category_data)) {
                                        <div class="col-sm-12">
 
                                           <input type="text" class="form-control form-control-sm" required id="name"
-                                             name="name" value="<?  echo $name; ?>" placeholder="Category Name">
+                                             name="name" value="<?php  echo $name; ?>" placeholder="Category Name">
 
                                        </div>
 
@@ -419,7 +417,7 @@ if (!empty($category_data)) {
                                              <div class="form-check" style="margin-top:12px">
                                                 <div class="form-group clearfix">
                                                    <div class="icheck-success d-inline">
-                                                      <input type="radio" name="is_outer_menu" <?  if ($is_outer_menu == 1) {
+                                                      <input type="radio" name="is_outer_menu" <?php  if ($is_outer_menu == 1) {
                                                          echo "checked";
                                                       } ?> value="1" id="is_outer_menu1">
                                                       <label for="is_outer_menu1"> Yes</label> &nbsp;&nbsp;
@@ -427,7 +425,7 @@ if (!empty($category_data)) {
                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                                                    <div class="icheck-danger d-inline">
-                                                      <input type="radio" name="is_outer_menu" <?  if ($is_outer_menu != 1) {
+                                                      <input type="radio" name="is_outer_menu" <?php  if ($is_outer_menu != 1) {
                                                          echo "checked";
                                                       } ?> value="0" id="is_outer_menu2">
                                                       <label for="is_outer_menu2"> No</label>
@@ -449,7 +447,7 @@ if (!empty($category_data)) {
 
 
 
-                                    <div class="form-group is_parent_field" <? php /*?>style=" <?  if(empty($super_category_id)){ ?> display:block <?  }else{ ?> display:none <?  } ?>"<? php */ ?>>
+                                    <div class="form-group is_parent_field" <?php  /*?>style=" <?php  if(empty($super_category_id)){ ?> display:block <?php  }else{ ?> display:none <?php  } ?>"<?php  */ ?>>
 
                                        <div class="form-group row">
 
@@ -464,21 +462,21 @@ if (!empty($category_data)) {
                                                 <mute><em>Icon Size : 20px X 20px</em></mute>
                                                 <div class="input-group-btn" style="border:1px solid #ddd">
                                                    <div class="category-icon-display">
-                                                      <?  if (!empty($category_icon)) { ?><a
-                                                            href="<? php echo _uploaded_files_ . 'category/' . $category_icon; ?>"
+                                                      <?php  if (!empty($category_icon)) { ?><a
+                                                            href="<?php  echo _uploaded_files_ . 'category/' . $category_icon; ?>"
                                                             target="_blank"><img width="70"
-                                                               src="<? php echo _uploaded_files_ . 'category/' . $category_icon; ?>"
-                                                               class="img-preview" /></a><?  } else { ?> <img width="70"
-                                                            src="<? php echo _lte_files_ . 'dist/img/no-img.png'; ?>"
-                                                            class="img-preview" /> <? php } ?>
+                                                               src="<?php  echo _uploaded_files_ . 'category/' . $category_icon; ?>"
+                                                               class="img-preview" /></a><?php  } else { ?> <img width="70"
+                                                            src="<?php  echo  _lte_files_ . 'dist/img/no-img.png'; ?>"
+                                                            class="img-preview" /> <?php  } ?>
                                                    </div>
                                                 </div>
-                                                <?  if (!empty($category_icon) && !empty($category_id)) { ?>
+                                                <?php  if (!empty($category_icon) && !empty($category_id)) { ?>
                                                    <a style="margin-left:20px;color:#F00;font-size:18px"
                                                       onclick="deleteImage(this)" data-table='category'
-                                                      data-column='category_icon' data-id='<? php echo $category_id ?>'><i
+                                                      data-column='category_icon' data-id='<?php  echo  $category_id ?>'><i
                                                          class="fa fa-trash"></i></a>
-                                                <?  } ?>
+                                                <?php  } ?>
                                              </div>
                                           </div>
 
@@ -501,23 +499,23 @@ if (!empty($category_data)) {
                                                 <mute><em>Image Size : 310 X 200</em></mute>
 
                                                 <div class="input-group-btn" style="border:1px solid #ddd">
-                                                   <div class="cover-image-display"> <?  if (!empty($cover_image)) { ?><a
-                                                            href="<? php echo _uploaded_files_ . 'category/' . $cover_image; ?>"
+                                                   <div class="cover-image-display"> <?php  if (!empty($cover_image)) { ?><a
+                                                            href="<?php  echo _uploaded_files_ . 'category/' . $cover_image; ?>"
                                                             target="_blank"><img width="70"
-                                                               src="<? php echo _uploaded_files_ . 'category/' . $cover_image; ?>"
-                                                               class="img-preview" /></a><?  } else { ?> <img width="70"
-                                                            src="<? php echo _lte_files_ . 'dist/img/no-img.png'; ?>"
-                                                            class="img-preview" /> <? php } ?> </div>
+                                                               src="<?php  echo _uploaded_files_ . 'category/' . $cover_image; ?>"
+                                                               class="img-preview" /></a><?php  } else { ?> <img width="70"
+                                                            src="<?php  echo  _lte_files_ . 'dist/img/no-img.png'; ?>"
+                                                            class="img-preview" /> <?php  } ?> </div>
                                                 </div>
 
-                                                <?  if (!empty($cover_image) && !empty($category_id)) { ?>
+                                                <?php  if (!empty($cover_image) && !empty($category_id)) { ?>
 
                                                    <a style="margin-left:20px;color:#F00;font-size:18px"
                                                       onclick="deleteImage(this)" data-table='category'
-                                                      data-column='cover_image' data-id='<? php echo $category_id ?>'><i
+                                                      data-column='cover_image' data-id='<?php  echo  $category_id ?>'><i
                                                          class="fa fa-trash"></i></a>
 
-                                                <?  } ?>
+                                                <?php  } ?>
 
                                              </div>
 
@@ -551,25 +549,24 @@ if (!empty($category_data)) {
                                                 <div class="input-group-btn">
                                                    <div class="header1-image-display">
 
-                                                      <?  if (!empty($header_1_img)) { ?><a
-                                                            href="<? php echo _uploaded_files_ . 'category/' . $header_1_img; ?>"
+                                                      <?php  if (!empty($header_1_img)) { ?><a
+                                                            href="<?php  echo _uploaded_files_ . 'category/' . $header_1_img; ?>"
                                                             target="_blank"><img width="40"
-                                                               src="<? php echo _uploaded_files_ . 'category/' . $header_1_img; ?>" /></a><?  } else { ?>
-                                                         <img width="70"
-                                                            src="<? php echo _lte_files_ . 'dist/img/no-img.png'; ?>"
-                                                            class="img-preview" /> <? php } ?>
+                                                               src="<?php  echo _uploaded_files_ . 'category/' . $header_1_img; ?>" /></a><?php  } else { ?>
+                                                         <img width="70" src="<?php  echo  _lte_files_ . 'dist/img/no-img.png'; ?>"
+                                                            class="img-preview" /> <?php  } ?>
 
                                                    </div>
                                                 </div>
 
-                                                <?  if (!empty($header_1_img) && !empty($category_id)) { ?>
+                                                <?php  if (!empty($header_1_img) && !empty($category_id)) { ?>
 
                                                    <a style="margin-left:20px;color:#F00;font-size:18px"
                                                       onclick="deleteImage(this)" data-table='category'
-                                                      data-column='header_1_img' data-id='<? php echo $category_id ?>'><i
+                                                      data-column='header_1_img' data-id='<?php  echo  $category_id ?>'><i
                                                          class="fa fa-trash"></i></a>
 
-                                                <?  } ?>
+                                                <?php  } ?>
 
                                              </div>
 
@@ -587,7 +584,7 @@ if (!empty($category_data)) {
                                              </label>
 
                                              <input type="text" class="form-control" name="header_1_url" id="header_1_url"
-                                                value="<? php echo $header_1_url ?>" />
+                                                value="<?php  echo  $header_1_url ?>" />
 
                                           </div>
 
@@ -624,25 +621,24 @@ if (!empty($category_data)) {
                                                 <div class="input-group-btn">
                                                    <div class="footer-image-display">
 
-                                                      <?  if (!empty($footer_1_img)) { ?><a
-                                                            href="<? php echo _uploaded_files_ . 'category/' . $footer_1_img; ?>"
+                                                      <?php  if (!empty($footer_1_img)) { ?><a
+                                                            href="<?php  echo _uploaded_files_ . 'category/' . $footer_1_img; ?>"
                                                             target="_blank"><img width="40"
-                                                               src="<? php echo _uploaded_files_ . 'category/' . $footer_1_img; ?>" /></a><?  } else { ?>
-                                                         <img width="70"
-                                                            src="<? php echo _lte_files_ . 'dist/img/no-img.png'; ?>"
-                                                            class="img-preview" /> <? php } ?>
+                                                               src="<?php  echo _uploaded_files_ . 'category/' . $footer_1_img; ?>" /></a><?php  } else { ?>
+                                                         <img width="70" src="<?php  echo  _lte_files_ . 'dist/img/no-img.png'; ?>"
+                                                            class="img-preview" /> <?php  } ?>
 
                                                    </div>
                                                 </div>
 
-                                                <?  if (!empty($footer_1_img) && !empty($category_id)) { ?>
+                                                <?php  if (!empty($footer_1_img) && !empty($category_id)) { ?>
 
                                                    <a style="margin-left:20px;color:#F00;font-size:18px"
                                                       onclick="deleteImage(this)" data-table='category'
-                                                      data-column='footer_1_img' data-id='<? php echo $category_id ?>'><i
+                                                      data-column='footer_1_img' data-id='<?php  echo  $category_id ?>'><i
                                                          class="fa fa-trash"></i></a>
 
-                                                <?  } ?>
+                                                <?php  } ?>
 
                                              </div>
 
@@ -660,7 +656,7 @@ if (!empty($category_data)) {
                                              </label>
 
                                              <input type="text" class="form-control" name="footer_1_url" id="footer_1_url"
-                                                value="<? php echo $footer_1_url ?>" />
+                                                value="<?php  echo  $footer_1_url ?>" />
 
                                           </div>
 
@@ -679,7 +675,7 @@ if (!empty($category_data)) {
 
                                                    <div class="icheck-success d-inline">
 
-                                                      <input type="radio" name="is_display_home_page" <?  if ($is_display_home_page == 1) {
+                                                      <input type="radio" name="is_display_home_page" <?php  if ($is_display_home_page == 1) {
                                                          echo "checked";
                                                       } ?> value="1"
                                                          id="is_display_home_page1">
@@ -694,7 +690,7 @@ if (!empty($category_data)) {
 
                                                    <div class="icheck-danger d-inline">
 
-                                                      <input type="radio" name="is_display_home_page" <?  if ($is_display_home_page != 1) {
+                                                      <input type="radio" name="is_display_home_page" <?php  if ($is_display_home_page != 1) {
                                                          echo "checked";
                                                       } ?> value="0"
                                                          id="is_display_home_page2">
@@ -733,7 +729,7 @@ if (!empty($category_data)) {
                                        <div class="col-sm-12">
 
                                           <input type="text" class="form-control form-control-sm" required id="slug_url"
-                                             name="slug_url" value="<?  echo $slug_url; ?>" placeholder="Slug URL">
+                                             name="slug_url" value="<?php  echo $slug_url; ?>" placeholder="Slug URL">
 
                                        </div>
 
@@ -749,7 +745,7 @@ if (!empty($category_data)) {
                                        <div class="col-sm-12">
 
                                           <input type="text" class="form-control form-control-sm" maxlength="60" required
-                                             id="meta_title" name="meta_title" value="<?  echo $meta_title; ?>"
+                                             id="meta_title" name="meta_title" value="<?php  echo $meta_title; ?>"
                                              placeholder="Meta Title">
 
                                        </div>
@@ -765,7 +761,7 @@ if (!empty($category_data)) {
 
                                           <input type="text" class="form-control form-control-sm" maxlength="160" required
                                              id="meta_description" name="meta_description"
-                                             value="<?  echo $meta_description; ?>" placeholder="Meta Description">
+                                             value="<?php  echo $meta_description; ?>" placeholder="Meta Description">
 
                                        </div>
 
@@ -779,7 +775,7 @@ if (!empty($category_data)) {
                                        <div class="col-sm-12">
 
                                           <input type="text" class="form-control form-control-sm" required
-                                             id="meta_keyword" name="meta_keyword" value="<?  echo $meta_keyword; ?>"
+                                             id="meta_keyword" name="meta_keyword" value="<?php  echo $meta_keyword; ?>"
                                              placeholder="Meta Keyword">
 
                                        </div>
@@ -815,13 +811,13 @@ if (!empty($category_data)) {
 
                                              <li class="isFolder isExpanded" title="New Parent Category">
 
-                                                <a href="0" target="super_category_id,0,<?  if ($super_category_id == 0)
+                                                <a href="0" target="super_category_id,0,<?php  if ($super_category_id == 0)
                                                    echo "true";
                                                 else
                                                    echo "false"; ?>">
                                                    New Parent Category</a>
 
-                                                <? 
+                                                <?php 
 
                                                 foreach ($category_list as $row1) {
 
@@ -831,7 +827,7 @@ if (!empty($category_data)) {
 
                                                       <ul>
 
-                                                         <? 
+                                                         <?php 
 
                                                          $liClassExpend = '';
                                                          $liClass = '';
@@ -857,18 +853,17 @@ if (!empty($category_data)) {
 
                                                          ?>
 
-                                                         <?  ?>
+                                                         <?php  ?>
 
-
-                                                         <li class="<?  echo $liClass . " " . $liClassExpend; ?> "
+                                                         <li class="<?php  echo $liClass . " " . $liClassExpend; ?> "
                                                             title="Parent Category">
 
-                                                            <a href="0" target="super_category_id,<?  echo $row1->category_id; ?>,<?  if ($super_category_id == $row1->category_id)
+                                                            <a href="0" target="super_category_id,<?php  echo $row1->category_id; ?>,<?php  if ($super_category_id == $row1->category_id)
                                                                   echo "true";
                                                                else
-                                                                  echo "false"; ?>"><?  echo $row1->name; ?></a>
+                                                                  echo "false"; ?>"><?php  echo $row1->name; ?></a>
 
-                                                            <?  foreach ($category_list as $row3) {
+                                                            <?php  foreach ($category_list as $row3) {
 
                                                                if ($row3->super_category_id == $row1->category_id) {
 
@@ -876,7 +871,7 @@ if (!empty($category_data)) {
 
                                                                   <ul>
 
-                                                                     <?  $liClassExpend = '';
+                                                                     <?php  $liClassExpend = '';
                                                                      $liClass = '';
                                                                      $liFolderCount = 0;
                                                                      foreach ($category_list as $row4) {
@@ -893,28 +888,28 @@ if (!empty($category_data)) {
 
 
 
-                                                                     <li class="<?  echo $liClass . " " . $liClassExpend; ?> "
+                                                                     <li class="<?php  echo $liClass . " " . $liClassExpend; ?> "
                                                                         title="Sub Category">
 
                                                                         <a href="0"
-                                                                           target="super_category_id,<?  echo $row3->category_id; ?>,
-                                                                           <?  if ($super_category_id == $row3->category_id)
+                                                                           target="super_category_id,<?php  echo $row3->category_id; ?>,
+                                                                           <?php  if ($super_category_id == $row3->category_id)
                                                                               echo "true";
                                                                            else
-                                                                              echo "false"; ?>"><?  echo $row3->name; ?></a>
-                                                                        <?  echo $row3->name; ?>
+                                                                              echo "false"; ?>"><?php  echo $row3->name; ?></a>
+                                                                        <?php  echo $row3->name; ?>
 
                                                                         <ul>
 
-                                                                           <?  foreach ($category_list as $row5) { //echo "<pre>"; print_r($category_list); echo "</pre>";
+                                                                           <?php  foreach ($category_list as $row5) { //echo "<pre>"; print_r($category_list); echo "</pre>";
                                                                               
                                                                                                 if ($row5->super_category_id == $row3->category_id) { ?>
 
                                                                                  <li class="" title="Super Sub Category"><a href="0"
-                                                                                       target="super_category_id,<?  echo $row5->category_id; ?>,false"><?  echo $row5->name; ?></a>
+                                                                                       target="super_category_id,<?php  echo $row5->category_id; ?>,false"><?php  echo $row5->name; ?></a>
                                                                                  </li>
 
-                                                                              <?  }
+                                                                              <?php  }
                                                                                              } ?>
 
                                                                         </ul>
@@ -923,14 +918,14 @@ if (!empty($category_data)) {
 
                                                                   </ul>
 
-                                                               <?  }
+                                                               <?php  }
                                                             } ?>
 
                                                          </li>
 
                                                       </ul>
 
-                                                   <?  }
+                                                   <?php  }
                                                 } ?>
 
                                              </li>
@@ -974,7 +969,7 @@ if (!empty($category_data)) {
 
                                        <textarea name="short_description" id="short_description"
                                           placeholder="Short Description"
-                                          class="form-control"><?  echo $short_description; ?></textarea>
+                                          class="form-control"><?php  echo $short_description; ?></textarea>
 
                                     </div>
 
@@ -995,7 +990,7 @@ if (!empty($category_data)) {
                            </label> -->
 
                                        <textarea name="description" id="description" placeholder="Description"
-                                          class="form-control ckeditor"><?  echo $description; ?></textarea>
+                                          class="form-control ckeditor"><?php  echo $description; ?></textarea>
 
                                     </div>
 
@@ -1087,7 +1082,7 @@ if (!empty($category_data)) {
 
                                                 <div class="icheck-success d-inline">
 
-                                                   <input type="radio" name="status" <?  if ($status == 1) {
+                                                   <input type="radio" name="status" <?php  if ($status == 1) {
                                                       echo "checked";
                                                    } ?> value="1" id="radioSuccess1">
 
@@ -1101,7 +1096,7 @@ if (!empty($category_data)) {
 
                                                 <div class="icheck-danger d-inline">
 
-                                                   <input type="radio" name="status" <?  if ($status != 1) {
+                                                   <input type="radio" name="status" <?php  if ($status != 1) {
                                                       echo "checked";
                                                    } ?> value="0" id="radioSuccess2">
 
@@ -1146,13 +1141,13 @@ if (!empty($category_data)) {
 
                            <!-- /.card-footer -->
 
-                           <? php echo form_close() ?>
+                           <?php  echo form_close() ?>
 
 
 
                         </div>
 
-                     <?  } else {
+                     <?php  } else {
 
                         $this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
 
@@ -1174,8 +1169,7 @@ if (!empty($category_data)) {
 
    </section>
 
-   <?  ?>
-
+   <?php  ?>
 
 </div>
 
@@ -1197,7 +1191,7 @@ if (!empty($category_data)) {
       return true;
    }
 </script>
-<script src="<? php echo _admin_files_ ?>js/jquery.easytree.js"></script>
+<script src="<?php  echo  _admin_files_ ?>js/jquery.easytree.js"></script>
 
 <script>
    $('#demo1_menu').easytree();
@@ -1210,7 +1204,7 @@ if (!empty($category_data)) {
          //alert($(obj).data("table") + ' : ' + $(obj).data("column") + ' : ' + $(obj).data("id"));
          $.ajax({
             type: "POST",
-            url: '<?  echo MAINSITE_Admin ?>catalog/Category-Module/deleteImagesForCategory',
+            url: '<?php  echo MAINSITE_Admin ?>catalog/Category-Module/deleteImagesForCategory',
             //dataType : "json",
             data: { "column": column, "id": id },
             success: function (result) {

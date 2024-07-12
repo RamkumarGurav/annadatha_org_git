@@ -1,7 +1,7 @@
-<? php
+<?php
 $page_module_name = "Department";
 ?>
-<? 
+<?
 $department_name = "";
 $department_id = 0;
 $status = 1;
@@ -26,20 +26,20 @@ if (!empty($department_master_data)) {
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark"><? php echo $page_module_name ?> </small></h1>
+					<h1 class="m-0 text-dark"><?php echo $page_module_name ?> </small></h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 						<li class="breadcrumb-item"><a
-								href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
+								href="<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?php echo $user_access->module_name ?>
 								List</a></li>
-						<?  if (!empty($department_master_data)) { ?>
+						<?php if (!empty($department_master_data)) { ?>
 							<li class="breadcrumb-item"><a
-									href="<? php echo MAINSITE_Admin . $user_access->class_name . "/department_view/" . $department_id ?>">View</a>
+									href="<?php echo MAINSITE_Admin . $user_access->class_name . "/department_view/" . $department_id ?>">View</a>
 							</li>
-						<?  } ?>
-						<li class="breadcrumb-item"><? php echo $record_action ?></li>
+						<?php } ?>
+						<li class="breadcrumb-item"><?php echo $record_action ?></li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -48,7 +48,7 @@ if (!empty($department_master_data)) {
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<?  ?>
+	<?php ?>
 
 	<section class="content">
 		<div class="row">
@@ -57,17 +57,17 @@ if (!empty($department_master_data)) {
 				<div class="card">
 
 					<div class="card-header">
-						<h3 class="card-title"><? php echo $department_name ?> <small><? php echo $record_action ?></small></h3>
+						<h3 class="card-title"><?php echo $department_name ?> <small><?php echo $record_action ?></small></h3>
 					</div>
 					<!-- /.card-header -->
-					<? php
+					<?php
 					if ($user_access->view_module == 1 || true) {
 						?>
-						<?  echo $this->session->flashdata('alert_message'); ?>
+						<?php echo $this->session->flashdata('alert_message'); ?>
 						<div class="card-body">
 
-							<? php echo form_open(MAINSITE_Admin . "$user_access->class_name/userDepartmentDoEdit", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
-							<input type="hidden" name="department_id" id="department_id" value="<? php echo $department_id ?>" />
+							<?php echo form_open(MAINSITE_Admin . "$user_access->class_name/userDepartmentDoEdit", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
+							<input type="hidden" name="department_id" id="department_id" value="<?php echo $department_id ?>" />
 							<input type="hidden" name="redirect_type" id="redirect_type" value="" />
 
 							<div class="row">
@@ -75,7 +75,7 @@ if (!empty($department_master_data)) {
 									<label for="inputEmail3" class="col-sm-4 label_content text-right mt-2">Department </label>
 									<div class="col-sm-6">
 										<input type="text" class="form-control form-control-sm" required id="department_name"
-											name="department_name" value="<? php echo $department_name ?>" placeholder="Department">
+											name="department_name" value="<?php echo $department_name ?>" placeholder="Department">
 										<span style="color:#f00;font-size: 22px;margin-top: 3px;">*</span>
 									</div>
 								</div>
@@ -85,7 +85,7 @@ if (!empty($department_master_data)) {
 										<div class="form-check" style="margin-top:12px">
 											<div class="form-group clearfix">
 												<div class="icheck-success d-inline">
-													<input type="radio" name="status" <?  if ($status == 1) {
+													<input type="radio" name="status" <?php if ($status == 1) {
 														echo "checked";
 													} ?> value="1"
 														id="radioSuccess1">
@@ -94,7 +94,7 @@ if (!empty($department_master_data)) {
 												</div>
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<div class="icheck-danger d-inline">
-													<input type="radio" name="status" <?  if ($status != 1) {
+													<input type="radio" name="status" <?php if ($status != 1) {
 														echo "checked";
 													} ?> value="0"
 														id="radioSuccess2">
@@ -118,10 +118,10 @@ if (!empty($department_master_data)) {
 							</div>
 							<!-- /.card-footer -->
 
-							<? php echo form_close() ?>
+							<?php echo form_close() ?>
 							</table>
 						</div>
-					<?  } else {
+					<?php } else {
 						$this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
 						$this->load->view('admin/template/access_denied', $this->data);
 					} ?>
@@ -132,7 +132,7 @@ if (!empty($department_master_data)) {
 
 
 	</section>
-	<?  ?>
+	<?php ?>
 
 </div>
 

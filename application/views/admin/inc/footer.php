@@ -1,5 +1,5 @@
 <footer class="main-footer">
-  <span><strong>Copyright &copy; <?php  php echo date('Y') ?> <b><a target="_blank" href="https://www.marswebsolution.com/"
+  <span><strong>Copyright &copy; <?php echo date('Y') ?> <b><a target="_blank" href="https://www.marswebsolution.com/"
           class="text-black">Mars Web Solutions</a></b></strong>
     All rights reserved.</span>
   <div class="float-right d-none d-sm-inline-block">
@@ -8,7 +8,7 @@
 </footer>
 </div>
 <!-- ./wrapper -->
-<?php  
+<?php
 if (!empty($page_type)) {
   if ($page_type == "list") {
     $this->load->view('admin/inc/files/footer-list', $this->data);
@@ -34,12 +34,12 @@ if (!empty($page_type)) {
 <script>
   $.ajaxSetup({
     headers: {
-      '<?php  php echo $csrf['name'] ?>': '<?php  php echo $csrf['hash'] ?>'
+      '<?php echo $csrf['name'] ?>': '<?php echo $csrf['hash'] ?>'
     }
   });
 </script>
-<script src="<?php  php echo _lte_files_ ?>plugins/pace-progress/pace.min.js"></script>
-<?php  
+<script src="<?php echo _lte_files_ ?>plugins/pace-progress/pace.min.js"></script>
+<?php
 print_r($this->session->all_userdata());
 ?>
 </body>

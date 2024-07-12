@@ -1,4 +1,4 @@
-<? php
+<?php
 
 
 $filename = "Client Group-List-" . date('d-m-Y') . ".xls";
@@ -25,21 +25,21 @@ header("Content-Type: application/vnd.ms-excel");
 
 
 <body>
-    <? 
+    <?php
     $colspan = 8;
     ?>
     <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
         <thead>
-            <?  if (!empty($start_date) || !empty($end_date)) { ?>
+            <?php if (!empty($start_date) || !empty($end_date)) { ?>
                 <tr>
-                    <th colspan="<? php echo $colspan ?>" style="background-color:#CCC" width="*"><br />
+                    <th colspan="<?php echo $colspan ?>" style="background-color:#CCC" width="*"><br />
 
                         Search Record :
-                        <?  if (!empty($start_date)) {
+                        <?php if (!empty($start_date)) {
                             echo "From : " . date('d-m-Y', strtotime($start_date));
                         } ?>
 
-                        <?  if (!empty($end_date)) {
+                        <?php if (!empty($end_date)) {
                             echo " &nbsp;&nbsp;&nbsp;&nbsp;	 To : " . date('d-m-Y', strtotime($end_date));
                         } ?>
                         <br />&nbsp;
@@ -47,7 +47,7 @@ header("Content-Type: application/vnd.ms-excel");
                     </th>
 
                 </tr>
-            <?  } ?>
+            <?php } ?>
 
             <tr>
                 <th style="background-color:#999" width="*">Sl. No.</th>
@@ -62,7 +62,7 @@ header("Content-Type: application/vnd.ms-excel");
             </tr>
         </thead>
         <tbody>
-            <? php
+            <?php
             $count = 0;
             // echo "count : ".count($ptype_list)." <br>";
             if (!empty($client_group_data)) { //print_r($ptype_list);
@@ -74,37 +74,37 @@ header("Content-Type: application/vnd.ms-excel");
 
                         ?>
                         <tr>
-                            <td width="*"><?  echo $count; ?></td>
-                            <td width="*"><?  echo $row->group_name; ?></td>
-                            <td width="*"><?  echo $row->group_description; ?></td>
-                            <td width="*"><?  echo $row->minimum_order_value; ?></td>
-                            <td width="*"> <?  echo date('d-m-Y h:i:s A', strtotime($row->added_on)); ?> &nbsp;</td>
-                            <td width="*"><?  echo $row->added_by_name; ?></td>
+                            <td width="*"><?php echo $count; ?></td>
+                            <td width="*"><?php echo $row->group_name; ?></td>
+                            <td width="*"><?php echo $row->group_description; ?></td>
+                            <td width="*"><?php echo $row->minimum_order_value; ?></td>
+                            <td width="*"> <?php echo date('d-m-Y h:i:s A', strtotime($row->added_on)); ?> &nbsp;</td>
+                            <td width="*"><?php echo $row->added_by_name; ?></td>
                             <td width="*">
-                                <?  if (!empty($row->updated_on)) {
+                                <?php if (!empty($row->updated_on)) {
                                     echo date('d-m-Y h:i:s A', strtotime($row->updated_on));
                                 } ?> &nbsp;
                             </td>
-                            <td width="*"><?  if (!empty($row->updated_by_name)) {
+                            <td width="*"><?php if (!empty($row->updated_by_name)) {
                                 echo $row->updated_by_name;
                             } ?></td>
                             <td width="*">
-                                <?  if ($row->status == 1) { ?> Active
-                                <?  } else { ?>Block
-                                <?  } ?>    
+                                <?php if ($row->status == 1) { ?> Active
+                                <?php } else { ?>Block
+                                <?php } ?>
                             </td>
 
                         </tr>
-                    <? php }
+                    <?php }
                 } ?>
 
 
-            <? php } else { ?>
+            <?php } else { ?>
                 <tr>
-                    <th colspan="<? php echo $colspan ?>">No records to display...</th>
+                    <th colspan="<?php echo $colspan ?>">No records to display...</th>
                 </tr>
 
-            <? php } ?>
+            <?php } ?>
         </tbody>
 
     </table>

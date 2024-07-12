@@ -96,13 +96,13 @@ th {
         <div class="row">
             <div class="col-12">
 <center>
-<? php
+<?php 
 $path = base_url('assets/images/logo.png');// Modify this part (your_img.png
 $type = pathinfo($path, PATHINFO_EXTENSION);
 $data = file_get_contents($path);
 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data); 
 ?>
-	<img src="<? php echo $base64?>">
+	<img src="<?php  echo $base64?>">
 </center>
                 <div class="card ">
 
@@ -117,7 +117,7 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
                     	
                         
                         
-                        <? php echo form_open(MAINSITE_Admin."$user_access->class_name/#", array('method' => 'post', 'id' => 'ptype_list_form' , "name"=>"ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
+                        <?php  echo form_open(MAINSITE_Admin."$user_access->class_name/#", array('method' => 'post', 'id' => 'ptype_list_form' , "name"=>"ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
                             <input type="hidden" name="task" id="task" value="">
                                                         <div class="divTable" style="display:none;"></div>
                             
@@ -138,10 +138,10 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
                                         <th>Status</th>
                                     </tr>
                                 </thead>
-                                <?  
+                                <?php  
 								if(!empty($enquiry_data)){ ?>
                                 <tbody>
-									<?  
+									<?php  
 									$offset_val = (int)$this->uri->segment(5);
 										
 									$count=$offset_val;
@@ -150,24 +150,24 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 											$count++;
 											?>
                                     <tr>
-                                        <td><? php echo $count?>.</td>
-										<td><? php echo date("d-m-Y" , strtotime($urm->added_on))?></td>                                        
-                                        <td><? php echo $urm->name?></td>
-                                        <td><? php echo $urm->email?></td>
-                                        <td><? php echo $urm->contactno?></td>
-                                        <td><? php echo $urm->subject?></td>
-                                        <td><? php echo $urm->description?></td>
-                                        <td><? php echo date("d-m-Y" , strtotime($urm->added_on))?></td>
-                                        <td><? php echo date("d-m-Y" , strtotime($urm->updated_on))?></td>
-                                        <td><? php echo $urm->updated_by_name?></td>
-                                        <td width="6%"><?  if($row->status==1){ ?> Active <? }else{ ?>Block <?  }?>	</td>
+                                        <td><?php  echo $count?>.</td>
+										<td><?php  echo date("d-m-Y" , strtotime($urm->added_on))?></td>                                        
+                                        <td><?php  echo $urm->name?></td>
+                                        <td><?php  echo $urm->email?></td>
+                                        <td><?php  echo $urm->contactno?></td>
+                                        <td><?php  echo $urm->subject?></td>
+                                        <td><?php  echo $urm->description?></td>
+                                        <td><?php  echo date("d-m-Y" , strtotime($urm->added_on))?></td>
+                                        <td><?php  echo date("d-m-Y" , strtotime($urm->updated_on))?></td>
+                                        <td><?php  echo $urm->updated_by_name?></td>
+                                        <td width="6%"><?php  if($row->status==1){ ?> Active <?php }else{ ?>Block <?php  }?>	</td>
                                     </tr>
-                                    <?  } ?>
+                                    <?php  } ?>
                                 </tbody>
-                                <?  } ?>
+                                <?php  } ?>
                                 
 						</table>
-						<? php echo form_close() ?>
+						<?php  echo form_close() ?>
                         
                        
                             

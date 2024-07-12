@@ -1,7 +1,7 @@
-<? php
+<?php 
 $page_module_name = "Gallery";
 ?>
-<? 
+<?php 
 $name = $image = "";
 $id = 0;
 $status = 1;
@@ -28,19 +28,19 @@ if (!empty($gallery_data)) {
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark"><? php echo $page_module_name ?> </small></h1>
+					<h1 class="m-0 text-dark"><?php  echo $page_module_name ?> </small></h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?php  echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 						<li class="breadcrumb-item"><a
-								href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
+								href="<?php  echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?php  echo $user_access->module_name ?>
 								List</a></li>
-						<?  if (!empty($gallery_data)) { ?>
+						<?php  if (!empty($gallery_data)) { ?>
 							<li class="breadcrumb-item"><a
-									href="<? php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $id ?>">View</a></li>
-						<?  } ?>
-						<li class="breadcrumb-item"><? php echo $record_action ?></li>
+									href="<?php  echo MAINSITE_Admin . $user_access->class_name . "/view/" . $id ?>">View</a></li>
+						<?php  } ?>
+						<li class="breadcrumb-item"><?php  echo $record_action ?></li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -49,8 +49,7 @@ if (!empty($gallery_data)) {
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<?  ?>
-
+	<?php  ?>
 	<section class="content">
 		<div class="row">
 			<div class="col-12">
@@ -58,18 +57,18 @@ if (!empty($gallery_data)) {
 				<div class="card">
 
 					<div class="card-header">
-						<h3 class="card-title"><? php echo $name ?> <small><? php echo $record_action ?></small></h3>
+						<h3 class="card-title"><?php  echo $name ?> <small><?php  echo $record_action ?></small></h3>
 					</div>
 					<!-- /.card-header -->
-					<? php
+					<?php 
 					if ($user_access->view_module == 1 || true) {
 						?>
-						<?  echo $this->session->flashdata('alert_message'); ?>
+						<?php  echo $this->session->flashdata('alert_message'); ?>
 						<div class="card-body">
 
 
-							<? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'gallery_form', "name" => "gallery_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'onsubmit' => 'return validateForm()', 'enctype' => 'multipart/form-data')); ?>
-							<input type="hidden" name="id" id="id" value="<? php echo $id ?>" />
+							<?php  echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'gallery_form', "name" => "gallery_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'onsubmit' => 'return validateForm()', 'enctype' => 'multipart/form-data')); ?>
+							<input type="hidden" name="id" id="id" value="<?php  echo $id ?>" />
 							<input type="hidden" name="redirect_type" id="redirect_type" value="" />
 
 							<div class="">
@@ -84,7 +83,7 @@ if (!empty($gallery_data)) {
 										</label>
 										<div class="col-sm-12">
 											<input type="text" class="form-control form-control-sm" required id="name" name="name"
-												value="<? php echo $name ?>" placeholder="Gallery Name">
+												value="<?php  echo $name ?>" placeholder="Gallery Name">
 											<span style="color:red" class="error_span" id="name_error"></span>
 										</div>
 									</div>
@@ -97,23 +96,23 @@ if (!empty($gallery_data)) {
 										<div class="col-sm-12 d-flex">
 											<div class="input-group" style="width:90%">
 												<div class="custom-file">
-													<input type="file" name="image" class="custom-file-input" id="files" <?  if (empty($image)) { ?>
-															required <?  } ?>>
+													<input type="file" name="image" class="custom-file-input" id="files" <?php  if (empty($image)) { ?>
+															required <?php  } ?>>
 													<label class="custom-file-label form-control-sm" for="files"></label>
 												</div>
 											</div>
 											<div class="custom-file-display">
-												<?  if (!empty($image)) { ?>
+												<?php  if (!empty($image)) { ?>
 													<span class="pip">
-														<a target="_blank" href="<? php echo _uploaded_files_ . 'gallery/medium/' . $image ?>">
-															<img class="imageThumb" src="<? php echo _uploaded_files_ . 'gallery/medium/' . $image ?>" />
+														<a target="_blank" href="<?php  echo _uploaded_files_ . 'gallery/medium/' . $image ?>">
+															<img class="imageThumb" src="<?php  echo _uploaded_files_ . 'gallery/medium/' . $image ?>" />
 														</a>
 													</span>
-												<?  } else { ?>
+												<?php  } else { ?>
 													<span class="pip">
-														<img class="imageThumb" src="<? php echo _uploaded_files_ ?>no-img.png" />
+														<img class="imageThumb" src="<?php  echo _uploaded_files_ ?>no-img.png" />
 													</span>
-												<?  } ?>
+												<?php  } ?>
 											</div>
 										</div>
 									</div>
@@ -130,7 +129,7 @@ if (!empty($gallery_data)) {
 											<div class="form-check" style="">
 												<div class="form-group clearfix">
 													<div class="icheck-success d-inline">
-														<input type="radio" name="status" <?  if ($status == 1) {
+														<input type="radio" name="status" <?php  if ($status == 1) {
 															echo "checked";
 														} ?> value="1"
 															id="radioSuccess1">
@@ -139,7 +138,7 @@ if (!empty($gallery_data)) {
 													</div>
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 													<div class="icheck-danger d-inline">
-														<input type="radio" name="status" <?  if ($status != 1) {
+														<input type="radio" name="status" <?php  if ($status != 1) {
 															echo "checked";
 														} ?> value="0"
 															id="radioSuccess2">
@@ -170,10 +169,10 @@ if (!empty($gallery_data)) {
 
 								<!-- /.card-footer -->
 
-								<? php echo form_close() ?>
+								<?php  echo form_close() ?>
 								</table>
 							</div>
-						<?  } else {
+						<?php  } else {
 						$this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
 						$this->load->view('admin/template/access_denied', $this->data);
 					} ?>
@@ -184,8 +183,7 @@ if (!empty($gallery_data)) {
 
 		</div>
 	</section>
-	<?  ?>
-
+	<?php  ?>
 
 </div>
 <aside class="control-sidebar control-sidebar-dark">

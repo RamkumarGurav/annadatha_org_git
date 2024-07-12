@@ -1,13 +1,13 @@
-<?  $id = 1;
+<?php $id = 1;
 if (!empty($append_id)) {
   $id = $append_id;
 } ?>
 <tr class="qe_sub_table_tr">
   <td class="qe_sub_table_count">1</td>
   <td>
-    <input type="text" name="file_title[]" id="file_title_<? php echo $id ?>" placeholder="File Title"
+    <input type="text" name="file_title[]" id="file_title_<?php echo $id ?>" placeholder="File Title"
       class="form-control search-code form-control-sm" />
-    <input type="hidden" name="quotation_enquiry_detail_id[]" id="quotation_enquiry_detail_id<? php echo $id ?>"
+    <input type="hidden" name="quotation_enquiry_detail_id[]" id="quotation_enquiry_detail_id<?php echo $id ?>"
       value="" />
   </td>
   <td>

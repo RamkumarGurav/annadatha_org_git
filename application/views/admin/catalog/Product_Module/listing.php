@@ -1,4 +1,4 @@
-<? php
+<?php
 
 
 
@@ -32,7 +32,7 @@ $product_image_name = '';
 
                 <div class="col-sm-6">
 
-                    <h1 class="m-0 text-dark"><? php echo $page_module_name ?> <small>List</small></h1>
+                    <h1 class="m-0 text-dark"><?php echo $page_module_name ?> <small>List</small></h1>
 
                 </div><!-- /.col -->
 
@@ -40,9 +40,9 @@ $product_image_name = '';
 
                     <ol class="breadcrumb float-sm-right">
 
-                        <li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 
-                        <li class="breadcrumb-item active"><? php echo $page_module_name ?></li>
+                        <li class="breadcrumb-item active"><?php echo $page_module_name ?></li>
 
                     </ol>
 
@@ -60,8 +60,7 @@ $product_image_name = '';
 
     <!-- Main content -->
 
-    <?  ?>
-
+    <?php ?>
 
     <section class="content">
 
@@ -94,7 +93,7 @@ $product_image_name = '';
 
                             <div class="card-body">
 
-                                <? php echo form_open(MAINSITE_Admin . "$user_access->class_name/$user_access->function_name", array('method' => 'post', 'id' => 'search_report_form', "name" => "search_report_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
+                                <?php echo form_open(MAINSITE_Admin . "$user_access->class_name/$user_access->function_name", array('method' => 'post', 'id' => 'search_report_form', "name" => "search_report_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
 
 
 
@@ -157,12 +156,12 @@ $product_image_name = '';
 
                                                     <option value=''>Active / Block</option>
 
-                                                    <option value='1' <?  if ($record_status == 1) {
+                                                    <option value='1' <?php if ($record_status == 1) {
                                                         echo 'selected';
                                                     } ?>>
                                                         Active</option>
 
-                                                    <option value='zero' <?  if ($record_status == 'zero') {
+                                                    <option value='zero' <?php if ($record_status == 'zero') {
                                                         echo 'selected';
                                                     } ?>>Block</option>
 
@@ -217,7 +216,7 @@ $product_image_name = '';
                                                 <div class="input-group date reservationdate" id="reservationdate"
                                                     data-target-input="nearest">
 
-                                                    <input type="text" value="<? php echo $start_date ?>"
+                                                    <input type="text" value="<?php echo $start_date ?>"
                                                         name="start_date" id="start_date" placeholder="Start Date"
                                                         style="width: 100%;" class="form-control datetimepicker-input"
                                                         data-target="#reservationdate" />
@@ -249,7 +248,7 @@ $product_image_name = '';
                                                 <div class="input-group date reservationdate1" id="reservationdate1"
                                                     data-target-input="nearest">
 
-                                                    <input type="text" value="<? php echo $end_date ?>" name="end_date"
+                                                    <input type="text" value="<?php echo $end_date ?>" name="end_date"
                                                         id="end_date" placeholder="End Date" style="width: 100%;"
                                                         class="form-control datetimepicker-input"
                                                         data-target="#reservationdate1" />
@@ -289,7 +288,7 @@ $product_image_name = '';
 
                                 </div>
 
-                                <? php echo form_close() ?>
+                                <?php echo form_close() ?>
 
                             </div>
 
@@ -310,25 +309,25 @@ $product_image_name = '';
                     <div class="card-header">
 
                         <h3 class="card-title"><span style="color:#FF0000;">Total Records:
-                                <? php echo $row_count; ?></span></h3>
+                                <?php echo $row_count; ?></span></h3>
 
                         <div class="float-right">
 
-                            <? php
+                            <?php
 
                             if ($user_access->add_module == 1) {
 
                                 ?>
 
-                                <a href="<? php echo MAINSITE_Admin . $user_access->class_name ?>/edit">
+                                <a href="<?php echo MAINSITE_Admin . $user_access->class_name ?>/edit">
 
                                     <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add
 
                                         New</button></a>
 
-                            <?  } ?>
+                            <?php } ?>
 
-                            <? php
+                            <?php
 
                             if ($user_access->update_module == 1) {
 
@@ -340,9 +339,9 @@ $product_image_name = '';
                                 <button type="button" class="btn btn-dark btn-sm" onclick="validateRecordsBlock()"><i
                                         class="fas fa-ban"></i> Unpublish</button>
 
-                            <?  } ?>
+                            <?php } ?>
 
-                            <? php
+                            <?php
 
                             if ($user_access->export_data == 1) {
 
@@ -351,9 +350,9 @@ $product_image_name = '';
                                 <button type="button" class="btn btn-success btn-sm export_excel"><i
                                         class="fas fa-file-excel"></i> Export</button>
 
-                            <?  } ?>
+                            <?php } ?>
 
-                            <? php
+                            <?php
 
                             if ($user_access->export_data == 1) {
 
@@ -362,7 +361,7 @@ $product_image_name = '';
                                 <button type="button" class="btn btn-success btn-sm export_pdf"><i class="fas fa-file-pdf"
                                         style='color:red'></i> Print</button>
 
-                            <?  } ?>
+                            <?php } ?>
 
                         </div>
 
@@ -370,7 +369,7 @@ $product_image_name = '';
 
                     <!-- /.card-header -->
 
-                    <? php
+                    <?php
 
                     if ($user_access->view_module == 1) {
 
@@ -380,11 +379,11 @@ $product_image_name = '';
 
 
 
-                            <? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doUpdateStatus", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
+                            <?php echo form_open(MAINSITE_Admin . "$user_access->class_name/doUpdateStatus", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
 
                             <input type="hidden" name="task" id="task" value="" />
 
-                            <?  echo $this->session->flashdata('alert_message'); ?>
+                            <?php echo $this->session->flashdata('alert_message'); ?>
 
                             <table id="example1" class="table table-bordered table-hover table-striped">
 
@@ -394,12 +393,12 @@ $product_image_name = '';
 
                                         <th>#</th>
 
-                                        <? php if ($user_access->update_module == 1) { ?>
+                                        <?php if ($user_access->update_module == 1) { ?>
 
                                             <th width="4%"><input type="checkbox" name="main_check" id="main_check"
                                                     onclick="check_uncheck_All_records()" value="" /></th>
 
-                                        <?  } ?>
+                                        <?php } ?>
 
                                         <th>Product Name</th>
 
@@ -419,47 +418,33 @@ $product_image_name = '';
 
                                 </thead>
 
-                                <?  if (!empty($product_data)) { ?>
+                                <?php if (!empty($product_data)) { ?>
 
                                     <tbody>
 
-                                        <? 
+                                        <?
 
                                         $offset_val = (int) $this->uri->segment(5);
-
-
-
                                         $count = $offset_val;
-
-
-
                                         foreach ($product_data as $urm) {
-
                                             $count++;
-
                                             //if($urm->super_category_id == '') { $urm->super_category_id == '0';}
-                                
                                             ?>
-
                                             <tr>
 
-                                                <td><? php echo $count ?>.</td>
-
-                                                <? php if ($user_access->update_module == 1) { ?>
-
-                                                    <td><input type="checkbox" name="sel_recds[]" id="sel_recds<? php echo $count; ?>"
-                                                            value="<? php echo $urm->product_id; ?>" /></td>
-
-                                                <?  } ?>
-
+                                                <td><?php echo $count ?>.</td>
+                                                <?php if ($user_access->update_module == 1) { ?>
+                                                    <td><input type="checkbox" name="sel_recds[]" id="sel_recds<?php echo $count; ?>"
+                                                            value="<?php echo $urm->product_id; ?>" /></td>
+                                                <?php } ?>
                                                 <td><a
-                                                        href="<? php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $urm->product_id ?>"><? php echo $urm->name ?></a>
+                                                        href="<?php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $urm->product_id ?>"><?php echo $urm->name ?></a>
                                                 </td>
 
                                                 <td>
-                                                    <?  if (!empty($urm->category_name)) { ?>
+                                                    <?php if (!empty($urm->category_name)) { ?>
                                                         <ol>
-                                                            <? 
+                                                            <?
                                                             $category_name = explode("~~~", $urm->category_name);
                                                             foreach ($category_name as $cn) {
                                                                 echo "<li>$cn</li>";
@@ -467,59 +452,59 @@ $product_image_name = '';
 
                                                             ?>
                                                         </ol>
-                                                    <?  } else {
+                                                    <?php } else {
                                                         echo "-";
                                                     } ?>
                                                 </td>
 
 
 
-                                                <td><? php echo $urm->brand_name ?></td>
+                                                <td><?php echo $urm->brand_name ?></td>
 
-                                                <td><? php echo $urm->updated_by_name ?></td>
+                                                <td><?php echo $urm->updated_by_name ?></td>
 
 
 
                                                 <td><a class="btn btn-default"
-                                                        href="<? php echo _uploaded_files_ . 'product/large/' ?><? php echo $urm->product_image_name ?>"
+                                                        href="<?php echo _uploaded_files_ . 'product/large/' ?><?php echo $urm->product_image_name ?>"
                                                         target="_blank"><img
-                                                            src="<? php echo _uploaded_files_ . 'product/small/' ?><? php echo $urm->product_image_name ?>"
+                                                            src="<?php echo _uploaded_files_ . 'product/small/' ?><?php echo $urm->product_image_name ?>"
                                                             width="75" /></a></td>
 
-                                                <? php if ($urm->status != '0') { ?>
+                                                <?php if ($urm->status != '0') { ?>
 
                                                     <td class='nodrag' align='center'><i class='fa fa-check true-icon'></i><span
                                                             style='display:none'>Publish</span></td>
 
-                                                <? php } else { ?>
+                                                <?php } else { ?>
 
                                                     <td class='nodrag' align='center'><i class="fa fa-cross"
                                                             style="font-size:48px;color:red"></i><span style='display:none'>Un
                                                             Publish</span></td>
 
-                                                <? php } ?>
+                                                <?php } ?>
 
-                                                <td><? php echo date("d-m-Y", strtotime($urm->added_on)) ?></td>
+                                                <td><?php echo date("d-m-Y", strtotime($urm->added_on)) ?></td>
 
                                             </tr>
 
-                                        <?  } ?>
+                                        <?php } ?>
 
                                     </tbody>
 
-                                <?  } ?>
+                                <?php } ?>
 
                             </table>
 
-                            <? php echo form_close() ?>
+                            <?php echo form_close() ?>
 
                             <center>
-                                <div class="pagination_custum"><?  echo $this->pagination->create_links(); ?></div>
+                                <div class="pagination_custum"><?php echo $this->pagination->create_links(); ?></div>
                             </center>
 
                         </div>
 
-                    <?  } else {
+                    <?php } else {
 
                         $this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
 
@@ -541,8 +526,7 @@ $product_image_name = '';
 
     </section>
 
-    <?  ?>
-
+    <?php ?>
 
 </div>
 
@@ -712,7 +696,7 @@ $product_image_name = '';
 
 
 
-            $('#search_report_form').attr('action', '<?  echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name . "-export"; ?>');
+            $('#search_report_form').attr('action', '<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name . "-export"; ?>');
 
             $('#search_report_form').attr('target', '_blank');
 
@@ -720,7 +704,7 @@ $product_image_name = '';
 
 
 
-            $('#search_report_form').attr('action', '<?  echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name; ?>');
+            $('#search_report_form').attr('action', '<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name; ?>');
 
             $('#search_report_form').attr('target', '');
 
@@ -734,7 +718,7 @@ $product_image_name = '';
 
 
 
-            $('#search_report_form').attr('action', '<?  echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name . "-pdf"; ?>');
+            $('#search_report_form').attr('action', '<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name . "-pdf"; ?>');
 
             $('#search_report_form').attr('target', '_blank');
 
@@ -742,7 +726,7 @@ $product_image_name = '';
 
 
 
-            $('#search_report_form').attr('action', '<?  echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name; ?>');
+            $('#search_report_form').attr('action', '<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name; ?>');
 
             $('#search_report_form').attr('target', '');
 

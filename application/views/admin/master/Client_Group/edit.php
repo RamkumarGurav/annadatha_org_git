@@ -1,7 +1,7 @@
-<? php
+<?php
 $page_module_name = "Client Group";
 ?>
-<? 
+<?php
 $group_name = $group_description = "";
 $group_id = $minimum_order_value = 0;
 $category_id = 0;
@@ -30,19 +30,20 @@ if (!empty($client_group_data)) {
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark"><? php echo $page_module_name ?> </small></h1>
+					<h1 class="m-0 text-dark"><?php echo $page_module_name ?> </small></h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 						<li class="breadcrumb-item"><a
-								href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
+								href="<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?php echo $user_access->module_name ?>
 								List</a></li>
-						<?  if (!empty($client_group_data)) { ?>
+						<?php if (!empty($client_group_data)) { ?>
 							<li class="breadcrumb-item"><a
-									href="<? php echo MAINSITE_Admin . $user_access->class_name . "/city_view/" . $group_id ?>">View</a></li>
-						<?  } ?>
-						<li class="breadcrumb-item"><? php echo $record_action ?></li>
+									href="<?php echo MAINSITE_Admin . $user_access->class_name . "/city_view/" . $group_id ?>">View</a>
+							</li>
+						<?php } ?>
+						<li class="breadcrumb-item"><?php echo $record_action ?></li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -51,7 +52,7 @@ if (!empty($client_group_data)) {
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<?  ?>
+	<?php ?>
 
 	<section class="content">
 		<div class="row">
@@ -60,16 +61,16 @@ if (!empty($client_group_data)) {
 				<div class="card">
 
 					<div class="card-header">
-						<h3 class="card-title"><? php echo $group_name ?> <small><? php echo $record_action ?></small></h3>
+						<h3 class="card-title"><?php echo $group_name ?> <small><?php echo $record_action ?></small></h3>
 					</div>
 					<!-- /.card-header -->
-					<? php
+					<?php
 					if ($user_access->view_module == 1 || true) {
 						?>
-						<?  echo $this->session->flashdata('alert_message'); ?>
+						<?php echo $this->session->flashdata('alert_message'); ?>
 						<div class="card-body">
-							<? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => '', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form')); ?>
-							<input type="hidden" name="group_id" id="group_id" value="<? php echo $group_id ?>" />
+							<?php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => '', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form')); ?>
+							<input type="hidden" name="group_id" id="group_id" value="<?php echo $group_id ?>" />
 							<input type="hidden" name="redirect_type" id="redirect_type" value="" />
 
 							<div class="form-group row">
@@ -78,7 +79,7 @@ if (!empty($client_group_data)) {
 											style="color:#f00;font-size: 22px;margin-top: 3px;">*</span></label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control form-control-sm" required id="group_name" name="group_name"
-											value="<? php echo $group_name ?>" placeholder="Client Group Name">
+											value="<?php echo $group_name ?>" placeholder="Client Group Name">
 									</div>
 								</div>
 
@@ -89,7 +90,7 @@ if (!empty($client_group_data)) {
 											style="color:#f00;font-size: 22px;margin-top: 3px;">*</span></label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control form-control-sm" required id="group_description"
-											name="group_description" value="<? php echo $group_description ?>"
+											name="group_description" value="<?php echo $group_description ?>"
 											placeholder="Client Group Description">
 
 									</div>
@@ -100,7 +101,7 @@ if (!empty($client_group_data)) {
 											style="color:#f00;font-size: 22px;margin-top: 3px;">*</span></label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control form-control-sm" required id="minimum_order_value"
-											name="minimum_order_value" value="<? php echo $minimum_order_value ?>"
+											name="minimum_order_value" value="<?php echo $minimum_order_value ?>"
 											placeholder="Minimum Order Value">
 
 									</div>
@@ -113,45 +114,45 @@ if (!empty($client_group_data)) {
 								<div class="col-lg-12 col-md-4 col-sm-6">
 									<label for="radioSuccess1" class="col-sm-12 label_content px-2 py-0">Category</label>
 									<div class="col-md-10">
-										<?  if (!empty($client_group_category_data)) { ?>
+										<?php if (!empty($client_group_category_data)) { ?>
 
-											<?  foreach ($client_group_category_data as $dgd) { ?>
+											<?php foreach ($client_group_category_data as $dgd) { ?>
 
 												<div class="form-group clearfix">
 													<div class="row">
 														<div class="col-md-4">
-															<label for="radioSuccess1" <?  if ($dgd->status != 1) { ?> style="color:#F00" <?  } ?>>
-																<? php echo $dgd->category_name ?></label>
+															<label for="radioSuccess1" <?php if ($dgd->status != 1) { ?> style="color:#F00" <?php } ?>>
+																<?php echo $dgd->category_name ?></label>
 														</div>
 														<div class="col-md-6">
 															<input type="hidden" name="category_id[]" class="form-control"
-																value="<? php echo $dgd->category_id ?>">
+																value="<?php echo $dgd->category_id ?>">
 															<input type="number" min="0" max="99" name="category_disc_mrp[]"
-																value="<? php echo $dgd->category_disc_mrp ?>" class="form-control" step="any">
+																value="<?php echo $dgd->category_disc_mrp ?>" class="form-control" step="any">
 														</div>
 
 													</div>
 												</div>
-											<?  } ?> 
-										<?  } else if (!empty($category_data)) { ?>
+											<?php } ?>
+										<?php } else if (!empty($category_data)) { ?>
 
-											<?  foreach ($category_data as $dgd) { ?>
+											<?php foreach ($category_data as $dgd) { ?>
 
 													<div class="form-group clearfix">
 														<div class="row">
 															<div class="col-md-6">
-																<label for="radioSuccess1"> <? php echo $dgd->name ?></label>
+																<label for="radioSuccess1"> <?php echo $dgd->name ?></label>
 															</div>
 															<div class="col-md-6">
 																<input type="hidden" name="category_id[]" class="form-control"
-																	value="<? php echo $dgd->category_id ?>">
+																	value="<?php echo $dgd->category_id ?>">
 																<input type="number" value="0" min="0" max="99" name="category_disc_mrp[]" class="form-control"
 																	step="any">
 															</div>
 														</div>
 													</div>
-											<?  } ?>
-										<?  } ?>
+											<?php } ?>
+										<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -165,7 +166,7 @@ if (!empty($client_group_data)) {
 										<div class="form-check" style="margin-top:12px">
 											<div class="form-group clearfix">
 												<div class="icheck-success d-inline">
-													<input type="radio" name="status" <?  if ($status == 1) {
+													<input type="radio" name="status" <?php if ($status == 1) {
 														echo "checked";
 													} ?> value="1"
 														id="radioSuccess1">
@@ -174,7 +175,7 @@ if (!empty($client_group_data)) {
 												</div>
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<div class="icheck-danger d-inline">
-													<input type="radio" name="status" <?  if ($status != 1) {
+													<input type="radio" name="status" <?php if ($status != 1) {
 														echo "checked";
 													} ?> value="0"
 														id="radioSuccess2">
@@ -198,10 +199,10 @@ if (!empty($client_group_data)) {
 							</div>
 							<!-- /.card-footer -->
 
-							<? php echo form_close() ?>
+							<?php echo form_close() ?>
 							</table>
 						</div>
-					<?  } else {
+					<?php } else {
 						$this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
 						$this->load->view('admin/template/access_denied', $this->data);
 					} ?>
@@ -212,7 +213,7 @@ if (!empty($client_group_data)) {
 
 
 	</section>
-	<?  ?>
+	<?php ?>
 
 </div>
 

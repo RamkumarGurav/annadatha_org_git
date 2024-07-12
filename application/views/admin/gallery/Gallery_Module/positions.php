@@ -1,4 +1,4 @@
-<? 
+<?
 $page_module_name = "Gallery";
 $trip_duration = $trip_name = $trip_location = $trip_tour_type = $trip_seats_left = $trip_max_people = $trip_min_age = $slug_url = $meta_title = $meta_keywords = $meta_description = $meta_others = "";
 $id = 0;
@@ -10,14 +10,14 @@ echo "</pre>";*/
 
 ?>
 <script>
-    <? php if ($user_access->view_module == 1) { ?>
+    <?php if ($user_access->view_module == 1) { ?>
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
 
-                url: '<?  echo MAINSITE_Admin ?>gallery/Gallery-Module/GetCompleteGalleryList',
+                url: '<?php echo MAINSITE_Admin ?>gallery/Gallery-Module/GetCompleteGalleryList',
                 //dataType : "json", 
-                data: { "id": '<?  echo $id; ?>', "withPosition": 1, 'sortByPosition': 1, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
+                data: { "id": '<?php echo $id; ?>', "withPosition": 1, 'sortByPosition': 1, "<?php echo $csrf['name'] ?>": "<?php echo $csrf['hash'] ?>" },
                 success: function (result) {
                     //   alert(result);
                     $('#galleryList').html(result);
@@ -26,7 +26,7 @@ echo "</pre>";*/
                 }
             });
         });
-    <?  } ?>
+    <?php } ?>
 </script>
 <style>
     body {
@@ -41,13 +41,13 @@ echo "</pre>";*/
         <div class="container-fluid ">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-2 text-dark"><? php echo $page_module_name ?> <small>Details</small></h1>
+                    <h1 class="m-2 text-dark"><?php echo $page_module_name ?> <small>Details</small></h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
                         <li class="breadcrumb-item"><a
-                                href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
+                                href="<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?php echo $user_access->module_name ?>
                                 List</a></li>
                         <li class="breadcrumb-item active">Details</li>
                     </ol>
@@ -66,9 +66,9 @@ echo "</pre>";*/
 
                 </div>
                 <div class="box-body">
-                    <? php if ($user_access->view_module == 1) { ?>
+                    <?php if ($user_access->view_module == 1) { ?>
 
-                        <link rel="stylesheet" href="<? php echo _admin_files_ ?>css/tablednd.css" type="text/css" />
+                        <link rel="stylesheet" href="<?php echo _admin_files_ ?>css/tablednd.css" type="text/css" />
                         <div class="tableDemo">
                             <table class="table table-striped" id="table-2">
                                 <thead>
@@ -92,7 +92,7 @@ echo "</pre>";*/
                                     <tr>
                                         <td colspan="10">
                                             <div class="clearfix text-center">
-                                                <img src="<?  echo MAINSITE . "assets/admin/images/load.gif"; ?>" />
+                                                <img src="<?php echo MAINSITE . "assets/admin/images/load.gif"; ?>" />
                                             </div>
                                         </td>
                                     </tr>
@@ -104,12 +104,12 @@ echo "</pre>";*/
                             <div class="result"></div>
                         </div>
 
-                    <?  } else {
+                    <?php } else {
                         //$this->data['no_access_flash_message']="You Dont Have Access To View ".$page_module_name;
                         $this->load->view('admin/template/access_denied', $this->data);
                     } ?>
 
-                    <script src="<? php echo _admin_files_ ?>js/jquery.tablednd.js" type="text/javascript"></script>
+                    <script src="<?php echo _admin_files_ ?>js/jquery.tablednd.js" type="text/javascript"></script>
 
                     <script>
 
@@ -128,12 +128,12 @@ echo "</pre>";*/
                                         podId += rows[i].id + ",";
                                     }
 
-                                    $('#galleryList').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<?  echo MAINSITE . "assets/admin/images/load.gif"; ?>" /></div></td></tr>');
+                                    $('#galleryList').html('<tr><td colspan="10"> <div class="clearfix text-center" ><img  src="<?php echo MAINSITE . "assets/admin/images/load.gif"; ?>" /></div></td></tr>');
                                     $.ajax({
                                         type: "POST",
-                                        url: '<? php echo MAINSITE_Admin . 'gallery/Gallery-Module/GetCompleteGalleryListNewPos' ?>',
+                                        url: '<?php echo MAINSITE_Admin . 'gallery/Gallery-Module/GetCompleteGalleryListNewPos' ?>',
                                         //dataType : "json", 
-                                        data: { "id": '<?  echo $id; ?>', 'podId': podId, "<? php echo $csrf['name'] ?>": "<? php echo $csrf['hash'] ?>" },
+                                        data: { "id": '<?php echo $id; ?>', 'podId': podId, "<?php echo $csrf['name'] ?>": "<?php echo $csrf['hash'] ?>" },
                                         success: function (result) {
                                             // alert(result);
                                             $('#galleryList').html(result);

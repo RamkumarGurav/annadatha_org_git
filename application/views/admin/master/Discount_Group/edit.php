@@ -1,7 +1,7 @@
-<? php
+<?php
 $page_module_name = "Discount Group";
 ?>
-<? 
+<?
 $discount_group_name = $discount_group_description = "";
 $discount_group_id = 0;
 $category_id = 0;
@@ -28,20 +28,20 @@ if (!empty($discount_group_data)) {
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark"><? php echo $page_module_name ?> </small></h1>
+					<h1 class="m-0 text-dark"><?php echo $page_module_name ?> </small></h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 						<li class="breadcrumb-item"><a
-								href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
+								href="<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?php echo $user_access->module_name ?>
 								List</a></li>
-						<?  if (!empty($discount_group_data)) { ?>
+						<?php if (!empty($discount_group_data)) { ?>
 							<li class="breadcrumb-item"><a
-									href="<? php echo MAINSITE_Admin . $user_access->class_name . "/city_view/" . $discount_group_id ?>">View</a>
+									href="<?php echo MAINSITE_Admin . $user_access->class_name . "/city_view/" . $discount_group_id ?>">View</a>
 							</li>
-						<?  } ?>
-						<li class="breadcrumb-item"><? php echo $record_action ?></li>
+						<?php } ?>
+						<li class="breadcrumb-item"><?php echo $record_action ?></li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -50,7 +50,7 @@ if (!empty($discount_group_data)) {
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<?  ?>
+	<?php ?>
 
 	<section class="content">
 		<div class="row">
@@ -59,17 +59,17 @@ if (!empty($discount_group_data)) {
 				<div class="card">
 
 					<div class="card-header">
-						<h3 class="card-title"><? php echo $discount_group_name ?> <small><? php echo $record_action ?></small></h3>
+						<h3 class="card-title"><?php echo $discount_group_name ?> <small><?php echo $record_action ?></small></h3>
 					</div>
 					<!-- /.card-header -->
-					<? php
+					<?php
 					if ($user_access->view_module == 1 || true) {
 						?>
-						<?  echo $this->session->flashdata('alert_message'); ?>
+						<?php echo $this->session->flashdata('alert_message'); ?>
 						<div class="card-body">
-							<? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => '', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form')); ?>
+							<?php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => '', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form')); ?>
 							<input type="hidden" name="discount_group_id" id="discount_group_id"
-								value="<? php echo $discount_group_id ?>" />
+								value="<?php echo $discount_group_id ?>" />
 							<input type="hidden" name="redirect_type" id="redirect_type" value="" />
 
 							<div class="form-group row">
@@ -78,7 +78,7 @@ if (!empty($discount_group_data)) {
 											style="color:#f00;font-size: 22px;margin-top: 3px;">*</span></label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control form-control-sm" required id="discount_group_name"
-											name="discount_group_name" value="<? php echo $discount_group_name ?>"
+											name="discount_group_name" value="<?php echo $discount_group_name ?>"
 											placeholder="Discount Group Name">
 									</div>
 								</div>
@@ -90,7 +90,7 @@ if (!empty($discount_group_data)) {
 											style="color:#f00;font-size: 22px;margin-top: 3px;">*</span></label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control form-control-sm" required id="discount_group_description"
-											name="discount_group_description" value="<? php echo $discount_group_description ?>"
+											name="discount_group_description" value="<?php echo $discount_group_description ?>"
 											placeholder="Discount Group Description">
 
 									</div>
@@ -107,7 +107,7 @@ if (!empty($discount_group_data)) {
 										<div class="form-check" style="margin-top:12px">
 											<div class="form-group clearfix">
 												<div class="icheck-success d-inline">
-													<input type="radio" name="status" <?  if ($status == 1) {
+													<input type="radio" name="status" <?php if ($status == 1) {
 														echo "checked";
 													} ?> value="1"
 														id="radioSuccess1">
@@ -116,7 +116,7 @@ if (!empty($discount_group_data)) {
 												</div>
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<div class="icheck-danger d-inline">
-													<input type="radio" name="status" <?  if ($status != 1) {
+													<input type="radio" name="status" <?php if ($status != 1) {
 														echo "checked";
 													} ?> value="0"
 														id="radioSuccess2">
@@ -140,10 +140,10 @@ if (!empty($discount_group_data)) {
 							</div>
 							<!-- /.card-footer -->
 
-							<? php echo form_close() ?>
+							<?php echo form_close() ?>
 							</table>
 						</div>
-					<?  } else {
+					<?php } else {
 						$this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
 						$this->load->view('admin/template/access_denied', $this->data);
 					} ?>
@@ -154,7 +154,7 @@ if (!empty($discount_group_data)) {
 
 
 	</section>
-	<?  ?>
+	<?php ?>
 
 </div>
 

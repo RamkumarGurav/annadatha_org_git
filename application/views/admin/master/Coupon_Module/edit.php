@@ -1,7 +1,7 @@
-<? php
+<?php
 $page_module_name = "Coupon";
 ?>
-<? 
+<?php
 $name = "";
 $discount_value = "";
 $id = 0;
@@ -30,19 +30,19 @@ if (!empty($coupon_data)) {
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark"><? php echo $page_module_name ?> </small></h1>
+					<h1 class="m-0 text-dark"><?php echo $page_module_name ?> </small></h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
-						<li class="breadcrumb-item"><a href="<? php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
+						<li class="breadcrumb-item"><a href="<?php echo MAINSITE_Admin . "wam" ?>">Home</a></li>
 						<li class="breadcrumb-item"><a
-								href="<? php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><? php echo $user_access->module_name ?>
+								href="<?php echo MAINSITE_Admin . $user_access->class_name . "/" . $user_access->function_name ?>"><?php echo $user_access->module_name ?>
 								List</a></li>
-						<?  if (!empty($coupon_data)) { ?>
+						<?php if (!empty($coupon_data)) { ?>
 							<li class="breadcrumb-item"><a
-									href="<? php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $id ?>">View</a></li>
-						<?  } ?>
-						<li class="breadcrumb-item"><? php echo $record_action ?></li>
+									href="<?php echo MAINSITE_Admin . $user_access->class_name . "/view/" . $id ?>">View</a></li>
+						<?php } ?>
+						<li class="breadcrumb-item"><?php echo $record_action ?></li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -51,7 +51,7 @@ if (!empty($coupon_data)) {
 	<!-- /.content-header -->
 
 	<!-- Main content -->
-	<?  ?>
+	<?php ?>
 
 	<section class="content">
 		<div class="row">
@@ -60,17 +60,17 @@ if (!empty($coupon_data)) {
 				<div class="card">
 
 					<div class="card-header">
-						<h3 class="card-title"><? php echo $name ?> <small><? php echo $record_action ?></small></h3>
+						<h3 class="card-title"><?php echo $name ?> <small><?php echo $record_action ?></small></h3>
 					</div>
 					<!-- /.card-header -->
-					<? php
+					<?php
 					if ($user_access->view_module == 1 || true) {
 						?>
-						<?  echo $this->session->flashdata('alert_message'); ?>
+						<?php echo $this->session->flashdata('alert_message'); ?>
 						<div class="card-body">
 
-							<? php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
-							<input type="hidden" name="id" id="id" value="<? php echo $id ?>" />
+							<?php echo form_open(MAINSITE_Admin . "$user_access->class_name/doEdit", array('method' => 'post', 'id' => 'ptype_list_form', "name" => "ptype_list_form", 'style' => '', 'class' => 'form-horizontal', 'role' => 'form', 'enctype' => 'multipart/form-data')); ?>
+							<input type="hidden" name="id" id="id" value="<?php echo $id ?>" />
 							<input type="hidden" name="redirect_type" id="redirect_type" value="" />
 
 							<div class="row">
@@ -79,7 +79,7 @@ if (!empty($coupon_data)) {
 											style="color:#f00;font-size: 22px;margin-top: 3px;">*</span></label>
 									<div class="col-sm-10">
 										<input type="text" class="form-control form-control-sm" required id="name" name="name"
-											value="<? php echo $name ?>" placeholder="Coupon Name">
+											value="<?php echo $name ?>" placeholder="Coupon Name">
 
 									</div>
 								</div>
@@ -90,19 +90,17 @@ if (!empty($coupon_data)) {
 										<div class="form-check" style="margin-top:12px">
 											<div class="form-group clearfix">
 												<div class="icheck-success d-inline">
-													<input type="radio" name="discount_in" <?  if ($discount_in == 1) {
+													<input type="radio" name="discount_in" <?php if ($discount_in == 1) {
 														echo "checked";
-													} ?> value="1"
-														id="discount_in1">
+													} ?> value="1" id="discount_in1">
 													<label for="discount_in1"> Rs.
 													</label>
 												</div>
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<div class="icheck-danger d-inline">
-													<input type="radio" name="discount_in" <?  if ($discount_in != 1) {
+													<input type="radio" name="discount_in" <?php if ($discount_in != 1) {
 														echo "checked";
-													} ?> value="0"
-														id="discount_in2">
+													} ?> value="0" id="discount_in2">
 													<label for="discount_in2"> %
 													</label>
 												</div>
@@ -116,7 +114,7 @@ if (!empty($coupon_data)) {
 											style="color:#f00;font-size: 22px;margin-top: 3px;">*</span></label>
 									<div class="col-sm-10">
 										<input type="number" class="form-control form-control-sm" required id="discount_value"
-											name="discount_value" value="<? php echo $discount_value ?>" placeholder="Discount Value">
+											name="discount_value" value="<?php echo $discount_value ?>" placeholder="Discount Value">
 
 									</div>
 								</div>
@@ -128,7 +126,7 @@ if (!empty($coupon_data)) {
 										<div class="form-check" style="margin-top:12px">
 											<div class="form-group clearfix">
 												<div class="icheck-success d-inline">
-													<input type="radio" name="status" <?  if ($status == 1) {
+													<input type="radio" name="status" <?php if ($status == 1) {
 														echo "checked";
 													} ?> value="1"
 														id="radioSuccess1">
@@ -137,7 +135,7 @@ if (!empty($coupon_data)) {
 												</div>
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<div class="icheck-danger d-inline">
-													<input type="radio" name="status" <?  if ($status != 1) {
+													<input type="radio" name="status" <?php if ($status != 1) {
 														echo "checked";
 													} ?> value="0"
 														id="radioSuccess2">
@@ -161,10 +159,10 @@ if (!empty($coupon_data)) {
 							</div>
 							<!-- /.card-footer -->
 
-							<? php echo form_close() ?>
+							<?php echo form_close() ?>
 							</table>
 						</div>
-					<?  } else {
+					<?php } else {
 						$this->data['no_access_flash_message'] = "You Dont Have Access To View " . $page_module_name;
 						$this->load->view('admin/template/access_denied', $this->data);
 					} ?>
@@ -175,7 +173,7 @@ if (!empty($coupon_data)) {
 
 
 	</section>
-	<?  ?>
+	<?php ?>
 
 </div>
 
