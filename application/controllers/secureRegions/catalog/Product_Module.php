@@ -123,9 +123,6 @@ class Product_Module extends Main
 		$this->data['product_data'] = $this->Product_Model->get_product($search);
 		//$this->data['category_data'] = $this->Product_Model->get_category($search);
 
-		echo "<pre> <br>";
-		print_r($this->data['product_data']);
-		exit;
 
 
 		parent::get_header();
@@ -379,13 +376,13 @@ class Product_Module extends Main
 			}
 		}
 		/*$order_date = $_POST['order_date'];
-			$mc_chip_no = $_POST['mc_chip_no'];
-			$order_no = $_POST['order_no'];
-			$status = $_POST['status'];
-			$enter_data['order_date'] = date("Y-m-d" , strtotime($_POST['order_date']));
-			$enter_data['mc_chip_no'] = $_POST['mc_chip_no'];
-			$enter_data['order_no'] = $_POST['order_no'];
-			$enter_data['status'] = $_POST['status'];*/
+				$mc_chip_no = $_POST['mc_chip_no'];
+				$order_no = $_POST['order_no'];
+				$status = $_POST['status'];
+				$enter_data['order_date'] = date("Y-m-d" , strtotime($_POST['order_date']));
+				$enter_data['mc_chip_no'] = $_POST['mc_chip_no'];
+				$enter_data['order_no'] = $_POST['order_no'];
+				$enter_data['status'] = $_POST['status'];*/
 		$msg = 'fail';
 		$entereddata['product_id'] = $_POST['product_id'];
 		$entereddata['name'] = $_POST['name'];
@@ -927,9 +924,9 @@ class Product_Module extends Main
 
 		/*$super_category_id = $_POST['super_category_id'];
 
-			$podId = trim($_POST['podId'] , ',');
+				$podId = trim($_POST['podId'] , ',');
 
-			$podIdArr = explode(',' , $podId);*/
+				$podIdArr = explode(',' , $podId);*/
 
 		//$category_list=$this->Product_Model->get_category('category_list','', '',$super_category_id, '','', '','', '');
 
@@ -1472,12 +1469,12 @@ class Product_Module extends Main
 
 		/*else
 
-			{
+				{
 
-				$position_status = "";
+					$position_status = "";
 
-			}
-	*/
+				}
+		*/
 		//echo json_encode(array("position_status"=>"exist"));
 
 		echo json_encode(array("position_status" => $position_status));
@@ -1666,34 +1663,34 @@ class Product_Module extends Main
 
 	/*function checkProductSEOSlugUrl()
 
-	 {
+		{
 
-		 $search = array();
+			$search = array();
 
-		 if(!empty($_POST['product_id'])){$product_id = $_POST['product_id'];}
+			if(!empty($_POST['product_id'])){$product_id = $_POST['product_id'];}
 
-		 if(!empty($_POST['product_combination_id'])){$product_combination_id = $_POST['product_combination_id'];}
+			if(!empty($_POST['product_combination_id'])){$product_combination_id = $_POST['product_combination_id'];}
 
-		 if(!empty($_POST['slug_url'])){$slug_url = $_POST['slug_url'];}
+			if(!empty($_POST['slug_url'])){$slug_url = $_POST['slug_url'];}
 
-		 if(!empty($_POST['product_seo_id'])){$product_seo_id = $_POST['product_seo_id'];}
+			if(!empty($_POST['product_seo_id'])){$product_seo_id = $_POST['product_seo_id'];}
 
-		 $search['product_id'] = $product_id;
+			$search['product_id'] = $product_id;
 
-		 $search['product_combination_id'] = $product_combination_id;
+			$search['product_combination_id'] = $product_combination_id;
 
-		 $search['slug_url'] = $slug_url;
+			$search['slug_url'] = $slug_url;
 
-		 $search['product_seo_id'] = $product_seo_id;
+			$search['product_seo_id'] = $product_seo_id;
 
-		 $position_status = $this->Product_Model->checkSlugUrl($search);
+			$position_status = $this->Product_Model->checkSlugUrl($search);
 
 
 
-		 echo $position_status;
+			echo $position_status;
 
-	 }
- */
+		}
+	*/
 
 
 
@@ -1821,17 +1818,17 @@ class Product_Module extends Main
 		$data['attribute_value_list'] = $this->Common_Model->getData(array('select' => '*', 'from' => 'product_attribute_value', 'where' => "product_attribute_value_id >0"));
 
 		/*$data['product_detail']=$this->Admin_Model->products('product_detail',$product_id);
-			$data['product_category_detail']=$this->Admin_Model->products('product_category_detail',$product_id);
-			$data['product_image_detail']=$this->Admin_Model->products('product_image_detail',$product_id);
-			$data['product_combination_detail']=$this->Admin_Model->products('product_combination_detail',$product_id);
+				$data['product_category_detail']=$this->Admin_Model->products('product_category_detail',$product_id);
+				$data['product_image_detail']=$this->Admin_Model->products('product_image_detail',$product_id);
+				$data['product_combination_detail']=$this->Admin_Model->products('product_combination_detail',$product_id);
 
-			$data['product_in_store_detail']=$this->Admin_Model->products('product_in_store',$product_id);
-			$data['product_combination_attribute_detail']=$this->Admin_Model->products('product_combination_attribute_detail',$product_id);
-			$data['product_use_info_value_detail']=$this->Admin_Model->products('product_use_info_value_detail',$product_id);
-			$data['product_seo_detail']=$this->Admin_Model->products('product_seo_detail',$product_id);
-			$data['product_specification_detail']=$this->Admin_Model->products('product_specification',$product_id);
-			$data['product_attribute_list']=$this->Admin_Model->getListSearch('all_product_attribute_list','', '','', '','', '','', '' , 1);
-			$data['attribute_value_list']=$this->Admin_Model->getListSearch('all_attribute_value_list','', '','', '','', '','', '' , 1);*/
+				$data['product_in_store_detail']=$this->Admin_Model->products('product_in_store',$product_id);
+				$data['product_combination_attribute_detail']=$this->Admin_Model->products('product_combination_attribute_detail',$product_id);
+				$data['product_use_info_value_detail']=$this->Admin_Model->products('product_use_info_value_detail',$product_id);
+				$data['product_seo_detail']=$this->Admin_Model->products('product_seo_detail',$product_id);
+				$data['product_specification_detail']=$this->Admin_Model->products('product_specification',$product_id);
+				$data['product_attribute_list']=$this->Admin_Model->getListSearch('all_product_attribute_list','', '','', '','', '','', '' , 1);
+				$data['attribute_value_list']=$this->Admin_Model->getListSearch('all_attribute_value_list','', '','', '','', '','', '' , 1);*/
 		$this->data = $data;
 		$this->load->view('admin/catalog/Product_Module/create_product_clone', $this->data);
 	}

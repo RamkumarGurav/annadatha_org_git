@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2024-05-24 11:37:54 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 11:37:59 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 11:38:03 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 11:38:12 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 11:38:28 --> Severity: Notice --> Undefined index: total_weight E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Products.php 1740
+ERROR - 2024-05-24 11:38:28 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 11:38:31 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 11:38:44 --> Severity: Notice --> Undefined index: total_weight E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Products.php 1740
+ERROR - 2024-05-24 11:38:44 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 11:38:49 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 15:22:37 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:22:42 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:22:43 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:22:44 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:22:45 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:23:11 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:23:33 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:25:13 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:25:15 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 15:30:41 --> Severity: Notice --> Undefined index: city_id E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Ajax.php 52
+ERROR - 2024-05-24 17:16:54 --> Severity: Notice --> Undefined variable: otp E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Dashboard.php 1103
+ERROR - 2024-05-24 17:16:56 --> Severity: Notice --> Undefined variable: otp E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Dashboard.php 1103
+ERROR - 2024-05-24 17:17:02 --> Severity: Notice --> Undefined variable: otp E:\xampp\htdocs\xampp\MARS1\annadatha\application\controllers\Dashboard.php 1103
+ERROR - 2024-05-24 18:00:28 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:00:33 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:00:43 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:09:26 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:10:05 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:10:09 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:10:40 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:11:46 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:14:15 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:14:46 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:15:33 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
+ERROR - 2024-05-24 18:15:49 --> Severity: Notice --> Undefined index: token E:\xampp\htdocs\xampp\MARS1\annadatha\application\third_party\shiprocket\auth.php 35
