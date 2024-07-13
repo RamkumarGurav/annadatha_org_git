@@ -186,26 +186,21 @@ if(!empty($user_employee_data))
                                     </td>
 
                                     <td >
-                                    <strong class="full">Employee Code</strong>
-										<?=$user_employee_data->user_employee_code?>
+                                    <strong class="full">Department Name</strong>
+										<?=$user_employee_data->department_name?>
                                     </td>
 
- <td >
-										<strong class="full">Employee Name</strong>
-										<?=$user_employee_data->name?></td>
-                                        <td >
-                                    <strong class="full">Shift Timing</strong>
-                                    <?php if (!empty($user_employee_data->login_time)): ?>
-															<?= (new DateTime($user_employee_data->login_time))->format('h:i A'); ?>
-														<?php else: ?>
-															-
-														<?php endif; ?> to <?php if (!empty($user_employee_data->logout_time)): ?>
-															<?= (new DateTime($user_employee_data->logout_time))->format('h:i A'); ?>
-														<?php else: ?>
-															-
-														<?php endif; ?>
-														
+                                    <td >
+                                    <strong class="full">Designation Name</strong>
+										<?=$user_employee_data->designation_name?>
                                     </td>
+
+                                    <td >
+                                    <strong class="full">Employee ID</strong>
+										<?=$user_employee_data->user_employee_custom_id?>
+                                    </td>
+
+                                  
 										
 
 
@@ -214,17 +209,53 @@ if(!empty($user_employee_data))
 									</tr>
                                     <tr>
                                     <td >
+										<strong class="full">Employee Name</strong>
+										<?=$user_employee_data->name?></td>
+                                        <td >
+                                    <strong class="full">Shift Timing</strong>
+                                    <?php if (!empty($user_employee_data->start_time)): ?>
+															<?= (new DateTime($user_employee_data->start_time))->format('h:i A'); ?>
+														<?php else: ?>
+															-
+														<?php endif; ?> to <?php if (!empty($user_employee_data->end_time)): ?>
+															<?= (new DateTime($user_employee_data->end_time))->format('h:i A'); ?>
+														<?php else: ?>
+															-
+														<?php endif; ?>
+														
+                                    </td>
+                                    <td >
 										<strong class="full">Employee Mobile No.</strong>
 										<?=$user_employee_data->contactno?></td>
+                                        <td >
+										<strong class="full">Employee Alt Mobile No.</strong>
+										<?=$user_employee_data->alt_contactno?></td>
                                     <td >
 										<strong class="full">Employee Email</strong>
-										<?=$user_employee_data->email?></td>
+										<?=$user_employee_data->personal_email?></td>
+                                       
+										
+										
+									</tr>							
+									<tr>
+                                    <td >
+										<strong class="full">Company Email</strong>
+										<?=$user_employee_data->company_email?></td>
 
 										
 										<td >
                                     <strong class="full">Employee Birthday</strong>
                                     <?php if (!empty($user_employee_data->birthday)): ?>
                                         <?=date("d-m-Y" , strtotime($user_employee_data->birthday))?>
+														<?php else: ?>
+															-
+														<?php endif; ?>
+										
+                                    </td>
+                                    <td >
+                                    <strong class="full">Employee Joining Date</strong>
+                                    <?php if (!empty($user_employee_data->joining_date)): ?>
+                                        <?=date("d-m-Y" , strtotime($user_employee_data->joining_date))?>
 														<?php else: ?>
 															-
 														<?php endif; ?>
@@ -244,14 +275,8 @@ if(!empty($user_employee_data))
 											<img class="imageThumb" src="<?=MAINSITE?>assets/images/no_image.jpg" />
 											</span>
 										<? } ?></td>
-										
-										<td >
-                                    <strong class="full">password</strong>
-										<?=$user_employee_data->password?>
-                                    </td>
-									</tr>							
-									<tr>
-                                    <td >
+
+                                    <!-- <td >
                                     <strong class="full">Country</strong>
 										<?=$user_employee_data->country_name?>
                                     </td>
@@ -266,7 +291,8 @@ if(!empty($user_employee_data))
                                     <td >
                                     <strong class="full">Pincode</strong>
 										<?=$user_employee_data->pincode?>
-                                    </td>
+                                    </td> -->
+
 										<td >
 										<strong class="full">Address</strong>
                                         <?=$user_employee_data->address?>
@@ -274,7 +300,21 @@ if(!empty($user_employee_data))
 										
 										
 									</tr>
-
+                                    
+                                    <tr>
+                                    <td >
+										<strong class="full">AADHAR Number</strong>
+                                        <?=$user_employee_data->aadhar_number?>
+                                        </td>
+                                        <td >
+										<strong class="full">PAN Number</strong>
+                                        <?=$user_employee_data->pan_number?>
+                                        </td>
+                                        <td colspan="3">
+										<strong class="full">Uploaded KYC files </strong>
+                                       -
+                                        </td>
+                                    </tr>
 									<tr>
 										<td >
 										<strong class="full">Added On</strong>

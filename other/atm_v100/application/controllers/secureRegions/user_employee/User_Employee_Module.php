@@ -66,6 +66,8 @@ class User_Employee_Module extends Main
 		$field_name = '';
 		$field_value = '';
 		$branch_id = 0;
+		$department_id = 0;
+		$designation_id = 0;
 		$end_date = '';
 		$start_date = '';
 		$record_status = "";
@@ -84,6 +86,12 @@ class User_Employee_Module extends Main
 		if (!empty($_POST['branch_id']))
 			$branch_id = $_POST['branch_id'];
 
+		if (!empty($_POST['designation_id']))
+			$designation_id = $_POST['designation_id'];
+
+		if (!empty($_POST['department_id']))
+			$department_id = $_POST['department_id'];
+
 		if (!empty($_POST['end_date']))
 			$end_date = $_POST['end_date'];
 
@@ -97,6 +105,8 @@ class User_Employee_Module extends Main
 		$this->data['field_name'] = $field_name;
 		$this->data['field_value'] = $field_value;
 		$this->data['branch_id'] = $branch_id;
+		$this->data['department_id'] = $department_id;
+		$this->data['designation_id'] = $designation_id;
 		$this->data['end_date'] = $end_date;
 		$this->data['start_date'] = $start_date;
 		$this->data['record_status'] = $record_status;
@@ -107,6 +117,8 @@ class User_Employee_Module extends Main
 		$search['field_value'] = $field_value;
 		$search['field_name'] = $field_name;
 		$search['branch_id'] = $branch_id;
+		$search['department_id'] = $department_id;
+		$search['designation_id'] = $designation_id;
 		$search['record_status'] = $record_status;
 		$search['search_for'] = "count";
 
@@ -156,16 +168,14 @@ class User_Employee_Module extends Main
 		$this->data['user_employee_data'] = $this->User_Employee_Model->get_user_employee($search);
 
 
-		// $this->data['country_data'] = $this->Common_Model->getData(array('select' => '*', 'from' => 'country', 'where' => "country_id > 0", "order_by" => "country_name ASC"));
+		$this->data['country_data'] = $this->Common_Model->getData(array('select' => '*', 'from' => 'country', 'where' => "country_id > 0", "order_by" => "country_name ASC"));
 		$this->data['branch_data'] = $this->Common_Model->getData(array('select' => '*', 'from' => 'branch', 'where' => "branch_id > 0", "order_by" => "branch_name ASC"));
 		$this->data['department_data'] = $this->Common_Model->getData(array('select' => '*', 'from' => 'department_master', 'where' => "department_id > 0", "order_by" => "department_name ASC"));
 		$this->data['designation_data'] = $this->Common_Model->getData(array('select' => '*', 'from' => 'designation_master', 'where' => "designation_id > 0", "order_by" => "designation_name ASC"));
 
 
 
-		echo "<pre> <br>";
-		print_r($this->data['user_employee_data']);
-		exit;
+
 
 		parent::get_header();
 		parent::get_left_nav();

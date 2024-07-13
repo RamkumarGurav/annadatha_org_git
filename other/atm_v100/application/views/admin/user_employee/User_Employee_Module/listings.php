@@ -61,7 +61,7 @@ $page_module_name = "User Employee";
                                                         echo 'selected';
                                                     } ?>>
                                                         Employee Name</option>
-                                                    <option value='urm.user_employee_code' <? if ($field_name == 'urm.user_employee_code') {
+                                                    <option value='urm.user_employee_custom_id' <? if ($field_name == 'urm.user_employee_custom_id') {
                                                         echo 'selected';
                                                     } ?>>
                                                         Employee Code</option>
@@ -228,7 +228,7 @@ $page_module_name = "User Employee";
                                                     onclick="check_uncheck_All_records()" value="" /></th>
                                         <? } ?>
                                         <th>Employee Name</th>
-                                        <th>Employee Code</th>
+                                        <th>Employee ID</th>
                                         <th>Branch Name</th>
                                         <th>Employee ContactNo.</th>
                                         <th>Added On</th>
@@ -256,7 +256,7 @@ $page_module_name = "User Employee";
                                                 <td><a
                                                         href="<?= MAINSITE_Admin . $user_access->class_name . "/view/" . $urm->user_employee_id ?>"><?= $urm->name ?></a>
                                                 </td>
-                                                <td><?= $urm->user_employee_code ?></td>
+                                                <td><?= $urm->user_employee_custom_id ?></td>
                                                 <td><?= $urm->branch_name ?></td>
                                                 <td><?= $urm->contactno ?></td>
 
